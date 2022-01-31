@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: aws/task_modifying_export_policy_rules.html 
+keywords: Cloud Volumes Service for AWS, export policy rules, client access, access types 
+summary: 필요에 따라 볼륨에 대한 엑스포트 정책 규칙을 수정할 수 있습니다. 
+---
+= 엑스포트 정책 규칙 수정
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+필요에 따라 볼륨에 대한 엑스포트 정책 규칙을 수정할 수 있습니다.
+
+.단계
+. 볼륨 이름을 클릭한 다음 * Export policy * 를 선택합니다.
+. 기존 엑스포트 정책 규칙을 변경하려면 필요에 따라 다음 필드를 수정합니다.
++
+** * 허용된 클라이언트 *
+** * 액세스 유형 *
+
+
+. 변경 내용 저장 * 을 클릭합니다.
+

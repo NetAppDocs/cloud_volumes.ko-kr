@@ -1,0 +1,85 @@
+---
+settings:
+  name: Cloud Volumes Service
+  platform: ''
+  rss_page: reference_whats_new_cloud_volumes_aws.html
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: Cloud Volumes Service for AWS 문서
+    url: "/aws/index.html"
+  - title: 릴리스 정보
+    entries:
+    - title: 새로운 소식
+      url: "/aws/reference_whats_new_cloud_volumes_aws.html"
+    - title: 알려진 문제
+      url: "/aws/reference_known_issues.html"
+  - title: 시작하기
+    entries:
+    - title: 필수 구성 요소
+      url: "/aws/concept_overview.html"
+    - title: 빠른 시작 지침
+      url: "/aws/task_quick_start.html"
+    - title: 지원 권한 활성화 및 지원 액세스
+      url: "/aws/task_activating_support_entitlement.html"
+    - title: 지역 선택
+      url: "/aws/task_selecting_region.html"
+  - title: 클라우드 볼륨 관리
+    entries:
+    - title: 클라우드 볼륨을 생성하는 중입니다
+      url: "/aws/task_creating_cloud_volumes_for_aws.html"
+    - title: 클라우드 볼륨 마운트
+      url: "/aws/task_mounting_cloud_volumes_for_aws.html"
+    - title: 클라우드 볼륨 수정
+      url: "/aws/task_modifying_cloud_volumes_for_aws.html"
+    - title: 클라우드 볼륨을 삭제하는 중입니다
+      url: "/aws/task_deleting_cloud_volumes_for_aws.html"
+  - title: 클라우드 볼륨 스냅샷 관리
+    entries:
+    - title: 클라우드 볼륨에 대한 온디맨드 스냅샷 생성
+      url: "/aws/task_creating_on_demand_snapshots.html"
+    - title: 스냅샷 정책 생성 또는 수정
+      url: "/aws/task_creating_modifying_snapshot_policies.html"
+    - title: 스냅샷 정책을 사용하지 않도록 설정합니다
+      url: "/aws/task_disabling_snapshot_policy.html"
+    - title: 스냅샷에서 볼륨을 되돌리는 중입니다
+      url: "/aws/task_reverting_volume_to_snapshot.html"
+    - title: 스냅샷을 삭제하는 중입니다
+      url: "/aws/task_deleting_snapshots.html"
+    - title: 스냅샷을 새 볼륨으로 복구
+      url: "/aws/task_restoring_snapshots_to_new_volumes.html"
+  - title: 엑스포트 정책 규칙 관리
+    entries:
+    - title: 엑스포트 정책 규칙 수정
+      url: "/aws/task_modifying_export_policy_rules.html"
+    - title: 추가 엑스포트 정책 규칙 생성
+      url: "/aws/task_creating_additional_export_policy_rules.html"
+    - title: 엑스포트 정책 규칙을 삭제하는 중입니다
+      url: "/aws/task_deleting_export_policy_rules.html"
+  - title: 클라우드 볼륨을 위한 Cloud Sync 관리
+    entries:
+    - title: Cloud Sync 데이터 브로커 생성
+      url: "/aws/task_creating_cloud_sync_data_broker.html"
+    - title: Cloud Sync 관계 생성
+      url: "/aws/task_creating_cloud_sync_relationship.html"
+    - title: Cloud Sync 스케줄 수정
+      url: "/aws/task_modifying_cloud_sync_schedule.html"
+    - title: Cloud Sync 관계를 삭제하는 중입니다
+      url: "/aws/task_deleting_cloud_sync_relationship.html"
+    - title: Cloud Sync 데이터 브로커를 삭제하는 중입니다
+      url: "/aws/task_deleting_cloud_sync_data_broker.html"
+  - title: Cloud Volumes API
+    url: "/aws/reference_cloud_volume_apis.html"
+  - title: 참조하십시오
+    entries:
+    - title: Windows AD 서버에 대한 AWS 보안 그룹 설정
+      url: "/aws/reference_security_groups_windows_ad_servers.html"
+    - title: 적절한 서비스 레벨 및 할당된 용량 선택
+      url: "/aws/reference_selecting_service_level_and_quota.html"
+  - title: 법적 고지
+    url: "/aws/reference_notices.html"

@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_snapshots.html 
+keywords: Cloud Volumes Service for AWS, snapshots 
+summary: 볼륨 또는 스냅샷 페이지에서 스냅샷을 삭제할 수 있습니다. 
+---
+= 스냅샷을 삭제하는 중입니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+볼륨 또는 스냅샷 페이지에서 스냅샷을 삭제할 수 있습니다.
+
+
+
+== 볼륨 페이지에서 스냅샷 삭제
+
+.단계
+. 볼륨 이름을 클릭한 다음 * Snapshots * 를 선택하여 볼륨의 스냅샷 목록을 확인합니다.
+. 삭제할 스냅샷을 지정하려면 해당 확인란을 선택하고 * Actions * 를 클릭한 다음 드롭다운 목록에서 * Delete snapshot/s * 를 선택합니다.
++
+또는 작업 에서 * 사용 가능 * 을 클릭한 다음 드롭다운 목록에서 * 스냅샷 삭제 * 를 선택합니다.
+
+. 확인 대화 상자에서 '삭제'를 입력하여 확인한 다음 * 삭제 * 를 클릭합니다.
+
+
+
+
+== 스냅샷 페이지에서 스냅샷 삭제
+
+.단계
+. (선택 사항) 검색 상자를 사용하여 나열된 스냅샷을 필터링합니다.
+. 삭제할 스냅샷을 지정하려면 해당 확인란을 선택하고 * Actions * 를 클릭한 다음 드롭다운 목록에서 * Delete snapshot/s * 를 선택합니다.
+. 확인 대화 상자에서 '삭제'를 입력하여 확인한 다음 * 삭제 * 를 클릭합니다.
+

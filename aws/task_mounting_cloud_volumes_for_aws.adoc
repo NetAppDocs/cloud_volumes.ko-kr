@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: aws/task_mounting_cloud_volumes_for_aws.html 
+keywords: Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2, NFSv3, NFSv4.1, Linux, UNIX, SMB, Windows 
+summary: 클라우드 볼륨을 AWS 인스턴스에 마운트할 수 있습니다. 클라우드 볼륨은 현재 Linux 및 UNIX 클라이언트용 NFSv3 및 NFSv4.1과 Windows 클라이언트용 SMB 2.1, 3.0 및 3.1.1을 지원합니다. 
+---
+= 클라우드 볼륨 마운트
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+클라우드 볼륨을 AWS 인스턴스에 마운트할 수 있습니다. 클라우드 볼륨은 현재 Linux 및 UNIX 클라이언트용 NFSv3 및 NFSv4.1과 Windows 클라이언트용 SMB 2.1, 3.0 및 3.1.1을 지원합니다.
+
+* 참고: * 고객이 지원하는 강조 표시된 프로토콜/언어를 사용하십시오.
+
+.단계
+. 파란색 물음표(?)를 클릭하여 생성한 볼륨에 대한 마운트 지침을 확인합니다. 볼륨 이름 옆에 있는 내보내기 경로 필드의 끝 부분에 있습니다.
++
+물음표 위로 마우스를 가져가면 * Show mount instructions * 가 표시됩니다.
+
++
+image:diagram_mount_1.png["마운트 지침을 표시합니다"]
+
+. 물음표를 클릭하면 마운트 지침이 표시됩니다.
++
+* NFS 예: *
+
++
+image:diagram_mount_instructions_nfs.png["NFS에 대한 마운트 지침"]
+
++
+'rsize' 및 'wsize' 옵션에 의해 정의된 최대 I/O 크기는 1048576이지만 대부분의 사용 사례에서 65536이 권장되는 기본값입니다.
+
++
+버전을 지정하지 않으면 Linux 클라이언트는 기본적으로 NFSv4.1로 설정됩니다.
+
++
+* SMB 예: *
+
++
+image:diagram_mount_instructions_smb.png["SMB를 위한 마운트 지침"]
+
+. SSH 또는 RDP 클라이언트를 사용하여 Amazon Elastic Compute Cloud(EC2) 인스턴스에 연결한 다음 해당 인스턴스에 대한 마운트 지침을 따릅니다.
++
+마운트 지침의 단계를 완료한 후 클라우드 볼륨을 AWS 인스턴스에 마운트했습니다.
+
+

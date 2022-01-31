@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: aws/concept_overview.html 
+keywords: Cloud Volumes Service for AWS, overview, concepts, features, use cases, prerequisites, workflow 
+summary: 클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 있습니다. Cloud Volumes Service for AWS를 사용하려면 몇 가지 사전 요구사항이 충족되어야 합니다. 
+---
+= Cloud Volumes Service for AWS 사전 요구사항
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 있습니다. Cloud Volumes Service for AWS를 사용하려면 몇 가지 사전 요구사항이 충족되어야 합니다.
+
+이 문서에 설명된 Cloud Volumes 작업을 수행하려면 먼저 AWS용 Cloud Volumes Service를 구독해야 합니다. 가입 프로세스에는 서비스를 사용하는 데 필요한 초기 설정 및 구성이 포함됩니다.
+
+를 참조하십시오 https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e["먼저 새로운 NetApp Cloud Volumes Service for AWS에 대해 알아보십시오"^] 페이지를 참조하십시오.

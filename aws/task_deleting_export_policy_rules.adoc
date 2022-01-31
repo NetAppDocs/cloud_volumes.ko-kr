@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_export_policy_rules.html 
+keywords: Cloud Volumes Service for AWS, export policy rules 
+summary: 더 이상 필요하지 않은 엑스포트 정책 규칙을 삭제할 수 있습니다. 
+---
+= 엑스포트 정책 규칙을 삭제하는 중입니다
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+더 이상 필요하지 않은 엑스포트 정책 규칙을 삭제할 수 있습니다.
+
+.단계
+. 볼륨 이름을 클릭한 다음 * Export policy * 를 선택합니다.
+. 삭제할 정책 규칙에 대해 * X * 를 클릭합니다.
++
+image:diagram_export_policy_delete.png["엑스포트 정책 삭제"]
+
+. 변경 내용 저장 * 을 클릭합니다.
+

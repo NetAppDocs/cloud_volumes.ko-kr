@@ -1,0 +1,319 @@
+---
+sidebar: sidebar 
+permalink: aws/reference_cloud_volume_apis.html 
+keywords: Cloud Volumes Service for AWS, APIs 
+summary: 웹 UI를 통해 사용할 수 있는 Cloud Volumes 기능은 RESTful API를 통해서도 사용할 수 있습니다. API를 사용하여 클라우드 볼륨을 생성 및 관리하고 프로비저닝 스크립트 및 툴을 개발할 수 있습니다. 
+---
+= Cloud Volumes API
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+웹 UI를 통해 사용할 수 있는 Cloud Volumes 기능은 RESTful API를 통해서도 사용할 수 있습니다. API를 사용하여 클라우드 볼륨을 생성 및 관리하고 프로비저닝 스크립트 및 툴을 개발할 수 있습니다.
+
+
+
+== API URL, API 키 및 암호 키를 찾습니다
+
+API 호출을 실행하려면 Cloud Volumes API URL, API 키 및 암호 키를 얻어야 합니다.
+
+.단계
+. 스토리지 페이지 또는 사용자 이름 아래의 드롭다운 메뉴에서 * API access * 를 클릭합니다.
+. Cloud Volumes API URL, API 키 및 암호 키를 기록합니다.
+
+
+link:media/test.conf["계정에 대한 API URL, API 키 및 비밀 키를 보여 주는 샘플 파일입니다"]
+
+
+
+== 사용 가능한 API를 나열합니다
+
+스토리지 페이지에는 사용할 수 있는 사용 가능한 API가 표시됩니다.
+
+.단계
+. 스토리지 페이지에서 * API documentation * 을 클릭합니다.
++
+이 페이지에는 사용 가능한 API가 나열됩니다.
+
+. 페이지를 스크롤하여 사용 가능한 API를 확인합니다.
++
+API는 다음과 같이 기능별로 나열됩니다.
+
++
+** '볼륨'
+** '명사'입니다
+** '스토리지'입니다
+** "냅샷"
+
+
+. API 호출 사용 방법에 대한 자세한 내용과 예제를 보려면 함수를 선택하고 다음 작업 중 하나를 클릭합니다.
++
+** '내려받기' : 읽는다
+** 'POST'(POST)가 생성됩니다
+** 'PUT': 업데이트 또는 수정
+** 삭제: 파괴한다
+
+
+
+
+
+
+== Cloud Volumes API 사용
+
+이 섹션에서는 Cloud Volumes API를 사용하는 방법을 보여줍니다. 이 예에서는 Linux bash 셸에서 curl을 사용합니다. "<api_url>", "<api_key>" 및 "<secret_key>"를 에서 기록한 값으로 바꿔야 합니다 <<finding_urL_key_secretKey,API URL, API 키 및 암호 키를 찾습니다>>.
+
+
+
+=== 구문
+
+'* curl-s-H accept:application/json-H" content-type:application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X[get, POST, put, delete]<api_url>/v2/<command> *'
+
+
+
+=== 예
+
+
+
+==== 볼륨 나열
+
+다음 예에서는 모든 볼륨에 대한 정보를 표시합니다.
+
+
+NOTE: JQ를 통해 명령을 파이핑하면 json 출력 포맷이 향상됩니다. 시스템에 JQ를 설치해야 할 수도 있습니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v2/Volumes | jq
+----
+link:media/list-cv.py["계정에 클라우드 볼륨을 나열하는 스크립트입니다"]
+
+
+
+==== 특정 볼륨에 대한 세부 정보를 나열합니다
+
+각 볼륨에는 'volumeId'라는 ID가 있습니다(예: '07c9ab6c-b655-a9fe-f904-b9b97ef9baa'). API 호출에 ID를 포함시키면 특정 볼륨에 대한 세부 정보가 제공됩니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v2/Volumes/<volumeId> | jq
+----
+
+
+==== 볼륨을 생성하는 중입니다
+
+다음 예에서는 "POST" 호출을 사용하여 100GB의 할당 용량을 가진 "Test"라는 볼륨을 만들어 "Test"라는 이름의 영역을 만들어 "NFSv3"로 내보냈습니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v2/Volumes -d '
+{
+	"name": "Test",
+	"creationToken": "grahams-test-volume3",
+	"region": "us-west-1",
+	"serviceLevel": "standard",
+	"quotaInBytes": 100000000000,
+	"exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
+	"protocolTypes": ["NFSv3"],
+	"labels": ["test"]
+}'
+----
+link:media/create-cv.py["클라우드 볼륨을 생성하는 스크립트입니다"]
+
+
+
+==== 볼륨을 업데이트하는 중입니다
+
+다음 예에서는 테스트 볼륨을 업데이트하고 서비스 수준을 극단적으로 변경한 다음 할당된 용량을 600GB로 변경하기 위해 'Put' 호출을 사용합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X PUT <api_url>/v2/Volumes/<volumeId> -d '
+{
+	"serviceLevel": "extreme",
+	"quotaInBytes": 600000000000
+}'
+----
+link:media/update-cv.py["클라우드 볼륨을 업데이트하는 스크립트입니다"]
+
+
+
+==== 볼륨을 삭제하는 중입니다
+
+다음 예에서는 'DELETE' 호출을 사용하여 'volumeId'로 지정된 볼륨을 삭제합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v2/Volumes/<volumeId>
+----
+link:media/delete-cv.py["마운트 지점별로 클라우드 볼륨을 삭제하는 스크립트입니다"]
+
+
+IMPORTANT: 주의하여 사용하십시오. 이 API 호출은 볼륨과 해당 데이터를 모두 삭제합니다.
+
+
+
+==== 스냅샷 생성
+
+다음 예에서는 "POST" 호출을 사용하여 특정 볼륨에 대한 "Snappy"라는 스냅샷을 생성합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v2/Volumes/<volumeId>/Snapshots -d '
+{
+	"name": "<snapshot-name>"
+}'
+----
+link:media/snap-cv.py["마운트 지점을 기준으로 클라우드 볼륨의 스냅샷을 생성하는 스크립트입니다"]
+
+
+
+==== 스냅샷 정책을 생성하는 중입니다
+
+다음 예에서는 "Put" 호출을 사용하여 특정 볼륨에 대한 스냅샷 정책을 생성합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X PUT <api_url>/v2/Volumes/<volumeId> -d '
+{
+	"snapshotPolicy": {
+        "dailySchedule": {},
+        "enabled": true,
+        "hourlySchedule": {
+            "minute": 33,
+            "snapshotsToKeep": 24
+        },
+        "monthlySchedule": {},
+        "weeklySchedule": {}
+    }
+}'
+----
+link:media/snapshot-policy.py["마운트 지점별 클라우드 볼륨에 대한 스냅샷 정책을 생성하는 스크립트입니다"]
+
+
+
+==== 특정 볼륨에 대한 스냅샷 나열
+
+다음 예에서는 "get" 호출을 사용하여 특정 볼륨에 대한 스냅샷을 나열합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v2/Volumes/<volumeId>/Snapshots
+----
+link:media/get-snaps.py["마운트 지점별 클라우드 볼륨의 스냅샷을 나열하는 스크립트입니다"]
+
+
+
+==== 스냅샷을 되돌리는 중입니다
+
+다음 예에서는 'POST' 호출을 사용하여 '스냅샷 ID' 및 '볼륨 ID'로 지정된 스냅샷에서 볼륨을 되돌립니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v2/Volumes/<volumeId>/Revert -d '
+{
+	"snapshotId": "<snapshotId>"
+}'
+----
+link:media/revert-snap.py["마운트 지점 및 snapshotId를 기준으로 클라우드 볼륨의 스냅샷으로 되돌리는 스크립트입니다"]
+
+
+IMPORTANT: 주의하여 사용하십시오. 이 API 호출로 인해 해당 스냅샷 날짜 이후에 기록된 데이터가 손실됩니다.
+
+
+
+==== 스냅샷으로부터 새 볼륨 생성
+
+다음 예에서는 'POST' 호출을 사용하여 '스냅샷 ID'로 지정된 기존 볼륨의 스냅샷을 기반으로 새 볼륨을 생성합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v2/Volumes -d '
+{
+	"snapshotId": "<snapshotId>",
+	"name": "Copy",
+	"creationToken": "perfectly-copied-volume",
+	"region": "us-west-1",
+	"serviceLevel": "extreme",
+	"protocolTypes": ["NFSv3"]
+}'
+----
+link:media/copy-cv.py["클라우드 볼륨을 복사하는 스크립트"]
+
+
+
+==== 스냅샷을 삭제하는 중입니다
+
+다음 예에서는 'Delete' 호출을 사용하여 'shapshotId'로 지정된 스냅샷을 삭제합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v2/Volumes/<volumeId>/Snapshots/<snapshotId>
+----
+link:media/delete-snap.py["마운트 지점 및 snapshotId를 기준으로 클라우드 볼륨의 스냅샷을 삭제하는 스크립트입니다"]
+
+
+IMPORTANT: 주의하여 사용하십시오. 이 API 호출은 스냅샷과 모든 해당 데이터를 삭제합니다.
+
+
+
+==== 디렉터리 서비스 참가 중
+
+다음 예에서는 "POST" 호출을 사용하여 디렉터리 서비스에 연결하고 DNS IP 주소, 도메인, SMB 서버의 NetBIOS 이름, 디렉터리 서비스 관리자의 사용자 이름과 암호 및 조직 단위(선택 사항 및 기본값은 CN=Computers)를 제공합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v2/Storage/ActiveDirectory -d '
+{
+	"DNS": "<ip-address>",
+	"domain": "<domain>",
+	"netBIOS": "<netbios-name>",
+	"organizationalUnit": "OU=Cloud Servers,DC=nas-cloud,DC=local",
+	"password": "secret",
+	"region": "us-west-1",
+	"username": "Administrator"
+}'
+----
+link:media/join-ad.py["디렉토리 서비스에 가입하는 스크립트입니다"]
+
+
+
+==== 디렉토리 서비스 통합 보기
+
+다음 예제에서는 "get" 호출을 사용하여 디렉터리 서비스 통합을 위한 구성을 표시합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v2/Storage/ActiveDirectory
+----
+link:media/get-ad.py["디렉토리 서비스 통합을 볼 수 있는 스크립트입니다"]
+
+
+
+==== 디렉토리 서비스 가입 해제
+
+다음 예에서는 'Delete' 호출을 사용하여 디렉토리 서비스 통합 연결을 해제합니다. 이 경우 현재 조인에 대한 UUID가 필요하며, 이는 위에 나열된 'Get' 호출을 사용하여 확인할 수 있습니다.
+
+
+NOTE: 사용 중인 디렉터리 서비스의 연결을 해제할 수 없습니다. 상태는 "사용 중"입니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v2/Storage/ActiveDirectory/<UUID>
+----
+link:media/unjoin-ad.py["디렉토리 서비스의 연결을 해제하는 스크립트입니다"]
+
+
+
+==== 성능 통계를 확인합니다
+
+다음 예에서는 "get" 호출을 사용하여 특정 기간 동안의 읽기 및 쓰기 IOPS, 처리량 및 지연 시간 통계를 "volumeId"로 지정된 볼륨에 대해 나열합니다.
+
+[source, json]
+----
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET '<api_url>/v2/Volumes/<volumeId>/PerformanceMetrics?startDate=2021-02-05T09:00&endDate=2021-02-05T09:05&type=READ_IOPS,WRITE_IOPS,TOTAL_THROUGHPUT,AVERAGE_OTHER_LATENCY'
+----
+link:media/get-perfstats.py["마운트 지점별 클라우드 볼륨의 성능 통계를 가져오는 스크립트입니다"]

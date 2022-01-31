@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: aws/task_creating_cloud_sync_data_broker.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync, data brokers, sync relationships 
+summary: NetApp Cloud Sync는 AWS용 NetApp Cloud Volumes Service와 통합되어 클라우드 볼륨 간에 데이터를 빠르게 동기화할 수 있습니다. Cloud Sync 데이터 브로커를 사용하면 데이터 동기화를 위한 Cloud Sync 관계를 만들 수 있습니다. 
+---
+= Cloud Sync 데이터 브로커 생성
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+NetApp Cloud Sync는 AWS 환경을 위한 NetApp Cloud Volumes Service와 통합되어 클라우드 볼륨과 NFS를 통해 데이터를 빠르게 동기화할 수 있습니다. Cloud Sync 데이터 브로커를 사용하면 데이터 동기화를 위한 Cloud Sync 관계를 만들 수 있습니다.
+
+Cloud Volumes 계정에 사용하는 것과 동일한 AWS VPC(가상 프라이빗 클라우드)에 Cloud Sync 데이터 브로커가 이미 있는 경우 이 작업을 건너뛸 수 있습니다.
+
+https://docs.netapp.com/us-en/cloudsync/["NetApp Cloud Sync 문서"^]
+
+.단계
+. 볼륨 페이지의 볼륨에 대한 동기화 페이지 또는 동기화 탭으로 이동합니다.
+. Create data broker * 를 클릭하여 데이터 브로커를 생성합니다.
+. 다음 필드에 대한 정보를 제공합니다.
++
+** * 이름 *
++
+데이터 브로커의 이름을 지정하십시오.
+
+** * 유형 *
++
+AWS를 선택합니다.
+
+** * 지역 *
++
+사용 가능한 영역을 선택합니다.
+
+** API 키 *
++
+AWS 계정에 대한 액세스 키를 제공합니다.
+
+** * 비밀 키 *
++
+AWS 계정의 암호 키를 입력합니다.
+
+** * 키 쌍 *
++
+사용 가능한 키 쌍을 선택합니다.
+
++
+유효한 키를 입력하면 키 쌍이 업데이트됩니다.
+
+** * VPC *
++
+Cloud Volumes 계정에 연결된 VPC를 선택합니다.
+
+** * 서브넷 *
++
+데이터 브로커에 사용할 사용 가능한 서브넷을 선택합니다.
+
++
+image::diagram_creating_cloud_sync_data_broker.png[Cloud Sync 데이터 브로커 생성]
+
+
+
+. 데이터 브로커 생성 프로세스를 시작하려면 * 데이터 브로커 생성 * 을 클릭합니다.
++
+데이터 브로커를 생성하는 데 몇 분 정도 걸립니다. 데이터 브로커가 생성되면 녹색 점으로 표시되어 준비가 되었음을 나타냅니다.
+
+
+
+를 계속 진행합니다 link:task_creating_cloud_sync_relationship.html["Cloud Sync 관계 작성"].

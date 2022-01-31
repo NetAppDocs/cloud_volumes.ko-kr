@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_cloud_volumes_for_aws.html 
+keywords: Cloud Volumes Service for AWS, delete, unmount 
+summary: 더 이상 필요하지 않은 클라우드 볼륨을 삭제할 수 있습니다. 
+---
+= 클라우드 볼륨을 삭제하는 중입니다
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+더 이상 필요하지 않은 클라우드 볼륨을 삭제할 수 있습니다.
+
+.단계
+. 모든 클라이언트에서 볼륨을 마운트 해제합니다.
++
+** Linux 클라이언트의 경우 'umount' 명령을 사용합니다.
+** Windows 클라이언트에서 * 네트워크 드라이브 연결 해제 * 를 클릭합니다.
+
+
+. Volumes(볼륨) 페이지에서 해당 확인란을 선택하여 삭제할 볼륨을 지정하고 * Actions(작업) * 를 클릭한 다음 드롭다운 목록에서 * Delete volume/s *(볼륨/s 삭제 *)를 선택합니다.
+. 확인 대화 상자에서 삭제 를 입력하여 볼륨을 삭제할 것인지 확인한 다음 * 삭제 * 를 클릭합니다.
+

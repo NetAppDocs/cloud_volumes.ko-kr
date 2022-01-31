@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: aws/task_modifying_cloud_sync_schedule.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync schedule, auto sync 
+summary: Cloud Sync 관계가 처음 생성되면 기본적으로 자동 동기화가 활성화되고 하루에 한 번 실행되도록 예약됩니다. 필요에 따라 Cloud Sync 일정을 수정할 수 있습니다. 
+---
+= Cloud Sync 스케줄 수정
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Cloud Sync 관계가 처음 생성되면 기본적으로 자동 동기화가 활성화되고 하루에 한 번 실행되도록 예약됩니다. 필요에 따라 Cloud Sync 일정을 수정할 수 있습니다.
+
+.단계
+. 볼륨 페이지의 볼륨에 대한 동기화 페이지 또는 동기화 탭으로 이동하여 Cloud Sync 관계를 확인합니다.
++
+image::diagram_modifying_cloud_sync_schedule_sync_relationship.png[관계 동기화]
+
+. Cloud Sync 관계에 대한 자동 동기화를 끄려면 관계에 대한 파란색 * 켜짐 * 슬라이더를 클릭합니다.
++
+image::diagram_modifying_cloud_sync_schedule_auto_sync.png[자동 동기화 슬라이더]
+
+. 동기화 일정을 변경하려면 * Schedule * (일정 *) 아래의 드롭다운 목록을 클릭하고 * Day/s * (일/초 *) 또는 * Hour/s * (시간/초 *)를 선택한 다음 간격 번호를 선택하고 확인 표시를 클릭합니다.
++
+image::diagram_modifying_cloud_sync_schedule.png[Cloud Sync 스케줄 수정]
+
+. Cloud Sync를 즉시 시작하려면 작업 에서 * 완료 * 를 클릭하고 * 지금 동기화 * 를 선택한 다음 * 지금 동기화 * 를 다시 클릭하여 확인합니다.
+

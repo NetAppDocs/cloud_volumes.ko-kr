@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: aws/reference_known_issues.html 
+keywords: Cloud Volumes Service for AWS limitations and known issues 
+summary: Cloud Volumes Service for AWS에는 다음과 같은 알려진 문제 및 제한 사항이 있습니다. 
+---
+= 알려진 문제 및 제한 사항
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Cloud Volumes Service for AWS에는 다음과 같은 알려진 문제 및 제한 사항이 있습니다.
+
+* * 문제 *: 기존 볼륨에서 NFSv3만 지원하고 NFSv4.1 또는 NFSv3 및 NFSv4.1 지원을 통해 볼륨이 생성되거나 변환될 경우, NFS 버전(버전=3)을 지정하지 않고 기존 볼륨을 마운트할 수 없습니다.
++
+* 해결 방법 *: 마운트 명령에 NFS 버전을 지정하는 옵션(예: mount -o vers=3...)을 추가하거나 모든 볼륨이 NFSv4.1을 지원하도록 변환되도록 합니다. 버전을 지정하지 않으면 Linux 클라이언트는 기본적으로 NFSv4.1로 설정됩니다.
+
+* * 문제 *: 스냅샷에서 새 볼륨을 생성할 때 ' 볼륨 _ <볼륨> _ 에 대한 볼륨 속성 "파일을 설정할 수 없습니다." 메시지와 함께 실패할 수 있습니다. 이유: 새 수는 현재 할당된 개수 _ <숫자> _ 보다 커야 합니다.
++
+* 해결 방법 *: 이 문제는 할당된 용량에 할당된 새 볼륨보다 현재 더 많은 파일이 할당된 스냅샷에서 볼륨을 생성하려고 할 때 발생합니다. 새 볼륨에 할당된 용량을 늘려 충분한 파일(inode)을 할당해야 합니다. 을 참조하십시오 link:reference_selecting_service_level_and_quota.html#allocated-capacity["할당된 용량을 선택합니다"] 를 참조하십시오.
+
+* * 문제 *: 72시간 후 볼륨이 없는 CVS 영역에서 네트워크 가상 인터페이스가 자동으로 삭제됩니다. 새 볼륨을 생성할 때 AWS 계정 번호 및 CIDR을 다시 제공해야 합니다.
++
+* 해결 방법 *: 비활성 기간 동안 네트워크 가상 인터페이스가 삭제되지 않도록 하려면 최소 하나의 볼륨을 남기고 할당 및 서비스 수준을 낮춰 비용을 최소화합니다.
+
+* * 문제 *: 만료된 서브스크립션을 가진 사용자는 Cloud Volumes Service 사용자 인터페이스에 로그인하거나 API와 상호 작용할 수 없습니다.
++
+* 해결 방법 *: Cloud Volumes Service에 대한 AWS 마켓플레이스 페이지로 이동하여 구독을 갱신합니다.
+
+

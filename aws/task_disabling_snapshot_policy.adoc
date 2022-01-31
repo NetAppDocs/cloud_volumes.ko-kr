@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: aws/task_disabling_snapshot_policy.html 
+keywords: Cloud Volumes Service for AWS, snapshot policies 
+summary: 스냅샷 정책 설정을 유지하는 동안 잠시 동안 스냅샷이 생성되지 않도록 중지하려면 스냅샷 정책을 사용하지 않도록 설정하면 됩니다. 
+---
+= 스냅샷 정책을 사용하지 않도록 설정합니다
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+스냅샷 정책 설정을 유지하는 동안 잠시 동안 스냅샷이 생성되지 않도록 스냅샷 정책을 사용하지 않도록 설정할 수 있습니다.
+
+.단계
+. 볼륨 페이지에서 볼륨 이름을 클릭한 다음 * 스냅샷 정책 * 을 선택합니다.
+. 스냅샷을 생성하지 않으려면 * Enabled * 버튼을 클릭하여 * off * 로 설정하십시오.
++
+image:diagram_snapshot_policy_button.png["스냅샷 정책 활성화 버튼"]
+
+. 변경 내용 저장 * 을 클릭합니다.
+
+
+스냅샷 정책을 다시 활성화하려면 * Enabled * 버튼을 클릭하여 * On * 으로 설정하고 * Save Changes * 를 클릭합니다.

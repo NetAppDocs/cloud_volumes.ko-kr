@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: aws/task_quick_start.html 
+summary: 몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Service를 시작할 수 있습니다. 
+---
+= 빠른 시작 지침
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: cloud volumes, amazon web services, AWS, documentation, help
+
+
+[role="lead"]
+몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Service를 시작할 수 있습니다.
+
+* 참고: * 클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 link:media/cvs_aws_account_setup.pdf["[KO"^]]|] 아직 이 단계를 완료하지 않은 경우.
+
+[discrete]
+=== span class="image"><img src="./media/number1.png" alt="the number 1"></span><a href="task_selecting_region.html">지역 선택</A>
+
+[role="quick-margin-para"]
+클라우드 볼륨을 생성할 AWS 영역을 지정합니다.
+
+[discrete]
+=== span class="image"><img src="./media/number2.png" alt="the number 2"></span><a href="task_creating_cloud_volumes_for_AWS.html">클라우드 볼륨 만들기</A>
+
+[role="quick-margin-para"]
+크기 및 서비스 수준을 지정하여 AWS 클라우드에서 클라우드 볼륨을 생성하고 다른 옵션을 정의합니다.
+
+[discrete]
+=== span class="image"><img src="./media/number3.png" alt="the number 3"></span><a href="task_mounting_cloud_volumes_for_AWS.html">클라우드 볼륨 마운트</A>
+
+[role="quick-margin-para"]
+Linux 및 UNIX 클라이언트용 NFS 또는 Windows 클라이언트용 SMB를 사용하여 AWS 인스턴스에 클라우드 볼륨을 마운트합니다.

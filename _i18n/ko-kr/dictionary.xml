@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="86065a7c5be198b0b451c329712a6e5e" category="summary">클라우드 볼륨에 필요한 경우 스냅샷 정책을 생성하거나 수정할 수 있습니다.</block>
+  <block id="c1a54c459a2c68ef7bce2776b02dda72" category="doc">스냅샷 정책 생성 또는 수정</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
+  <block id="5aca16be49856649ef6f361c031985cf" category="list-text">볼륨 페이지에서 볼륨 이름을 클릭한 다음 * 스냅샷 정책 * 을 선택합니다.</block>
+  <block id="4c2120dd76d528a83820084c1413b9d8" category="list-text">스냅샷을 생성하는 빈도를 지정하려면 * Hourly *, * Daily *, * Weekly * 또는 * Monthly * 를 선택합니다.</block>
+  <block id="0dea4e4a8d31f5f42a6d768847468712" category="paragraph">구성된 정책은 녹색 점으로 표시됩니다. 정의되지 않은 정책은 빨간색 점으로 표시됩니다.</block>
+  <block id="95f0f96e7a13d18ec4b4cc683cac354a" category="list-text">유지할 스냅샷 수를 선택합니다.</block>
+  <block id="d83574476baea70ecfe273fcb08a92b1" category="list-text">스냅샷을 생성해야 하는 일, 시간 및 분을 선택합니다.</block>
+  <block id="fea98e2809d15fb87a8bbea9800bd2be" category="list-text">월별 및 일별 스냅샷과 같이 다른 빈도로 스냅샷을 추가로 생성하려면 2-4단계를 반복합니다.</block>
+  <block id="4c0abf2d4c54820b8d33061abaf30759" category="inline-image-macro">스냅샷 정책</block>
+  <block id="7568b0b850141bed61ca92cb7e6bc5f8" category="paragraph"><block ref="7568b0b850141bed61ca92cb7e6bc5f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7d9525412e509e5ed89e6eb646ce23d3" category="list-text">Enabled* 단추가 * On * 으로 설정되어 있지 않으면 단추를 클릭하여 정책을 활성화하거나 다시 활성화합니다.</block>
+  <block id="3dca1b912e3d43e2a746fbcde32a6018" category="list-text">변경 내용 저장 * 을 클릭합니다.</block>
+  <block id="08d3f7987f9191254ac2a098580ceca6" category="summary">볼륨 또는 스냅샷 페이지에서 클라우드 볼륨의 주문형 스냅샷을 생성할 수 있습니다.</block>
+  <block id="5eadbf3a82cbca9c34336a6621ddc4c0" category="doc">클라우드 볼륨에 대한 온디맨드 스냅샷 생성</block>
+  <block id="0b24d7ddffbb29497b17927a7d594dc4" category="section-title">볼륨 페이지에서 스냅샷 생성</block>
+  <block id="f164a8e831a3a815b4407d42da65ff1c" category="list-text">볼륨 이름을 클릭하고 * 스냅샷 * 을 선택한 다음 * + 새 스냅샷 생성 * 을 클릭합니다.</block>
+  <block id="97f92a716f462fcd2526684bae637352" category="list-text">스냅샷의 이름을 입력하거나 자동으로 생성된 이름을 사용합니다.</block>
+  <block id="c5bf430593e42ecdfdafbb40e81e38eb" category="list-text">볼륨 이름을 선택한 다음 드롭다운 목록에서 스냅샷을 생성할 볼륨을 선택합니다.</block>
+  <block id="98f824fcf352eba6d33065f2f741a1ef" category="list-text">스냅샷 생성 * 을 클릭합니다.</block>
+  <block id="274058659e495fd9c42f5042b420f59f" category="paragraph">생성된 스냅샷이 나타납니다.</block>
+  <block id="f58ecdfd2fc8906a44c80f16e04d0174" category="section-title">스냅샷 페이지에서 스냅샷 생성</block>
+  <block id="35d8e3c0405b8aa0b608015318c7bd97" category="list-text">새 스냅샷 생성 * 을 클릭합니다.</block>
+  <block id="c16419e6ff4ca77861aa35637895dcd7" category="list-text">드롭다운 목록에서 스냅샷을 생성할 볼륨을 선택합니다.</block>
+  <block id="9297331ca7cbadab93fdcead25710142" category="paragraph">이제 생성된 스냅샷이 나열됩니다.</block>
+  <block id="5b618ec153a442d925e7e3cc93bb65d8" category="summary">클라우드 볼륨과 함께 Windows AD(Active Directory) 서버를 사용하는 경우 AWS 보안 그룹 설정에 대한 지침을 숙지해야 합니다. 이 설정을 통해 클라우드 볼륨이 AD와 올바르게 통합될 수 있습니다.</block>
+  <block id="b79db32b660a9bbc01887de0acbc4f26" category="doc">Windows AD 서버에 대한 AWS 보안 그룹 설정</block>
+  <block id="c546611c5f302cd6f19dc2dba0bcf1b0" category="paragraph">기본적으로 EC2 Windows 인스턴스에 적용된 AWS 보안 그룹에는 RDP를 제외한 모든 프로토콜에 대한 인바운드 규칙이 포함되어 있지 않습니다. Cloud Volumes Service의 인바운드 통신을 활성화하려면 각 Windows AD 인스턴스에 연결된 보안 그룹에 규칙을 추가해야 합니다. 필요한 포트는 다음과 같습니다.</block>
+  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="cell">서비스</block>
+  <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">포트</block>
+  <block id="888a77f5ac0748b6c8001822417df8b6" category="cell">프로토콜</block>
+  <block id="5ca2a54c1065dd7d05391f89a278ad2a" category="cell">AD 웹 서비스</block>
+  <block id="2747e3c644b9a085cd4d3a7718b16024" category="cell">9389</block>
+  <block id="b136ef5f6a01d816991fe3cf7a6ac763" category="cell">TCP</block>
+  <block id="ed5f2bdecbd4bd349d09412d1ff6a6fb" category="cell">DNS</block>
+  <block id="d82c8d1619ad8176d665453cfb2e55f0" category="cell">53</block>
+  <block id="f5ef036b4d8b630721e51fe23489fbc9" category="cell">UDP입니다</block>
+  <block id="5985e830fae65f37a46ae22075a4ca48" category="cell">ICMPv4</block>
+  <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">해당 없음</block>
+  <block id="e0b221d2923b98ecd9ef35504d787365" category="cell">에코 응답</block>
+  <block id="87b3695bfd6f672e2c7c4da7ca2b46a8" category="cell">Kerberos</block>
+  <block id="f1b6f2857fb6d44dd73c7041e0aa0f19" category="cell">464</block>
+  <block id="2a38a4a9316c49e5a833517c45d31070" category="cell">88</block>
+  <block id="2363dee608bcd9f6ce7f980bfdad5789" category="cell">LDAP를 지원합니다</block>
+  <block id="c86a7ee3d8ef0b551ed58e354a836f2b" category="cell">389</block>
+  <block id="a4d92e2cd541fca87e4620aba658316d" category="cell">3268</block>
+  <block id="b19cdd862134a63196f20f8257d2834a" category="cell">NetBIOS 이름입니다</block>
+  <block id="013d407166ec4fa56eb1e1f8cbe183b9" category="cell">138</block>
+  <block id="56440062188d73f60d350ea349366299" category="cell">SAM/LSA</block>
+  <block id="67f7fb873eaf29526a11a9b7ac33bfac" category="cell">445</block>
+  <block id="3f0dca2433e91d5f3ab7109c68143794" category="cell">보안 LDAP</block>
+  <block id="c5ab0bc60ac7929182aadd08703f1ec6" category="cell">636</block>
+  <block id="c91e3483cf4f90057d02aa492d2b25b1" category="cell">3269</block>
+  <block id="010b192f04e8eee11d74c4802cc24093" category="cell">W32Time</block>
+  <block id="202cb962ac59075b964b07152d234b70" category="cell">123을 선택합니다</block>
+  <block id="6d0cda859aaf15ba029d2fa7848c128f" category="paragraph">AWS EC2 인스턴스에서 AD 설치 도메인 컨트롤러 및 구성원 서버를 구축하고 관리하는 경우 Cloud Volumes Service의 트래픽을 허용하기 위해 여러 보안 그룹 규칙이 필요합니다. 다음은 AWS CloudFormation 템플릿의 일부로 AD 애플리케이션에 대해 이러한 규칙을 구현하는 방법의 예입니다.</block>
+  <block id="3165aa7969fa5516d6d71f3de4c1b582" category="summary">웹 UI를 통해 사용할 수 있는 Cloud Volumes 기능은 RESTful API를 통해서도 사용할 수 있습니다. API를 사용하여 클라우드 볼륨을 생성 및 관리하고 프로비저닝 스크립트 및 툴을 개발할 수 있습니다.</block>
+  <block id="a412bcd83657e0286a1fee405c89100d" category="doc">Cloud Volumes API</block>
+  <block id="7f47ff02f0a7984381cf01d7e6172be1" category="section-title">API URL, API 키 및 암호 키를 찾습니다</block>
+  <block id="d13969ed9b830ef86f2dc7b680bdd148" category="paragraph">API 호출을 실행하려면 Cloud Volumes API URL, API 키 및 암호 키를 얻어야 합니다.</block>
+  <block id="f501546877aba95069ce239bf409ffe2" category="list-text">스토리지 페이지 또는 사용자 이름 아래의 드롭다운 메뉴에서 * API access * 를 클릭합니다.</block>
+  <block id="871354df0af5016899bedcade2b3b689" category="list-text">Cloud Volumes API URL, API 키 및 암호 키를 기록합니다.</block>
+  <block id="7e747db2968cd6dc818b43dbf7ba6476" category="inline-link-macro">계정에 대한 API URL, API 키 및 비밀 키를 보여 주는 샘플 파일입니다</block>
+  <block id="8c2872d6714a6a50ea8c1912bcf43bba" category="paragraph"><block ref="8c2872d6714a6a50ea8c1912bcf43bba" category="inline-link-macro-rx"></block></block>
+  <block id="4cc8b363e2c17c696e7397ff80bc3797" category="section-title">사용 가능한 API를 나열합니다</block>
+  <block id="b4b43a44289217b967abaf92899b47f4" category="paragraph">스토리지 페이지에는 사용할 수 있는 사용 가능한 API가 표시됩니다.</block>
+  <block id="a300ef370d0d1dab6d3bfe48214c4f26" category="list-text">스토리지 페이지에서 * API documentation * 을 클릭합니다.</block>
+  <block id="c33825dfec89a1a030d1d0fe7f41054b" category="paragraph">이 페이지에는 사용 가능한 API가 나열됩니다.</block>
+  <block id="a7614b8fc371c044de07ea99fc398824" category="list-text">페이지를 스크롤하여 사용 가능한 API를 확인합니다.</block>
+  <block id="73d03ea35c94efd436f404d5aeabb786" category="paragraph">API는 다음과 같이 기능별로 나열됩니다.</block>
+  <block id="707325d27093188691659cc218115f02" category="list-text">'볼륨'</block>
+  <block id="821c3259a2d2dc5b2f8d894874f51a23" category="list-text">'명사'입니다</block>
+  <block id="fd3e64f45143425a49161c4e76e3d347" category="list-text">'스토리지'입니다</block>
+  <block id="5ba59db5cc80ee016bd3350d071b8004" category="list-text">"냅샷"</block>
+  <block id="bd64a465814992b1c2b9b93a194179ff" category="list-text">API 호출 사용 방법에 대한 자세한 내용과 예제를 보려면 함수를 선택하고 다음 작업 중 하나를 클릭합니다.</block>
+  <block id="db3288a1c1073472dc757f20d2348c76" category="list-text">'내려받기' : 읽는다</block>
+  <block id="e1f2b5e55543a56862633fcacca8b8ae" category="list-text">'POST'(POST)가 생성됩니다</block>
+  <block id="4181bcd1edc0f5c41a62295a16ee0437" category="list-text">'PUT': 업데이트 또는 수정</block>
+  <block id="4a45f9a1929598df3fa5aa597a398ac6" category="list-text">삭제: 파괴한다</block>
+  <block id="7e4ebd342bb7e41a1d4dc8a8415e460b" category="section-title">Cloud Volumes API 사용</block>
+  <block id="1a2e2934b53e9075f32a18d1d0b4862d" category="paragraph">이 섹션에서는 Cloud Volumes API를 사용하는 방법을 보여줍니다. 이 예에서는 Linux bash 셸에서 curl을 사용합니다. "&lt;api_url&gt;", "&lt;api_key&gt;" 및 "&lt;secret_key&gt;"를 에서 기록한 값으로 바꿔야 합니다 <block ref="e7dca76a03ba418d05678cd43dcfc889" category="inline-xref-macro-rx"></block>.</block>
+  <block id="92e9d6227d5534e7afc27a11179c808e" category="section-title">구문</block>
+  <block id="7d36329259eb9461e88f0d81a2c33392" category="paragraph">'* curl-s-H accept:application/json-H" content-type:application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X[get, POST, put, delete]&lt;api_url&gt;/v2/&lt;command&gt; *'</block>
+  <block id="ff7c0fcd6a31e735a61c001f75426961" category="section-title">예</block>
+  <block id="417f1d595a24eeebf126fa0d34676529" category="section-title">볼륨 나열</block>
+  <block id="644b48292d8519f40fb516945b88bcff" category="paragraph">다음 예에서는 모든 볼륨에 대한 정보를 표시합니다.</block>
+  <block id="ddc5b619db27da42c436d2dce99b6f13" category="admonition">JQ를 통해 명령을 파이핑하면 json 출력 포맷이 향상됩니다. 시스템에 JQ를 설치해야 할 수도 있습니다.</block>
+  <block id="e0f6cbfd035b028c1bc8e71c97ed3abf" category="inline-link-macro">계정에 클라우드 볼륨을 나열하는 스크립트입니다</block>
+  <block id="76efd86ffdf9b4ba0276b48246583ebb" category="paragraph"><block ref="76efd86ffdf9b4ba0276b48246583ebb" category="inline-link-macro-rx"></block></block>
+  <block id="1b1f7340d341033e481b038866817574" category="section-title">특정 볼륨에 대한 세부 정보를 나열합니다</block>
+  <block id="ba63bdfc66b5014f9eb68abd5bde5a76" category="paragraph">각 볼륨에는 'volumeId'라는 ID가 있습니다(예: '07c9ab6c-b655-a9fe-f904-b9b97ef9baa'). API 호출에 ID를 포함시키면 특정 볼륨에 대한 세부 정보가 제공됩니다.</block>
+  <block id="5f0b1efca897384b8f67839d6cf866d5" category="section-title">볼륨을 생성하는 중입니다</block>
+  <block id="5a18f96110d1e8b54d3ec437bd8aea74" category="paragraph">다음 예에서는 "POST" 호출을 사용하여 100GB의 할당 용량을 가진 "Test"라는 볼륨을 만들어 "Test"라는 이름의 영역을 만들어 "NFSv3"로 내보냈습니다.</block>
+  <block id="b5c9f42eedd286c271953e9c3ab850da" category="inline-link-macro">클라우드 볼륨을 생성하는 스크립트입니다</block>
+  <block id="29397ff9a9ac55722aff77334948d1f3" category="paragraph"><block ref="29397ff9a9ac55722aff77334948d1f3" category="inline-link-macro-rx"></block></block>
+  <block id="d0e7a5d112a601cfd58f131f6a6f155a" category="section-title">볼륨을 업데이트하는 중입니다</block>
+  <block id="3212fd143472c532ff82ac4344441aa9" category="paragraph">다음 예에서는 테스트 볼륨을 업데이트하고 서비스 수준을 극단적으로 변경한 다음 할당된 용량을 600GB로 변경하기 위해 'Put' 호출을 사용합니다.</block>
+  <block id="2a74a589fbf2ef0088700f7241041164" category="inline-link-macro">클라우드 볼륨을 업데이트하는 스크립트입니다</block>
+  <block id="5b1c0e0c039f28352f31f4a43500e03e" category="paragraph"><block ref="5b1c0e0c039f28352f31f4a43500e03e" category="inline-link-macro-rx"></block></block>
+  <block id="314f9451416a4448b65c6850ff15f8e7" category="section-title">볼륨을 삭제하는 중입니다</block>
+  <block id="bf38a32d15762f9e14ab0ffe2b757d2f" category="paragraph">다음 예에서는 'DELETE' 호출을 사용하여 'volumeId'로 지정된 볼륨을 삭제합니다.</block>
+  <block id="5bb5a449d40e6b8a3aa844cf61c53a2f" category="inline-link-macro">마운트 지점별로 클라우드 볼륨을 삭제하는 스크립트입니다</block>
+  <block id="6662ba991d8a455389b5d9c65fb5a14c" category="paragraph"><block ref="6662ba991d8a455389b5d9c65fb5a14c" category="inline-link-macro-rx"></block></block>
+  <block id="fc6c542d42ee24898826aee8afdffc2a" category="admonition">주의하여 사용하십시오. 이 API 호출은 볼륨과 해당 데이터를 모두 삭제합니다.</block>
+  <block id="010dac8c2d7f8ba8580c0092723049ed" category="section-title">스냅샷 생성</block>
+  <block id="30a438700fef86494db7de62e3946239" category="paragraph">다음 예에서는 "POST" 호출을 사용하여 특정 볼륨에 대한 "Snappy"라는 스냅샷을 생성합니다.</block>
+  <block id="cf126360635de78f351b260f31fa438f" category="inline-link-macro">마운트 지점을 기준으로 클라우드 볼륨의 스냅샷을 생성하는 스크립트입니다</block>
+  <block id="277e9dc08a3aa11c1e9466cef3644483" category="paragraph"><block ref="277e9dc08a3aa11c1e9466cef3644483" category="inline-link-macro-rx"></block></block>
+  <block id="ba33208e705836c12b7e1e6e2fa6b492" category="section-title">스냅샷 정책을 생성하는 중입니다</block>
+  <block id="a9a183b7e786e3cb8bff49462b4f44d3" category="paragraph">다음 예에서는 "Put" 호출을 사용하여 특정 볼륨에 대한 스냅샷 정책을 생성합니다.</block>
+  <block id="065deb600317f9ff553e4b0cfb22d25d" category="inline-link-macro">마운트 지점별 클라우드 볼륨에 대한 스냅샷 정책을 생성하는 스크립트입니다</block>
+  <block id="537451b067dec98a30f3a9beacd83742" category="paragraph"><block ref="537451b067dec98a30f3a9beacd83742" category="inline-link-macro-rx"></block></block>
+  <block id="efac3ce0ce2b4ea795d45be44bfa0e86" category="section-title">특정 볼륨에 대한 스냅샷 나열</block>
+  <block id="c1d075778ef1cbac55475b7abb275e28" category="paragraph">다음 예에서는 "get" 호출을 사용하여 특정 볼륨에 대한 스냅샷을 나열합니다.</block>
+  <block id="d203d6e61d436dcd1071d07f840c18a6" category="inline-link-macro">마운트 지점별 클라우드 볼륨의 스냅샷을 나열하는 스크립트입니다</block>
+  <block id="b41d5d91a0d2e096cfc6e8692d38f807" category="paragraph"><block ref="b41d5d91a0d2e096cfc6e8692d38f807" category="inline-link-macro-rx"></block></block>
+  <block id="237dcff463ff393300d9aa2f5dcc4f52" category="section-title">스냅샷을 되돌리는 중입니다</block>
+  <block id="d78b05481062bddefc484324b50d5183" category="paragraph">다음 예에서는 'POST' 호출을 사용하여 '스냅샷 ID' 및 '볼륨 ID'로 지정된 스냅샷에서 볼륨을 되돌립니다.</block>
+  <block id="86bee8c8000f653ec429682200c099a8" category="inline-link-macro">마운트 지점 및 snapshotId를 기준으로 클라우드 볼륨의 스냅샷으로 되돌리는 스크립트입니다</block>
+  <block id="b2ae3645c0298bd967a6a3bcaf17a043" category="paragraph"><block ref="b2ae3645c0298bd967a6a3bcaf17a043" category="inline-link-macro-rx"></block></block>
+  <block id="a1826f70bcd0d51c2279f0be06bef208" category="admonition">주의하여 사용하십시오. 이 API 호출로 인해 해당 스냅샷 날짜 이후에 기록된 데이터가 손실됩니다.</block>
+  <block id="f0e6db7bd1f0f3bc93f1b8e2b7edb37e" category="section-title">스냅샷으로부터 새 볼륨 생성</block>
+  <block id="8377cd85d9ce514dc0d5ff2f4af70fc0" category="paragraph">다음 예에서는 'POST' 호출을 사용하여 '스냅샷 ID'로 지정된 기존 볼륨의 스냅샷을 기반으로 새 볼륨을 생성합니다.</block>
+  <block id="e7299de9faa88a3de61ca5cea7dc2539" category="inline-link-macro">클라우드 볼륨을 복사하는 스크립트</block>
+  <block id="e464545ae8c0d0adc7349c3be492a19e" category="paragraph"><block ref="e464545ae8c0d0adc7349c3be492a19e" category="inline-link-macro-rx"></block></block>
+  <block id="2f904ee6008397e7f99e9f0555d41276" category="section-title">스냅샷을 삭제하는 중입니다</block>
+  <block id="f001b99ba918af62817671c9a2293a14" category="paragraph">다음 예에서는 'Delete' 호출을 사용하여 'shapshotId'로 지정된 스냅샷을 삭제합니다.</block>
+  <block id="5595b37e5615614913fa916343ba08f7" category="inline-link-macro">마운트 지점 및 snapshotId를 기준으로 클라우드 볼륨의 스냅샷을 삭제하는 스크립트입니다</block>
+  <block id="ff2601e5c0bc593cf7e9b22a74e03eaa" category="paragraph"><block ref="ff2601e5c0bc593cf7e9b22a74e03eaa" category="inline-link-macro-rx"></block></block>
+  <block id="fd9241a307d3cbf53276add7a202762f" category="admonition">주의하여 사용하십시오. 이 API 호출은 스냅샷과 모든 해당 데이터를 삭제합니다.</block>
+  <block id="d2893306795716426893a2953b449c35" category="section-title">디렉터리 서비스 참가 중</block>
+  <block id="e0f3670fcd3f9b9d5281771fb7845849" category="paragraph">다음 예에서는 "POST" 호출을 사용하여 디렉터리 서비스에 연결하고 DNS IP 주소, 도메인, SMB 서버의 NetBIOS 이름, 디렉터리 서비스 관리자의 사용자 이름과 암호 및 조직 단위(선택 사항 및 기본값은 CN=Computers)를 제공합니다.</block>
+  <block id="14bf7ab761531a5763acced5079246e2" category="inline-link-macro">디렉토리 서비스에 가입하는 스크립트입니다</block>
+  <block id="f6909b0eb29ea546856dcedd03479f65" category="paragraph"><block ref="f6909b0eb29ea546856dcedd03479f65" category="inline-link-macro-rx"></block></block>
+  <block id="c9492debb28dace2e21d2e69b60fc170" category="section-title">디렉토리 서비스 통합 보기</block>
+  <block id="2a7bef74200cf4304f1ab7c416cbe68c" category="paragraph">다음 예제에서는 "get" 호출을 사용하여 디렉터리 서비스 통합을 위한 구성을 표시합니다.</block>
+  <block id="ac257fab8992db7942025a29fc805416" category="inline-link-macro">디렉토리 서비스 통합을 볼 수 있는 스크립트입니다</block>
+  <block id="03274b33c2a9a2197f0819cf1c944846" category="paragraph"><block ref="03274b33c2a9a2197f0819cf1c944846" category="inline-link-macro-rx"></block></block>
+  <block id="1724dc1a3be546ba86b7ada930916739" category="section-title">디렉토리 서비스 가입 해제</block>
+  <block id="36249526ed79dcaae394fe65d64d115e" category="paragraph">다음 예에서는 'Delete' 호출을 사용하여 디렉토리 서비스 통합 연결을 해제합니다. 이 경우 현재 조인에 대한 UUID가 필요하며, 이는 위에 나열된 'Get' 호출을 사용하여 확인할 수 있습니다.</block>
+  <block id="158aa6ad10b7113e6d669a4ee5a2bb1c" category="admonition">사용 중인 디렉터리 서비스의 연결을 해제할 수 없습니다. 상태는 "사용 중"입니다.</block>
+  <block id="0ad9fb34ed559d5c8188814fc25cdc8c" category="inline-link-macro">디렉토리 서비스의 연결을 해제하는 스크립트입니다</block>
+  <block id="cfe6276a56410b6f8d52ea83790ff15a" category="paragraph"><block ref="cfe6276a56410b6f8d52ea83790ff15a" category="inline-link-macro-rx"></block></block>
+  <block id="4951fd131b0c557f3befdf9e50a5c79a" category="section-title">성능 통계를 확인합니다</block>
+  <block id="9562cca80f464aafc3271ecbb5dad9c2" category="paragraph">다음 예에서는 "get" 호출을 사용하여 특정 기간 동안의 읽기 및 쓰기 IOPS, 처리량 및 지연 시간 통계를 "volumeId"로 지정된 볼륨에 대해 나열합니다.</block>
+  <block id="05ba930ea1b0e9120679e186909a4c1e" category="inline-link-macro">마운트 지점별 클라우드 볼륨의 성능 통계를 가져오는 스크립트입니다</block>
+  <block id="ab7093fff7711570f804bcae3b0d7478" category="paragraph"><block ref="ab7093fff7711570f804bcae3b0d7478" category="inline-link-macro-rx"></block></block>
+  <block id="62a8d0c8fcff03f0622fc6cbd111dbec" category="summary">필요에 따라 볼륨에 대한 엑스포트 정책 규칙을 수정할 수 있습니다.</block>
+  <block id="bd6a37a7558217618594fbda64bc80bc" category="doc">엑스포트 정책 규칙 수정</block>
+  <block id="a463e3464532c364ba51bf909b2d7c83" category="list-text">볼륨 이름을 클릭한 다음 * Export policy * 를 선택합니다.</block>
+  <block id="3c4facb5eb90728a1c0a6e5d4157dd59" category="list-text">기존 엑스포트 정책 규칙을 변경하려면 필요에 따라 다음 필드를 수정합니다.</block>
+  <block id="c84536fb3c475f36dd94316a1e964b23" category="list-text">* 허용된 클라이언트 *</block>
+  <block id="5c4fb2e80c745961db1f1b122d90daa6" category="list-text">* 액세스 유형 *</block>
+  <block id="a30ef1dc943afe195679c63f621c5de1" category="summary">Cloud Sync 관계를 사용하면 클라우드 볼륨과 데이터를 동기화할 수 있습니다.</block>
+  <block id="9584de5f451ba290f9ee51d34ea31394" category="doc">Cloud Sync 관계 생성</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">시작하기 전에</block>
+  <block id="5edd2ba906ba52517ebdb24395edfad6" category="list-text">Cloud Sync 데이터 브로커가 이미 있어야 합니다.</block>
+  <block id="0b9d898ef08ae0a527e709926f601b27" category="inline-link-macro">Cloud Sync 데이터 브로커 생성</block>
+  <block id="50d707f58d3099957988dcbedf22f399" category="paragraph"><block ref="50d707f58d3099957988dcbedf22f399" category="inline-link-macro-rx"></block></block>
+  <block id="29baeaf751978df46659760a343a669c" category="list-text">소스 볼륨과 타겟 볼륨 모두에 대한 내보내기 정책에 데이터 브로커 IP 주소를 추가해야 합니다.</block>
+  <block id="b21eaf7e4619c762b7bf17348f2fe553" category="paragraph">타겟 볼륨의 내보내기 정책은 데이터 브로커에 대한 쓰기 액세스를 허용해야 합니다.</block>
+  <block id="badd31e1f4f5929ae6e6051c43acc459" category="inline-link-macro">추가 엑스포트 정책 규칙 생성</block>
+  <block id="92ac5b93eac333d6ed9e0e69d3115aaa" category="paragraph"><block ref="92ac5b93eac333d6ed9e0e69d3115aaa" category="inline-link-macro-rx"></block></block>
+  <block id="ac44e5ceba504ad4024e6f887af9dcaa" category="inline-link">Cloud Sync 서비스</block>
+  <block id="262372b527aa43f160ed4faa45b11757" category="paragraph">Cloud Volumes Service에 통합된 Cloud Sync 기능은 현재 NFSv3만 지원합니다. SMB 볼륨 간에 동기화하려면 를 사용합니다<block ref="7b16cbffe4f261ace2aa399d57889e44" category="inline-link-rx"></block> 직접(cloudsync.netapp.com).</block>
+  <block id="5fe795faf539f79e16bea4cf2a17ca87" category="list-text">볼륨 페이지의 볼륨에 대한 동기화 페이지 또는 동기화 탭으로 이동합니다.</block>
+  <block id="713102bd718701d81f12310137c726a0" category="list-text">Create new relationship * 을 클릭하여 Cloud Sync 관계를 생성합니다.</block>
+  <block id="4d65ef8cf84d37cbb99560183afc8431" category="list-text">다음 작업 중 하나를 수행합니다.</block>
+  <block id="6c40fca4086e30fd4007f910e8b9d463" category="list-text">데이터를 볼륨에 동기화하려면 * Use volume as target * 을 선택합니다.</block>
+  <block id="a8d48feeab61a71b2a50cf8f11966101" category="list-text">볼륨에서 데이터를 동기화하려면 * Use volume as source * 를 선택합니다.</block>
+  <block id="fd06bef5818ad51a79a072161931b895" category="list-text">호스트 * 필드(채워지지 않음)에 동기화하거나 동기화하려는 NFS 서버의 IP 주소를 입력합니다.</block>
+  <block id="e79d38c4a43db031ff494ac78b2c5cd4" category="paragraph">잠시 후 사용 가능한 내보내기 목록이 자동으로 검색됩니다.</block>
+  <block id="f2036709ae7c5bb1355d71da1454dac2" category="list-text">내보내기 * 필드에서 사용 가능한 내보내기 중 하나를 선택합니다.</block>
+  <block id="61015974bec548b3b5586484eb7413f7" category="list-text">(선택 사항) 소스에서 파일을 삭제할 때 타겟에서 파일을 삭제하려면 * 소스에서 삭제할 때 대상에서 파일 삭제 * 상자를 선택합니다.</block>
+  <block id="92f136eec1b6f3fa355ff970d44a903c" category="list-text">관계 만들기 * 를 클릭합니다.</block>
+  <block id="ba6f9b0fb69eab0140a64107003c7b49" category="paragraph">관계 상태가 표시되고 파일 진행률 필드에 복사되는 파일 수가 표시됩니다.</block>
+  <block id="b84d400414400c87a14ad22cf930e8a0" category="summary">기존 스냅샷에서 볼륨을 이전 시점으로 되돌릴 수 있습니다.</block>
+  <block id="6293473d5ffaf1d19f91c9a271df2519" category="doc">스냅샷에서 볼륨을 되돌리는 중입니다</block>
+  <block id="722fda043af9bcf84505c8529d00eefe" category="paragraph">볼륨을 되돌리면 스냅샷의 컨텐츠가 기존 볼륨 구성을 덮어씁니다. 스냅샷이 생성된 후 볼륨의 데이터에 대한 모든 변경 사항은 손실됩니다.</block>
+  <block id="5e69623e5ef5b2074e9208bfd305062a" category="paragraph">되돌리기 작업 후 클라이언트가 볼륨을 다시 마운트하지 않아도 됩니다.</block>
+  <block id="27d56f3c7de39edfa2281add88470866" category="list-text">스냅샷 페이지 또는 볼륨 세부 정보의 스냅샷 탭에서 되돌리려는 스냅샷을 선택하고 * 사용 가능 * 을 클릭한 다음 * 볼륨으로 되돌리기 * 를 선택합니다.</block>
+  <block id="87a911a689c13b1996b26f989b762033" category="list-text">스냅샷 되돌리기 대화 상자에서 되돌리려는 볼륨의 이름을 다시 입력하고 * 되돌리기 * 를 클릭합니다.</block>
+  <block id="3d1f395f071b82aa2483997ed6a950f4" category="summary">필요에 따라 스냅샷을 새 볼륨으로 복원할 수 있습니다.</block>
+  <block id="67738a79260ff9449a61ca45df2ab602" category="doc">스냅샷을 새 볼륨으로 복구</block>
+  <block id="8daaa955f0d018ade75a4c07aa92b4f8" category="list-text">스냅샷 페이지 또는 볼륨 세부 정보의 스냅샷 섹션에서 복원할 스냅샷을 선택하고 * 사용 가능 * 을 클릭한 다음 * 볼륨으로 복원 * 을 선택합니다.</block>
+  <block id="a45ac00db210e447bf3e0306a3317848" category="list-text">볼륨 생성 대화 상자에서 새 볼륨의 이름을 입력하고 필요한 경우 다른 설정을 편집합니다.</block>
+  <block id="da246f4d785119f04f4bc71d836d4110" category="inline-link-macro">클라우드 볼륨을 생성하는 중입니다</block>
+  <block id="520f043b5bdac5e7f9049b1a384638af" category="paragraph"><block ref="520f043b5bdac5e7f9049b1a384638af" category="inline-link-macro-rx"></block></block>
+  <block id="34ee9e64e22b96fe684dd2268d670864" category="list-text">설정을 검토한 다음 * 볼륨 생성 * 을 클릭하여 스냅샷을 새 볼륨으로 복원을 완료합니다.</block>
+  <block id="9bb041017bc5d336c6f552e8516c6e2f" category="summary">볼륨 이름, 할당된 용량 또는 서비스 수준 변경을 비롯한 기존 볼륨을 수정할 수 있습니다.</block>
+  <block id="08c5f538951ec3e1d10fb5c572936f1e" category="doc">클라우드 볼륨 수정</block>
+  <block id="940753e5b9fc6075a74b1db65010cdc4" category="inline-link">NetApp Cloud Orchestrator를 사용하면</block>
+  <block id="70d3d298cacf009b7e7bfcd2a08433e6" category="list-text">에 로그인합니다<block ref="e1ae8f67f4b7e40d13b946f09e02a05e" category="inline-link-rx"></block>.</block>
+  <block id="231df94443f6cd64d5d2c4270ce00ff3" category="list-text">관리할 볼륨의 이름을 클릭합니다.</block>
+  <block id="92ade2558ccf062326e216774461e2bc" category="list-text">해당되는 경우 다음 볼륨 필드를 수정합니다.</block>
+  <block id="49ee3087348e8d44e1feda1917443987" category="list-text">이름</block>
+  <block id="189f63f277cd73395561651753563065" category="list-text">태그</block>
+  <block id="fba79ccafdb2717d0f2107ecca0bab16" category="list-text">할당된 용량입니다</block>
+  <block id="6d59be48f566a73e053e12167b279be5" category="list-text">서비스 레벨</block>
+  <block id="fa3a2b48f3b3b3b5ea1ca735ca1dbb2a" category="paragraph">서비스 레벨을 변경해도 작업이 중단되지 않으며 클라이언트 데이터 액세스에는 영향을 미치지 않습니다.</block>
+  <block id="a316230541ad1a9b54deaff69c0c527d" category="paragraph">사용 가능한 inode 수는 할당된 용량에 따라 다릅니다.</block>
+  <block id="be23d9937449997aeea8905aa6d4bfc9" category="inline-link-macro">적절한 서비스 레벨 및 할당된 용량 선택</block>
+  <block id="feea0043a4123253fb2a5bb1e3f2c629" category="paragraph">을 참조하십시오 <block ref="1df882ef3fd92ff8f9d6b863dc00aa54" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="d87b0f737e871fea336b4f2500359709" category="summary">NetApp Cloud Orchestrator 사이트에서 클라우드 볼륨을 생성할 수 있습니다.</block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">필수 구성 요소</block>
+  <block id="35698d6cc9c191fe3da0a24b66d03f60" category="paragraph">첫 번째 클라우드 볼륨을 생성하려면 AWS 환경이 특정 요구사항을 충족해야 합니다. 클라우드 볼륨을 구축하려는 각 AWS 지역의 경우 다음과 같은 항목이 있어야 합니다.</block>
+  <block id="c6edceb8cebc49ebbb0854a6151e1d7b" category="list-text">VPC(가상 프라이빗 클라우드)</block>
+  <block id="e474331e2d11b5bc1ebf067c037ab7a7" category="list-text">VPC에 연결된 vGW(Virtual Private Gateway</block>
+  <block id="5d39b619ff3d0875befbbc7efebb8a54" category="list-text">VPC용 서브넷</block>
+  <block id="881647a98def56e8a5d8660f5ac12913" category="list-text">클라우드 볼륨이 실행될 네트워크를 포함하여 정의된 경로</block>
+  <block id="d98eef44de75c77af79a864fd321bfe2" category="list-text">선택적으로 Direct Connect Gateway를 사용할 수 있습니다</block>
+  <block id="1c62c36d04886b80fc78af5af9a14175" category="paragraph">특정 지역에서 첫 번째 클라우드 볼륨을 생성할 때 다음 정보를 사용할 수 있어야 합니다.</block>
+  <block id="c7a4d5f41a6628927a5f3dc8cbe3f85b" category="list-text">* AWS 계정 ID *: 대시가 없는 12자리 아마존 계정 식별자입니다.</block>
+  <block id="740d5be035e948e76cf57673adb2d55e" category="list-text">* CIDR(Classless Inter-Domain Routing) 블록 *: 사용되지 않는 IPv4 CIDR 블록. 네트워크 접두사는 /16 및 /28 사이의 범위여야 하며, 개인 네트워크용으로 예약된 범위(RFC 1918)에도 속해야 합니다. VPC CIDR 할당과 중복되는 네트워크를 선택하지 마십시오.</block>
+  <block id="8bc6a1267631e7efc719b0823643828f" category="inline-link-macro">지역 선택</block>
+  <block id="1a2ef8048b932ecee79408bc7aac0ba2" category="list-text">서비스를 사용할 올바른 지역을 선택해야 합니다. 을 참조하십시오 <block ref="fed7554061f6235eb9cbb1cf6a1fe7f7" category="inline-link-macro-rx"></block>.</block>
+  <block id="75b39ab3345678229acb6ac8a0e5a6e2" category="inline-link-macro">NetApp Cloud Volumes Service for AWS 계정 설정</block>
+  <block id="bec4ee2a329a5dc066718aaf59fd1e52" category="paragraph">필요한 AWS 네트워킹 구성 요소를 구성하지 않은 경우 를 참조하십시오 <block ref="bacf78eb53f951a3286830620d5565e5" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="19837c9b7feb512deb30e6cfc7b8ff62" category="paragraph">* 참고: * SMB 볼륨 생성을 계획하는 경우 연결할 수 있는 Windows Active Directory 서버가 있어야 합니다. 볼륨을 생성할 때 이 정보를 입력합니다. 또한 관리자 사용자가 지정된 OU(조직 단위) 경로에 컴퓨터 계정을 만들 수 있는지 확인합니다.</block>
+  <block id="1246c64cc4c28e7414bd7caf48cd35f6" category="section-title">볼륨 세부 정보를 입력합니다</block>
+  <block id="33b69ef20ded987ec62c187903d78a5a" category="paragraph">볼륨 생성 페이지 맨 위에 있는 필드를 작성하여 볼륨 이름, 크기, 서비스 수준 등을 정의합니다.</block>
+  <block id="66e17e4749c9270c48bbba9234423875" category="inline-link-macro">영역을 선택했습니다</block>
+  <block id="7e49dd067eb6131e86fd8e564c7935d2" category="list-text">에 로그인한 후<block ref="e1ae8f67f4b7e40d13b946f09e02a05e" category="inline-link-rx"></block> 구독 중에 제공한 전자 메일 주소가 있는 사이트입니다 <block ref="b4f2d1e0d581193822b668c0f317a916" category="inline-link-macro-rx"></block>에서 * 새 볼륨 생성 * 버튼을 클릭합니다.</block>
+  <block id="38ecca3144a6a5ae246de29d61853d9c" category="image-alt">볼륨 생성 페이지</block>
+  <block id="d1a6d1aae33e39997d32fdfc8b293aa9" category="list-text">볼륨 생성 페이지에서 생성할 볼륨의 프로토콜로 * NFS *, * SMB * 또는 * 이중 프로토콜 * 을 선택합니다.</block>
+  <block id="6b23fea904896e3c4fd2b4391705dc9f" category="list-text">이름 * 필드에서 볼륨에 사용할 이름을 지정합니다.</block>
+  <block id="18182ea2bf5f4443d9e50b6ca7f0a2e8" category="list-text">Region * (지역 *) 필드에서 볼륨을 생성할 AWS 영역을 선택합니다. 이 지역은 AWS에서 구성한 지역과 일치해야 합니다.</block>
+  <block id="f27700904a62ff6e06a00916cbde9c03" category="list-text">시간대 * 필드에서 시간대를 선택합니다.</block>
+  <block id="4d5b8e63717f480726b57183490981f3" category="list-text">볼륨 경로 * 필드에서 사용하려는 경로를 지정하거나 자동으로 생성된 경로를 적용합니다.</block>
+  <block id="e2797e0311fa11abdc459f7d2e7f7b49" category="list-text">Service level * (서비스 수준 *) 필드에서 볼륨에 대한 성능 수준을 * Standard * (표준 *), * Premium * (프리미엄 *) 또는 * Extreme * (익스트림 *)으로 선택합니다.</block>
+  <block id="43a4addf37bd09753818a033e001e520" category="inline-link-macro">서비스 레벨 선택</block>
+  <block id="2498bb2d1d4740c0e55e4a81ffc24bbf" category="paragraph">을 참조하십시오 <block ref="159a13c1fbb204344232901db2b637f6" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="f0e510d4fd8ecf737f0fdff2df938ce0" category="list-text">할당된 용량 * 필드에서 필요한 용량을 선택합니다. 사용 가능한 inode 수는 할당된 용량에 따라 다릅니다.</block>
+  <block id="ccddeb0f19b9ffec3baad89f47d3580b" category="inline-link-macro">할당된 용량을 선택합니다</block>
+  <block id="a62e4605cbe98b23969f5f8a84635981" category="paragraph">을 참조하십시오 <block ref="03d96eecc7bfdfcecd22d71657187c7a" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="efa3c5ad14771c22eb93e9bfad991a01" category="list-text">NFS 버전 * 필드에서 요구사항에 따라 * NFSv3 *, * NFSv4.1 * 또는 * 둘 다를 선택합니다.</block>
+  <block id="1a88e36f404f2f38a659ce269445f7af" category="list-text">이중 프로토콜을 선택한 경우 드롭다운 메뉴에서 * NTFS * 또는 * UNIX * 를 선택하여 * 보안 스타일 * 필드에서 보안 스타일을 선택할 수 있습니다.</block>
+  <block id="e0e8f77700c5127f0d69a2bd10fe6c24" category="paragraph">보안 스타일은 사용된 파일 권한 유형과 사용 권한을 수정하는 방법에 영향을 줍니다.</block>
+  <block id="35c7690cdd2979341dcfe1409203a6f8" category="list-text">UNIX는 NFSv3 모드 비트를 사용하며, NFS 클라이언트만 권한을 수정할 수 있습니다.</block>
+  <block id="74851bf5ac7ba83cb1934d5c1c768a00" category="list-text">NTFS는 NTFS ACL을 사용하며, SMB 클라이언트만 권한을 수정할 수 있습니다.</block>
+  <block id="c6958989235975768fe5da1f8430e5f8" category="list-text">Show snapshot directory * (스냅샷 디렉토리 표시 *) 필드에서 이 볼륨의 스냅샷 디렉토리를 볼 수 있는 기본값을 유지하거나 스냅샷 복사본 목록을 숨기려면 이 상자의 선택을 취소합니다.</block>
+  <block id="55fed733b1494d1522d0225e7ed268e2" category="section-title">네트워크 세부 정보 입력(AWS 지역당 1회 설정)</block>
+  <block id="7cb9e7757aeaff71b7ca9d32ba6cafad" category="paragraph">이 AWS 지역에서 클라우드 볼륨을 처음 생성하는 경우 * Network * 섹션이 표시되어 Cloud Volumes 계정을 AWS 계정에 연결할 수 있습니다.</block>
+  <block id="f947fba32a64a0a12760e6915387a497" category="list-text">CIDR(IPv4) * 필드에 지역에 대해 원하는 IPv4 범위를 입력합니다. 네트워크 접두사의 범위는 /16과 /28 사이여야 합니다. 또한 네트워크는 전용 네트워크용으로 예약된 범위 내에 속해야 합니다(RFC 1918). VPC CIDR 할당과 중복되는 네트워크를 선택하지 마십시오.</block>
+  <block id="aa5ea6a107004b364c40ea3cfd629967" category="list-text">AWS 계정 ID * 필드에 대시 없이 12자리 아마존 계정 식별자를 입력합니다.</block>
+  <block id="e2a7e1b0e5f6f59b627d2fc40fab294f" category="image-alt">네트워크 설정을 구성합니다</block>
+  <block id="4854eb549e6538878c4819844120cb0f" category="section-title">엑스포트 정책 규칙 입력(선택 사항)</block>
+  <block id="bb6e52fff0551a8fa2a4ad22d834e7fc" category="paragraph">NFS 또는 이중 프로토콜을 선택한 경우 * Export policy * 섹션에서 내보내기 정책을 생성하여 볼륨에 액세스할 수 있는 클라이언트를 식별할 수 있습니다.</block>
+  <block id="d026032e7430667238eae46d5670f6b8" category="list-text">허용된 클라이언트 * 필드에서 IP 주소 또는 CIDR(Classless Inter-Domain Routing)을 사용하여 허용된 클라이언트를 지정합니다.</block>
+  <block id="04f7102bca3b180f0691b811a5991e57" category="list-text">Access * 필드에서 * Read &amp; Write * 또는 * Read Only * 를 선택합니다.</block>
+  <block id="2073725bf2530a7eb9ef004a9f18f081" category="list-text">프로토콜 * 필드에서 사용자 액세스에 사용되는 프로토콜(또는 볼륨에서 NFSv3과 NFSv4.1 액세스가 모두 허용되는 경우 프로토콜)을 선택합니다.</block>
+  <block id="dec4cc6b03e5860377f58b9b4a6077f0" category="image-alt">엑스포트 정책 규칙을 추가합니다</block>
+  <block id="8c957b9a3ed692a6d3fd994376a226f3" category="paragraph">추가 엑스포트 정책 규칙을 정의하려면 * + 엑스포트 정책 규칙 추가 * 를 클릭합니다.</block>
+  <block id="c387e8b87d015be7778dec231f27c787" category="section-title">데이터 암호화 활성화(선택 사항)</block>
+  <block id="a2f1d334c8b990b999f5182df7b34bc3" category="list-text">SMB 또는 이중 프로토콜을 선택한 경우 * SMB3 프로토콜 암호화 활성화 * 필드의 확인란을 선택하여 SMB 세션 암호화를 활성화할 수 있습니다.</block>
+  <block id="7c19445fe7d72699dd4ef814528b3ca3" category="paragraph">* 참고: * SMB 2.1 클라이언트가 볼륨을 마운트해야 하는 경우 암호화를 활성화하지 마십시오.</block>
+  <block id="7f7c8da7e5bf421630735f6be8de21b1" category="section-title">Active Directory 서버(SMB 및 이중 프로토콜)와 볼륨 통합</block>
+  <block id="4f9ba56a645e255791c13d95a227e7e5" category="paragraph">SMB 또는 이중 프로토콜을 선택한 경우 * Active Directory * 섹션에서 Windows Active Directory 서버 또는 AWS Managed Microsoft AD와 볼륨을 통합하도록 선택할 수 있습니다.</block>
+  <block id="8675b3d88ef474e29922d386aee74d51" category="paragraph">사용 가능한 설정 * 필드에서 기존 Active Directory 서버를 선택하거나 새 AD 서버를 추가합니다.</block>
+  <block id="7d6e3c06d00b2efd16349d559530fdba" category="paragraph">새 AD 서버에 대한 연결을 구성하려면 다음을 수행합니다.</block>
+  <block id="a710ecfc0bb3536d8f9da8f5e317d469" category="list-text">DNS server * 필드에 DNS 서버의 IP 주소를 입력합니다. 여러 서버를 참조할 때 쉼표를 사용하여 IP 주소를 구분합니다(예: 172.31.25.223, 172.31.2.74).</block>
+  <block id="6a4b2fa2aa4ac00bb34a400f24a51ecb" category="list-text">도메인 * 필드에 SMB 공유의 도메인을 입력합니다.</block>
+  <block id="b4d9711d0b118127e897c1e0c952b681" category="paragraph">AWS Managed Microsoft AD를 사용하는 경우 "Directory DNS name(디렉터리 DNS 이름)" 필드의 값을 사용합니다.</block>
+  <block id="144df9198adc8e74333aaa04fda0628d" category="list-text">SMB 서버 NetBIOS* 필드에 생성할 SMB 서버의 NetBIOS 이름을 입력합니다.</block>
+  <block id="74383c87802b0b42b2e7fc667c975dcc" category="list-text">조직 단위 * 필드에 자신의 Windows Active Directory 서버에 연결할 "CN=Computers"를 입력합니다.</block>
+  <block id="32cd7b9f964b4e14757281b9c0e95cce" category="paragraph">AWS Managed Microsoft AD를 사용하는 경우 조직 단위는 "OU=&lt;NetBIOS_name&gt;" 형식으로 입력해야 합니다. 예: * OU=AWSmanagedAD *.</block>
+  <block id="075fbcc9db41433bce63ddcdac9310a1" category="paragraph">중첩된 OU를 사용하려면 가장 낮은 수준의 OU를 가장 높은 수준의 OU까지 먼저 호출해야 합니다. 예: * OU=THIRDLEVEL, OU=SECONDLEVEL, OU=FIRSTLEVEL *.</block>
+  <block id="3fb110a46c12c87871188806e72c0b3f" category="list-text">사용자 이름 * 필드에 Active Directory 서버의 사용자 이름을 입력합니다.</block>
+  <block id="9c6fed6c5d85f24a9021628c55dbb81f" category="paragraph">SMB 서버에 연결할 Active Directory 도메인에서 컴퓨터 계정을 생성할 수 있도록 승인된 모든 사용자 이름을 사용할 수 있습니다.</block>
+  <block id="29000350d0565c230bbe33ef28ca7186" category="list-text">암호 * 필드에 지정한 AD 사용자 이름의 암호를 입력합니다.</block>
+  <block id="4fbbbcdfcdfad5270a20167c67509f0b" category="image-alt">Active Directory를 클릭합니다</block>
+  <block id="c95576166e4663a31b82fa1099617567" category="inline-link">Active Directory 도메인 서비스를 위한 사이트 토폴로지 설계</block>
+  <block id="7fd00e2c6b7fddc169d77473e9f42559" category="paragraph">을 참조하십시오<block ref="abb2be0c994e7cb7ee24dbd2d510a3e8" category="inline-link-rx"></block> 최적의 Microsoft AD 구현 설계 지침</block>
+  <block id="7022d8421ebd7fca86a1202b2053e180" category="inline-link-macro">NetApp Cloud Volumes Service for AWS로 AWS 디렉토리 서비스 설정</block>
+  <block id="3c189ab8b9737d3e08ce7b9d166a4043" category="paragraph">를 참조하십시오 <block ref="eebcb52612726313dceeb3c98c94c66d" category="inline-link-macro-rx"></block> AWS Managed Microsoft AD 사용에 대한 자세한 지침은 가이드를 참조하십시오.</block>
+  <block id="5258e68685a763ee454fc7ad84a26e3b" category="admonition">AWS 보안 그룹 설정에 대한 지침에 따라 클라우드 볼륨이 Windows Active Directory 서버와 올바르게 통합되도록 해야 합니다. 을 참조하십시오 <block ref="44a3cafff3b6eb48f1fa4125688b0162" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="c81ef832003f35deb65a481a567fa75d" category="paragraph">* 참고: * NFS를 사용하여 볼륨을 마운트하는 UNIX 사용자는 UNIX 루트의 경우 Windows 사용자 "루트"로, 다른 모든 사용자의 경우 "pcuser"로 인증됩니다. NFS를 사용할 때 이중 프로토콜 볼륨을 마운트하기 전에 이러한 사용자 계정이 Active Directory에 있는지 확인하십시오.</block>
+  <block id="e089ec303e9a9e203ceb3e3e14cfc1c2" category="section-title">스냅샷 정책 생성(선택 사항)</block>
+  <block id="dbe7189fc6872034be4cb75cdc8b109a" category="paragraph">이 볼륨에 대한 스냅샷 정책을 생성하려면 * 스냅샷 정책 * 섹션에 세부 정보를 입력합니다.</block>
+  <block id="3615a0ea112ddfe977410afb3de068b3" category="list-text">스냅샷 빈도 * 시간별 *, * 일별 *, * 주별 * 또는 * 월별 * 를 선택합니다.</block>
+  <block id="07dcb2348fe0a32858e67b73c2adf96d" category="list-text">유지할 스냅샷 수를 선택합니다.</block>
+  <block id="c46bd7895819e339ff03355120cc294b" category="list-text">스냅샷을 생성할 시간을 선택합니다.</block>
+  <block id="37bb666fbc242e5502ded21283fb12ac" category="paragraph">위의 단계를 반복하거나 왼쪽 탐색 영역에서 스냅샷 탭을 선택하여 추가 스냅샷 정책을 생성할 수 있습니다.</block>
+  <block id="d86273d53aebfe922c4a88a7ca881f0b" category="section-title">볼륨을 생성합니다</block>
+  <block id="4c5f1fefbbbe2297b8261296cac921f2" category="list-text">페이지 아래쪽으로 스크롤하여 * 볼륨 생성 * 을 클릭합니다.</block>
+  <block id="db2a2b62b79d1cc692490f5ea00e796e" category="paragraph">이 영역에서 이전에 클라우드 볼륨을 생성한 경우 새 볼륨이 볼륨 페이지에 나타납니다.</block>
+  <block id="51b47300dc2f110a300287e8331eb86e" category="paragraph">이 AWS 지역에서 생성한 첫 번째 클라우드 볼륨이고 이 페이지의 네트워크 섹션에 네트워킹 정보를 입력한 경우, AWS 인터페이스와 볼륨을 연결하기 위해 수행해야 하는 다음 단계를 식별하는 진행률 대화 상자가 표시됩니다.</block>
+  <block id="18994c3aec9d3d9d5d7e8daee82c2573" category="inline-image-macro">가상 인터페이스 수락 대화 상자</block>
+  <block id="4d1f206cf88ee45bbcba5454577ebb86" category="paragraph"><block ref="4d1f206cf88ee45bbcba5454577ebb86" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="01ce52770c1296671a8937195ecdbbb0" category="list-text">의 섹션 6.4에 설명된 대로 가상 인터페이스를 수락합니다 <block ref="5de60f3d06acf315859719dc096dad3a" category="inline-link-macro-rx"></block> 가이드. 10분 이내에 이 작업을 수행해야 합니다. 그렇지 않을 경우 시스템이 시간 초과될 수 있습니다.</block>
+  <block id="3d7b51a881694d85de2da12eb4619cde" category="paragraph">인터페이스가 10분 이내에 나타나지 않으면 구성 문제가 있을 수 있으며, 이 경우 지원 부서에 문의해야 합니다.</block>
+  <block id="bbc84ab4db08d3d44fa09d8fe19b02c4" category="inline-image-macro">볼륨이 생성됩니다</block>
+  <block id="f3d8a56fbe7513d4b6b517a8fc8cd238" category="paragraph">인터페이스 및 기타 네트워킹 구성 요소가 생성되면 생성한 볼륨이 Volumes 페이지에 나타나고 Actions 필드가 Available로 나열됩니다.<block ref="8cbf8912fb3b2f99322df366c8acaa2b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f216fc5e384284eaa455a2e659e036ea" category="inline-link-macro">클라우드 볼륨 마운트</block>
+  <block id="aaf4892f631f96038e72a27c95cd4a65" category="paragraph">를 계속 진행합니다 <block ref="3a29a578a1c336cebd60475bac919dfb" category="inline-link-macro-rx"></block>.</block>
+  <block id="f54f63939b49a2e897f6f6370866f7aa" category="summary">NetApp Cloud Sync는 AWS용 NetApp Cloud Volumes Service와 통합되어 클라우드 볼륨 간에 데이터를 빠르게 동기화할 수 있습니다. Cloud Sync 데이터 브로커를 사용하면 데이터 동기화를 위한 Cloud Sync 관계를 만들 수 있습니다.</block>
+  <block id="72ec00722826443159fbc980b807f44c" category="paragraph">NetApp Cloud Sync는 AWS 환경을 위한 NetApp Cloud Volumes Service와 통합되어 클라우드 볼륨과 NFS를 통해 데이터를 빠르게 동기화할 수 있습니다. Cloud Sync 데이터 브로커를 사용하면 데이터 동기화를 위한 Cloud Sync 관계를 만들 수 있습니다.</block>
+  <block id="fc64c429f54c97f722ee7a82818baef0" category="paragraph">Cloud Volumes 계정에 사용하는 것과 동일한 AWS VPC(가상 프라이빗 클라우드)에 Cloud Sync 데이터 브로커가 이미 있는 경우 이 작업을 건너뛸 수 있습니다.</block>
+  <block id="eb3729105d2f2cce55d8299916ef0852" category="inline-link">NetApp Cloud Sync 문서</block>
+  <block id="5f221db16b7611b1bed8d69f54a32bfd" category="paragraph"><block ref="5f221db16b7611b1bed8d69f54a32bfd" category="inline-link-rx"></block></block>
+  <block id="63ae667b42de9970b210c0cab46a6ba6" category="list-text">Create data broker * 를 클릭하여 데이터 브로커를 생성합니다.</block>
+  <block id="7d2c5257f8c80e600828a1232e020759" category="list-text">다음 필드에 대한 정보를 제공합니다.</block>
+  <block id="496ee322ba138fdbc777e5ab2e30145e" category="list-text">* 이름 *</block>
+  <block id="3bad38ae961eabbc2fa9c33b611132d5" category="paragraph">데이터 브로커의 이름을 지정하십시오.</block>
+  <block id="7464a7978b1ad9e7f36e5f0181e97eb5" category="list-text">* 유형 *</block>
+  <block id="f69f20d2c40a5e0d0c5e11f6443d21d9" category="paragraph">AWS를 선택합니다.</block>
+  <block id="c748e5cad0f18e9780f35a23a21dd5e4" category="list-text">* 지역 *</block>
+  <block id="98994f4ce54bafe9687bb25c8f66075a" category="paragraph">사용 가능한 영역을 선택합니다.</block>
+  <block id="7e4401bd51b149c6034056ac77524f43" category="list-text">API 키 *</block>
+  <block id="bb7092c027d5039a90a707cfb8a1c1a3" category="paragraph">AWS 계정에 대한 액세스 키를 제공합니다.</block>
+  <block id="ffbe4f76fc85855b9824b00eafa30e1b" category="list-text">* 비밀 키 *</block>
+  <block id="ba584e68baad1f98c82cc31a3370f1a4" category="paragraph">AWS 계정의 암호 키를 입력합니다.</block>
+  <block id="da21cdc8f1a4309f32bb9a9cd84e8d07" category="list-text">* 키 쌍 *</block>
+  <block id="5ecf85943167fb99caf42a9a2c629199" category="paragraph">사용 가능한 키 쌍을 선택합니다.</block>
+  <block id="97cee68f6d20624a128aba88410a0463" category="paragraph">유효한 키를 입력하면 키 쌍이 업데이트됩니다.</block>
+  <block id="5a27c4fb594c9f679329c31622b59a04" category="list-text">* VPC *</block>
+  <block id="6568c492b57364154f504c2637f2b10b" category="paragraph">Cloud Volumes 계정에 연결된 VPC를 선택합니다.</block>
+  <block id="a5ede60043f381fbec4810d49c62a7e7" category="list-text">* 서브넷 *</block>
+  <block id="20ab92d58e5556afa57f78268d7e56a4" category="paragraph">데이터 브로커에 사용할 사용 가능한 서브넷을 선택합니다.</block>
+  <block id="181f3b61f2d84afdf97ab3b04d449165" category="list-text">데이터 브로커 생성 프로세스를 시작하려면 * 데이터 브로커 생성 * 을 클릭합니다.</block>
+  <block id="fbaf95f8cc4dd41d3bc156dc8a08ff11" category="paragraph">데이터 브로커를 생성하는 데 몇 분 정도 걸립니다. 데이터 브로커가 생성되면 녹색 점으로 표시되어 준비가 되었음을 나타냅니다.</block>
+  <block id="d87231fba149b6158b5dc4f85d2365f1" category="inline-link-macro">Cloud Sync 관계 작성</block>
+  <block id="7e7078cd7ddb3ff9ff1be4fae310ea2a" category="paragraph">를 계속 진행합니다 <block ref="bb8654c06ea701c5ccb6dcbb9dc12cb1" category="inline-link-macro-rx"></block>.</block>
+  <block id="75e22bc0bd8a367d4636c51b9755302f" category="summary">더 이상 필요하지 않은 엑스포트 정책 규칙을 삭제할 수 있습니다.</block>
+  <block id="f2ad816f97d17f57e40c015ccbc369d6" category="doc">엑스포트 정책 규칙을 삭제하는 중입니다</block>
+  <block id="4679a1d210be95f431d4a0bb6d746a75" category="list-text">삭제할 정책 규칙에 대해 * X * 를 클릭합니다.</block>
+  <block id="17f8876fa5de4bb64c2d9e7c042e2497" category="inline-image-macro">엑스포트 정책 삭제</block>
+  <block id="556c65707182e8e81aca5636c0cc0e13" category="paragraph"><block ref="556c65707182e8e81aca5636c0cc0e13" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6394dfb6ad4f4dfc002a350b4e0d335d" category="summary">볼륨 또는 스냅샷 페이지에서 스냅샷을 삭제할 수 있습니다.</block>
+  <block id="c50bbf87cb333b45731afcd2dc9cf17a" category="section-title">볼륨 페이지에서 스냅샷 삭제</block>
+  <block id="7a9237e616becd923c2ebbba4563c273" category="list-text">볼륨 이름을 클릭한 다음 * Snapshots * 를 선택하여 볼륨의 스냅샷 목록을 확인합니다.</block>
+  <block id="9a9cf07ba560da56fc2e7b7bea23f524" category="list-text">삭제할 스냅샷을 지정하려면 해당 확인란을 선택하고 * Actions * 를 클릭한 다음 드롭다운 목록에서 * Delete snapshot/s * 를 선택합니다.</block>
+  <block id="bf967386910f61504fb53108a0298d19" category="paragraph">또는 작업 에서 * 사용 가능 * 을 클릭한 다음 드롭다운 목록에서 * 스냅샷 삭제 * 를 선택합니다.</block>
+  <block id="6fe968fbed96f25c1102441d2d1e7341" category="list-text">확인 대화 상자에서 '삭제'를 입력하여 확인한 다음 * 삭제 * 를 클릭합니다.</block>
+  <block id="09f8028ca28cba34eaf92d19e5970bd0" category="section-title">스냅샷 페이지에서 스냅샷 삭제</block>
+  <block id="27cb14677321b6ef499cc15bcf125416" category="list-text">(선택 사항) 검색 상자를 사용하여 나열된 스냅샷을 필터링합니다.</block>
+  <block id="556dbb93ad650042bc2c55dabbdc8e62" category="summary">Cloud Backup Service를 사용하여 NFS 클라우드 볼륨을 백업할 수 있습니다.</block>
+  <block id="c15e28ad98ea6112b893a32a8092c4cc" category="doc">Cloud Backup Service를 사용한 백업 관리(US-West-2의 베타)</block>
+  <block id="a4aac98e26cfe48e280254c44f22fcf7" category="paragraph">Cloud Backup Service는 장기 복구, 아카이브 및 규정 준수를 위한 전용 백업을 제공함으로써 Cloud Volumes Service의 데이터 보호 기능을 확장합니다. 서비스를 통해 생성된 백업은 거의 단기 복구 또는 클론 복제에 사용할 수 있는 클라우드 볼륨 스냅샷과 관계없이 AWS S3 오브젝트 스토리지에 저장됩니다.</block>
+  <block id="3bbf068c5edcecea4798ff8ee7844b0e" category="paragraph">Cloud Backup Service은 현재 베타 버전이며 AWS 미국 - 서부 2 지역에서 Cloud Volumes Service만 지원합니다.</block>
+  <block id="85280c2ce27c8f045a8d6b65b5457cd8" category="inline-link-macro">Cloud Volumes Service for NetApp Cloud Backup Service for AWS 설정</block>
+  <block id="69be1dc68ecd2393fc2a44122899b877" category="paragraph">Cloud Backup Service를 사용하기 전에 베타 소프트웨어 사용에 대한 약관, 요구 사항 및 고려 사항을 이해하고 동의해야 합니다. 을 참조하십시오 <block ref="06c4f77b7ac77e2a55f10e367313476d" category="inline-link-macro-rx"></block> 서비스 사용에 대한 자세한 내용 및 지침을 확인하십시오.</block>
+  <block id="db14c162453073ef938af228cf5fbafb" category="summary">NetApp Cloud Volumes Service for AWS 설명서 포털에 오신 것을 환영합니다.</block>
+  <block id="a56dd8ec8161b0604a81c32a36cb8a74" category="doc">NetApp Cloud Volumes Service for AWS 설명서</block>
+  <block id="cffa933a10458e8374fbef2e21507c9d" category="paragraph">NetApp Cloud Volumes Service for AWS는 NFS 및 SMB에서 All-Flash 성능을 통해 NAS 볼륨을 제공하는 클라우드 네이티브 파일 서비스입니다. 이 서비스를 사용하면 기존 애플리케이션을 포함한 모든 워크로드를 AWS 클라우드에서 실행할 수 있습니다.</block>
+  <block id="2756711ac396119b969ba6b553ad278e" category="section-title">Cloud Volumes Service for AWS의 이점</block>
+  <block id="55208bdbb7b4fa51eb7ae63a26d71791" category="paragraph">Cloud Volumes Service for AWS는 다음과 같은 이점을 제공합니다.</block>
+  <block id="3c853c4f551f244cc50b205d0109390d" category="list-text">일관된 고성능</block>
+  <block id="41ef7ad0f46081cf00f281841023188c" category="list-text">성능에 영향을 주지 않고 데이터 보호</block>
+  <block id="aa22ee2f190c11df7537e86bb610faba" category="list-text">즉각적으로 클론 복제하여 운영, 개발, 테스트 워크플로우 지원</block>
+  <block id="a28b8cc0668ed4d431f1863c997f5b75" category="list-text">NFSv3 및 NFSv4.1, SMB 2.1, 3.0 및 3.1.1 NAS 프로토콜 지원</block>
+  <block id="cdcd5a58d731470edacf43406346e5d2" category="list-text">다음과 같은 지원을 통해 Linux 및 Windows ECS(Elastic Container Service) 인스턴스에 안전하게 액세스할 수 있습니다.</block>
+  <block id="2d284a6be9a90f9d7d98ef4f9543b6b1" category="list-text">Amazon Linux 2, Red Hat Enterprise Linux 7.5, SLES 12 SP3 및 Ubuntu 16.04 LTS</block>
+  <block id="b5ef382c617bf480eb64c50a38e3cbfa" category="list-text">Windows Server 2008 R2, Windows Server 2012 R2 및 Windows Server 2016을 지원합니다</block>
+  <block id="ece95ef94c2dfbf3d6cac29bd306038d" category="list-text">따라서 스토리지 디바이스를 구성하거나 관리할 필요가 없습니다</block>
+  <block id="17dfcb3ae68171678fbe713c5cfb13eb" category="list-text">번들 및 용량제 가격 선택 가능</block>
+  <block id="3cf6c89cfed847168ff080c9d334a94b" category="section-title">상위 작업을 수행합니다</block>
+  <block id="fed7554061f6235eb9cbb1cf6a1fe7f7" category="list-text"><block ref="fed7554061f6235eb9cbb1cf6a1fe7f7" category="inline-link-macro-rx"></block></block>
+  <block id="3a29a578a1c336cebd60475bac919dfb" category="list-text"><block ref="3a29a578a1c336cebd60475bac919dfb" category="inline-link-macro-rx"></block></block>
+  <block id="1dfd5fcf7214f027cdc25e3fd14d3d6e" category="list-text"><block ref="1dfd5fcf7214f027cdc25e3fd14d3d6e" category="inline-link-macro-rx"></block></block>
+  <block id="6681a3ff8cf8540f05355c680f9f8fd5" category="section-title">Cloud Volumes Service for AWS에 대해 자세히 알아보십시오</block>
+  <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">자세한 내용을 확인하십시오</block>
+  <block id="49fc376ed35249f3841846ede4dab884" category="inline-link">NetApp Cloud Central에서</block>
+  <block id="24d234fce5b4e0608a37069ac65a0027" category="list-text"><block ref="24d234fce5b4e0608a37069ac65a0027" category="inline-link-rx"></block></block>
+  <block id="d54cd37c0797b45abe231544dc9fc6f6" category="inline-link">먼저 새로운 NetApp Cloud Volumes Service for AWS에 대해 알아보십시오</block>
+  <block id="379fc28f0bbce493c5460a2ec6ea1c8c" category="list-text"><block ref="379fc28f0bbce493c5460a2ec6ea1c8c" category="inline-link-rx"></block></block>
+  <block id="93255d5b967adbb05931601c7961bce3" category="summary">Cloud Sync 관계가 처음 생성되면 기본적으로 자동 동기화가 활성화되고 하루에 한 번 실행되도록 예약됩니다. 필요에 따라 Cloud Sync 일정을 수정할 수 있습니다.</block>
+  <block id="694387b87e801050b5dac0771fcf4359" category="doc">Cloud Sync 스케줄 수정</block>
+  <block id="ad5078b682cd59d6224ba78a42926d64" category="list-text">볼륨 페이지의 볼륨에 대한 동기화 페이지 또는 동기화 탭으로 이동하여 Cloud Sync 관계를 확인합니다.</block>
+  <block id="fe40a17d17b2dced5e9387341551cc5e" category="image-alt">관계 동기화</block>
+  <block id="675456ee72f1a689d9278ba923861abd" category="list-text">Cloud Sync 관계에 대한 자동 동기화를 끄려면 관계에 대한 파란색 * 켜짐 * 슬라이더를 클릭합니다.</block>
+  <block id="b8e70665413cb3870d9e87320561d2ea" category="image-alt">자동 동기화 슬라이더</block>
+  <block id="e2fe847cb8bfe6d0bf68fb7870b35a0a" category="list-text">동기화 일정을 변경하려면 * Schedule * (일정 *) 아래의 드롭다운 목록을 클릭하고 * Day/s * (일/초 *) 또는 * Hour/s * (시간/초 *)를 선택한 다음 간격 번호를 선택하고 확인 표시를 클릭합니다.</block>
+  <block id="41e123b9d6f5c0e01128cb2041032218" category="list-text">Cloud Sync를 즉시 시작하려면 작업 에서 * 완료 * 를 클릭하고 * 지금 동기화 * 를 선택한 다음 * 지금 동기화 * 를 다시 클릭하여 확인합니다.</block>
+  <block id="77ae50ef3e08c161ce77ba68d707720f" category="summary">NetApp은 새로운 기능과 개선사항을 제공하기 위해 AWS용 Cloud Volumes Service를 정기적으로 업데이트합니다.</block>
+  <block id="0674bb07944eeb6425669d4fdbc529c3" category="doc">Cloud Volumes Service for AWS의 새로운 기능</block>
+  <block id="8aa90565fb34d8b0aeab74ab74ffdf4a" category="section-title">2021년 2월</block>
+  <block id="3fdf0ec98b1a63c86b4e4dacb0cfa521" category="list-text">이제 새로운 Cloud Volumes API('PerformanceMetrics')를 사용하여 IOPS, 대역폭, 지연 시간 등의 성능 통계를 검색할 수 있습니다. 자세한 내용은 을 참조하십시오 <block ref="e502fc9fa2f84fd70d41eb87d0259048" category="inline-link-macro-rx"></block>.</block>
+  <block id="ca82c7bf0a12e1bd7623c916688916ff" category="section-title">2020년 7월</block>
+  <block id="fa619a7facccecd95dffcfdf8bef639c" category="list-text">Cloud Volumes Service는 이제 /16과 /28 사이의 보다 넓은 RFC 1918 사설 네트워크 범위를 지원합니다. 이전에는 28개 범위만 지원됩니다.</block>
+  <block id="0f809d87f50a9201964bee05a3689722" category="list-text">이제 '동기화' 기능이 Cloud Sync UI와 직접 통합되어 향상된 기능을 제공합니다.</block>
+  <block id="d2390df519d4530109168db7a9c4d7a0" category="list-text">볼륨은 API 호출을 통해 NSFv3, NFSv4.1 및 NFSv3과 NFSv4.1 모두로 변환될 수 있습니다.</block>
+  <block id="fb1b5fb993aca43165cf053826a4fd00" category="inline-link-macro">Cloud Volumes API 를 참조하십시오</block>
+  <block id="7e5e3cff2a3e22c19f42ba60fba52948" category="list-text">API 예제 및 샘플 Python 스크립트가 v2 API로 업데이트되었습니다. <block ref="8cf82d92253e589dfa4efae9d85c2b7c" category="inline-link-macro-rx"></block>.</block>
+  <block id="9b98513a9d35526671bb2362bc109bcb" category="list-text">이제 NFSv4.1 볼륨에 대해 ACL이 활성화됩니다.</block>
+  <block id="18e643dc88eb8bea7319191a7706f2aa" category="list-text">Cloud Volumes Service는 이제 SOC 2 Type 1로 인증되었습니다.</block>
+  <block id="cb408597e447395fe55a5c5169094ae9" category="list-text">Cloud Volumes Service는 현재 싱가포르에서 사용 가능합니다(AP-동남동-1).</block>
+  <block id="342aa26fa2cc7e365c1b819a4e86b6f1" category="section-title">2020년 3월</block>
+  <block id="4fda518158d164de867798bf9512d1a0" category="list-text">Cloud Volumes Service는 이제 NFSv3 및 NFSv4.1 마운트의 경우 최대 1MiB의 I/O 크기를 지원합니다. 이전에는 최대 입출력 크기가 64KiB였습니다. I/O 크기를 늘리면 일부 워크로드의 성능이 향상될 수 있습니다. I/O 크기를 늘리려면 마운트 옵션 "rsize" 및/또는 "wsize"를 사용합니다. 예를 들어, mount -o nfsvers=4.1, rsize=1048576, wsize=1048576 172.25.0.4:/vol1/mnt/CV"를 사용합니다</block>
+  <block id="cf2dfa7ef96d78d1f3ec76316e1481d0" category="section-title">2020년 2월</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
+  <block id="ff2c50fca31063bca7c7a4fdbdadd0aa" category="list-text">Cloud Volumes Service는 현재 AWS 마켓플레이스에서 용량제(pay as you go) 방식으로 이용할 수 있습니다. 자세한 내용은 마켓플레이스 목록을 참조하십시오.<block ref="c3992234bf098607943f4710edfa77cf" category="inline-link-rx"></block>원래 월 및 연간 구독 계획은 계속 사용할 수 있습니다.</block>
+  <block id="d835981d77534f5f20446d4648ad7e5b" category="section-title">2020년 1월</block>
+  <block id="65d173ac8563e7ccb65bd04bfb9cafa1" category="list-text">이제 Cloud Volumes Service는 여러 네트워크 연결을 동시에 사용하여 성능을 향상시키는 SMB 다중 채널을 지원합니다. 다중채널 은 Windows 클라이언트에서 기본적으로 활성화되지만 EC2 인스턴스는 RSS(Receive Side Scaling)를 지원하는 네트워크 어댑터를 사용해야 합니다.</block>
+  <block id="fe8552e6e906f75f07bc07d06306d7c4" category="list-text">이제 Cloud Volumes Service 사용자 인터페이스에서 스냅샷에서 볼륨을 되돌릴 수 있습니다. 따라서 클라이언트를 다시 마운트하지 않고도 볼륨을 시점 스냅샷으로 되돌릴 수 있습니다. 을 참조하십시오 <block ref="ff647bf166f606f514d0e8a2dbd7ea01" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">오픈 소스</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">통지 파일은 NetApp 소프트웨어에 사용된 타사의 저작권 및 라이센스에 대한 정보를 제공합니다.</block>
+  <block id="fdd6f311911c5ac6b3d7fa483c4361a4" category="inline-link-macro">NetApp Cloud Volumes Service에 관한 고지 사항</block>
+  <block id="2eddbc97a9bb8863399f4edfdcd0d4c7" category="list-text"><block ref="2eddbc97a9bb8863399f4edfdcd0d4c7" category="inline-link-macro-rx"></block></block>
+  <block id="8a11b7df22322ab2814174e7745c863f" category="inline-link-macro">ONTAP에 대한 고지 사항</block>
+  <block id="0df28895f8b16f3a9b7b4a540bc2f0ae" category="list-text"><block ref="0df28895f8b16f3a9b7b4a540bc2f0ae" category="inline-link-macro-rx"></block></block>
+  <block id="bc1e82d4547991a83618e5033c457a22" category="summary">더 이상 필요하지 않은 Cloud Sync 데이터 브로커를 삭제할 수 있습니다.</block>
+  <block id="90a4e3335aa9fe45c887d203938f53c2" category="doc">Cloud Sync 데이터 브로커를 삭제하는 중입니다</block>
+  <block id="430fb0c6e1b6f971bf061efbb964e725" category="paragraph">이 작업을 수행하면 클라우드 볼륨에서 데이터 브로커가 제거되지만 AWS에서 데이터 브로커 인스턴스가 삭제되지는 않습니다.</block>
+  <block id="702f16537513ec4a6af9c3116a23d1b3" category="paragraph">AWS에서 데이터 브로커 인스턴스를 삭제하려면 해당 계정의 AWS 콘솔로 이동하여 브로커용 EC2 인스턴스를 이름별로 찾은 다음 필요에 따라 종료해야 합니다.</block>
+  <block id="54a975ea836c7164ee64533d61bb890c" category="paragraph">데이터 브로커를 삭제하려면 먼저 데이터 브로커를 사용하는 모든 Cloud Sync 관계가 삭제되어야 합니다.</block>
+  <block id="85773e4a29542afcdff77da54c442399" category="inline-link-macro">Cloud Sync 관계를 삭제하는 중입니다</block>
+  <block id="5dfc503a2d09c61a15786ca3c2b897b5" category="paragraph"><block ref="5dfc503a2d09c61a15786ca3c2b897b5" category="inline-link-macro-rx"></block></block>
+  <block id="9257fec4e31315c0fae27c6e9fe0116b" category="list-text">데이터 브로커 이름을 클릭하여 데이터 브로커를 삭제하고 휴지통 아이콘을 클릭합니다.</block>
+  <block id="c8183a8f29be06a75306004e7b83b8e1" category="summary">추가 엑스포트 정책 규칙을 생성하여 유연한 클라이언트 액세스를 설정할 수 있습니다. 예를 들어, 지정된 IP 범위에 볼륨에 대한 읽기 전용 액세스만 있도록 지정할 수 있습니다.</block>
+  <block id="fb38b28c54a9e3b34dea9ed233f56a6b" category="list-text">내보내기 정책 규칙 추가 * 를 클릭합니다.</block>
+  <block id="dbf4e34206a31801abd0cfefa4e6ad20" category="list-text">다음 필드의 값을 설정합니다.</block>
+  <block id="440c69ab0022ce5c91acb45580969321" category="summary">더 이상 필요하지 않은 클라우드 볼륨을 삭제할 수 있습니다.</block>
+  <block id="bc5244252503ef8a3671a88565a540c9" category="doc">클라우드 볼륨을 삭제하는 중입니다</block>
+  <block id="e7d176ac7539a52a08943f65ecc19e32" category="list-text">모든 클라이언트에서 볼륨을 마운트 해제합니다.</block>
+  <block id="23394565644d9607267c2577190c4654" category="list-text">Linux 클라이언트의 경우 'umount' 명령을 사용합니다.</block>
+  <block id="b70c71384dfeac0e536c343872f2fb55" category="list-text">Windows 클라이언트에서 * 네트워크 드라이브 연결 해제 * 를 클릭합니다.</block>
+  <block id="e53edf03ed15597dedd48cee102d7a10" category="list-text">Volumes(볼륨) 페이지에서 해당 확인란을 선택하여 삭제할 볼륨을 지정하고 * Actions(작업) * 를 클릭한 다음 드롭다운 목록에서 * Delete volume/s *(볼륨/s 삭제 *)를 선택합니다.</block>
+  <block id="5371fba68a83007644927951787e6122" category="list-text">확인 대화 상자에서 삭제 를 입력하여 볼륨을 삭제할 것인지 확인한 다음 * 삭제 * 를 클릭합니다.</block>
+  <block id="77231c870dc9aeccee4a56fd6274db6d" category="summary">Cloud Volumes Service for AWS에는 다음과 같은 알려진 문제 및 제한 사항이 있습니다.</block>
+  <block id="fd1a06373f49d3ccd9bc28e476270b72" category="doc">알려진 문제 및 제한 사항</block>
+  <block id="e65d325097e18ab96473896f6252e103" category="list-text">* 문제 *: 기존 볼륨에서 NFSv3만 지원하고 NFSv4.1 또는 NFSv3 및 NFSv4.1 지원을 통해 볼륨이 생성되거나 변환될 경우, NFS 버전(버전=3)을 지정하지 않고 기존 볼륨을 마운트할 수 없습니다.</block>
+  <block id="6b582d170adeff7858e636d8688553af" category="paragraph">* 해결 방법 *: 마운트 명령에 NFS 버전을 지정하는 옵션(예: mount -o vers=3...)을 추가하거나 모든 볼륨이 NFSv4.1을 지원하도록 변환되도록 합니다. 버전을 지정하지 않으면 Linux 클라이언트는 기본적으로 NFSv4.1로 설정됩니다.</block>
+  <block id="ea065621eb7a1c456ed58ba0e8947bc7" category="list-text">* 문제 *: 스냅샷에서 새 볼륨을 생성할 때 ' 볼륨 _ &lt;볼륨&gt; _ 에 대한 볼륨 속성 "파일을 설정할 수 없습니다." 메시지와 함께 실패할 수 있습니다. 이유: 새 수는 현재 할당된 개수 _ &lt;숫자&gt; _ 보다 커야 합니다.</block>
+  <block id="b29eee0342f918569b8ea64c909e70a6" category="paragraph">* 해결 방법 *: 이 문제는 할당된 용량에 할당된 새 볼륨보다 현재 더 많은 파일이 할당된 스냅샷에서 볼륨을 생성하려고 할 때 발생합니다. 새 볼륨에 할당된 용량을 늘려 충분한 파일(inode)을 할당해야 합니다. 을 참조하십시오 <block ref="03d96eecc7bfdfcecd22d71657187c7a" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="28b3a9ecb69f8af46affe94c1ca3c15e" category="list-text">* 문제 *: 72시간 후 볼륨이 없는 CVS 영역에서 네트워크 가상 인터페이스가 자동으로 삭제됩니다. 새 볼륨을 생성할 때 AWS 계정 번호 및 CIDR을 다시 제공해야 합니다.</block>
+  <block id="fd99bc77eb960aa7e29912794c166c21" category="paragraph">* 해결 방법 *: 비활성 기간 동안 네트워크 가상 인터페이스가 삭제되지 않도록 하려면 최소 하나의 볼륨을 남기고 할당 및 서비스 수준을 낮춰 비용을 최소화합니다.</block>
+  <block id="684efdafc2aa207cfcf90a145bc1f138" category="list-text">* 문제 *: 만료된 서브스크립션을 가진 사용자는 Cloud Volumes Service 사용자 인터페이스에 로그인하거나 API와 상호 작용할 수 없습니다.</block>
+  <block id="4a997170782a4cc2ec95f310f150d558" category="paragraph">* 해결 방법 *: Cloud Volumes Service에 대한 AWS 마켓플레이스 페이지로 이동하여 구독을 갱신합니다.</block>
+  <block id="5a4ffc2a48fff0d5a02140c3350feb15" category="summary">AWS용 Cloud Volumes Service 비용은 선택한 서비스 수준과 할당된 용량을 기준으로 합니다. 적절한 서비스 수준과 용량을 선택하면 최소의 비용으로 스토리지 요구 사항을 충족할 수 있습니다.</block>
+  <block id="f54527d3facbaa2f576181ccd64f2a6b" category="paragraph">AWS용 Cloud Volumes Service 비용은 선택한 _service level_과 _allocated capacity_를 기준으로 합니다. 적절한 서비스 수준과 용량을 선택하면 최소의 비용으로 스토리지 요구 사항을 충족할 수 있습니다.</block>
+  <block id="7fc630f0203a2975f2645b17b5f1f777" category="admonition">_본 문서의 모든 가격 정보는 2018년 9월 12일 기준 정가를 기준으로 합니다. 이 정보는 예로만 제공되며 변경될 수 있습니다. _</block>
+  <block id="ea61e2c2ff507048203824add1eb7c21" category="section-title">고려 사항</block>
+  <block id="e9e60dd401a5b937180118755b2c516f" category="paragraph">스토리지 요구사항은 두 가지 기본 측면이 있습니다.</block>
+  <block id="fec28a2ae3528c66f53ebe76c854e92f" category="list-text">데이터 보관을 위한 storage_capacity _</block>
+  <block id="9d7a4264a0f7f44695b988f88cdbf00d" category="list-text">데이터와의 상호 작용을 위한 storage_bandwidth _</block>
+  <block id="38d12ff54e360686263308a96fd9217c" category="paragraph">볼륨에 대해 선택한 용량보다 더 많은 스토리지 공간을 사용하는 경우 다음과 같은 사항을 고려해야 합니다.</block>
+  <block id="9b177f3b5012cc7a7fdc682fc2988847" category="list-text">서비스 수준에서 정의한 가격으로 사용하는 추가 스토리지 용량에 대한 요금이 청구됩니다.</block>
+  <block id="a24fb87327e01f9d972fcc8f148a8006" category="list-text">할당된 용량 크기를 늘리거나 서비스 수준을 변경하기 전에는 볼륨에 사용할 수 있는 스토리지 대역폭의 양이 증가하지 않습니다.</block>
+  <block id="c6f45ce2284ef7f44c38a58ebbd013e0" category="section-title">서비스 레벨</block>
+  <block id="421405600dbac51a8d526a6ba0b154c6" category="paragraph">Cloud Volumes Service for AWS는 3가지 서비스 수준을 지원합니다. 볼륨을 생성하거나 수정할 때 서비스 수준을 지정합니다.</block>
+  <block id="3243d5989806ef5df5d5d629a6f6c7a7" category="inline-link-macro">클라우드 볼륨 생성 중</block>
+  <block id="1829b4e7aed90332ecd6c2073e1c3876" category="inline-link-macro">클라우드 볼륨 수정</block>
+  <block id="a807f4d8cac4e736cd520b7038cd420f" category="paragraph"><block ref="1d07822b08600a72487112c7f7e5fd7c" category="inline-link-macro-rx"></block>
+<block ref="6b3190b7ad0ab49d1e6d97b9bc4c71c0" category="inline-link-macro-rx"></block></block>
+  <block id="60bc680f6244fa7d54528486e2d2b04d" category="paragraph">서비스 수준은 다양한 스토리지 용량 및 스토리지 대역폭 요구 사항을 충족합니다.</block>
+  <block id="92a6e56b5e5d5f811a086aaa714742b2" category="list-text">** 표준**(용량)</block>
+  <block id="8da6204306af19ccd70ab85e1c1f1029" category="paragraph">가장 낮은 비용으로 용량을 사용하고 대역폭 요구사항이 제한적인 경우 표준 서비스 수준이 가장 적합할 수 있습니다. 예를 들어, 볼륨을 백업 타겟으로 사용하는 경우를 들 수 있습니다.</block>
+  <block id="3c8acce87eebd8be15cf2b20b0858a7d" category="list-text">정가: 매월 GB당 $0.10(2018년 9월 12일 기준)</block>
+  <block id="3ac69ccfc6792ec21bd8ffab1dfb98c8" category="list-text">대역폭: GB당 프로비저닝된 용량 당 16KB의 대역폭</block>
+  <block id="be3cebf083f37aeffebd57d996548f8e" category="list-text">** 프리미엄** (용량과 성능의 균형)</block>
+  <block id="55b8415db4209b79aecffe10679fc602" category="paragraph">애플리케이션의 스토리지 용량과 대역폭이 균형 잡힌 이라면 프리미엄 서비스 수준이 여러분에게 가장 적합할 수 있습니다. 이 수준은 표준 서비스 수준보다 MB/s당 비용이 저렴하며 또한 최고 수준의 서비스 수준보다 GB당 비용이 저렴합니다.</block>
+  <block id="f2f3eb5c345861cab3a7ec66ad9db4e0" category="list-text">정가: 매월 GB당 0.20달러(2018년 9월 12일 기준)</block>
+  <block id="ba7e1ee82476be180981f31a6c955bb5" category="list-text">대역폭: 용량 할당 GB당 64KB의 대역폭</block>
+  <block id="ce14cf4662be2609e919850db18c8bc1" category="list-text">** 매우 뛰어난**(성능)</block>
+  <block id="5aec843c7eadedb02c34978da08e431a" category="paragraph">최고 수준의 서비스 수준은 스토리지 대역폭 측면에서 가장 저렴합니다. 많은 스토리지 용량에 대한 관련 요구 없이 애플리케이션에 스토리지 대역폭이 필요한 경우 Extreme 서비스 수준이 가장 적합할 수 있습니다.</block>
+  <block id="2c6a43d572e99c76b7bc56222543243f" category="list-text">정가: 매월 GB당 $0.30(2018년 9월 12일 기준)</block>
+  <block id="69af2908469ea6cc3270e8598edb606c" category="list-text">대역폭: GB당 프로비저닝된 용량 당 128KB의 대역폭</block>
+  <block id="8be570b19c302676d406e242a338cc98" category="paragraph">볼륨을 생성하거나 수정할 때 볼륨에 할당된 용량을 지정합니다.</block>
+  <block id="6e7b7bcdf649d898ca61befdc7ebe633" category="paragraph">일반적인 상위 수준의 비즈니스 요구 사항에 따라 서비스 수준을 선택하지만, 애플리케이션의 특정 요구 사항에 따라 할당된 용량 크기를 선택해야 합니다. 예를 들면 다음과 같습니다.</block>
+  <block id="7a514d592ea09e8cf39304fb5fd687ff" category="list-text">애플리케이션에 필요한 스토리지 공간</block>
+  <block id="78c779a14fb92b89e0ba07d2d0a58e51" category="list-text">애플리케이션 또는 사용자에게 필요한 초당 스토리지 대역폭</block>
+  <block id="168810665e2ff23a35f7868f1cd8d31c" category="paragraph">할당된 용량은 GB에 지정됩니다. 볼륨의 할당된 용량은 100GB ~ 100,000GB 범위 내에서 설정할 수 있습니다(100TB에 해당).</block>
+  <block id="6f979818230d4e05c5e0e6a622be92fd" category="section-title">inode 수</block>
+  <block id="4befc62c5b2a3509b19a274cdb519659" category="paragraph">1TB 이하의 볼륨은 최대 2천만 개의 inode를 사용할 수 있습니다. 할당된 TB당 inode 수가 최대 1억 개까지 증가하여 inode 수가 2천만 개까지 증가합니다.</block>
+  <block id="b5ad4a53f7910efad5e0b32480ac4644" category="list-text">= 1TB = 2천만 개의 inode</block>
+  <block id="9048dd5aaea9ea899eb5d3c504a388e4" category="list-text">1TB ~ 2TB 초과 = 4천만 inode</block>
+  <block id="84e9ea4a8cb6dda1638be3c1085d4794" category="list-text">2TB ~ 3TB 초과 = 6천만 inode</block>
+  <block id="fad0f1d113e957c55c7adaf192b41c90" category="list-text">3TB ~ 4TB 초과 = 8천만 inode</block>
+  <block id="968c9954af08101b6859a753070b5cfd" category="list-text">4TB~100TB = 1억 개의 inode를 초과</block>
+  <block id="7d724e4bd163fe8323200b15500517f9" category="section-title">대역폭</block>
+  <block id="7c710de840d663ce1b41ce18323e24d4" category="paragraph">선택한 서비스 수준과 할당된 용량을 조합하여 볼륨에 대한 최대 대역폭을 결정합니다.</block>
+  <block id="b6b860ad9bd23cc49cf7d156afff6df4" category="paragraph">애플리케이션이나 사용자가 선택한 것보다 더 많은 대역폭을 필요로 하는 경우 서비스 수준을 변경하거나 할당된 용량을 늘릴 수 있습니다. 변경 사항으로 인해 데이터 액세스가 중단되지 않습니다.</block>
+  <block id="d166390b76a18ea782161fb36dba3f2b" category="section-title">서비스 레벨 및 할당된 용량을 선택합니다</block>
+  <block id="e175cfd89a253264b4cf1a5738f8c75f" category="paragraph">요구 사항에 가장 적합한 서비스 수준과 할당된 용량을 선택하려면 피크 또는 에지에 필요한 용량과 대역폭을 알아야 합니다.</block>
+  <block id="537c3aaba2230386e08f53eadf5a6769" category="section-title">서비스 수준 및 할당된 용량에 대한 비용 비교</block>
+  <block id="fe90609cec4caaf8cb5bf3d197c6473e" category="paragraph">아래 표에서는 다양한 서비스 수준과 할당된 용량 크기에 대한 비용을 비교합니다. 표에서 맨 왼쪽 열은 용량을 나타내고 다른 열은 각 용량 지점과 해당 비용에 사용할 수 있는 MB/s를 정의합니다.</block>
+  <block id="dd68926c0207f5bf0deff6339a03335a" category="admonition">_모든 가격 정보는 2018년 9월 12일 기준 정가를 기준으로 합니다. 이 정보는 예로만 제공되며 변경될 수 있습니다. _</block>
+  <block id="3b8f7696879f77dfc8c74aa8df8db24b" category="cell">용량</block>
+  <block id="eb6d8ae6f20283755b339c0dc273988b" category="cell">표준</block>
+  <block id="8d5e7e72f12067991186cdf3cb7d5d9d" category="cell">프리미엄</block>
+  <block id="ba1f6c59525d71aee4c027798d2470fd" category="cell">익스트림</block>
+  <block id="b3614c2c56659e3d47a607083815532d" category="cell">** TB**</block>
+  <block id="660261132e690aa83925decdd50a27da" category="cell">MB/s**</block>
+  <block id="a198c147e163dc9adee4a0c7201cc1c5" category="cell">비용**</block>
+  <block id="d30afcce0a79de2f0b4b40521ccf9d80" category="cell">0.1(100GB)</block>
+  <block id="4341447b6ad78bf4d7eb59ebb5a53d63" category="cell">1.6</block>
+  <block id="52604aaf9d0fec52d4ffb195924623d8" category="cell">$10</block>
+  <block id="ded681fc154529ebbc7562fb0c73ba47" category="cell">6.4</block>
+  <block id="3c6713ed0b513644dc1f892bf008d1f4" category="cell">$20</block>
+  <block id="e76af95319f03251bdf6c3771f39afbe" category="cell">12.8</block>
+  <block id="b8e03d4998077cd92ddb0e4252a09764" category="cell">$30</block>
+  <block id="c4ca4238a0b923820dcc509a6f75849b" category="cell">1</block>
+  <block id="c74d97b01eae257e44aa9d5bade97baf" category="cell">16</block>
+  <block id="530029252abcbda4a2a2069036ccc7fc" category="cell">$100</block>
+  <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
+  <block id="baaa3cde5d56dc506ddb0fae184a5238" category="cell">$200</block>
+  <block id="76dc611d6ebaafc66cc0879c71b5db5c" category="cell">128</block>
+  <block id="c600da429be893170d47a0e7fc8f39f9" category="cell">$300</block>
+  <block id="c81e728d9d4c2f636f067f89cc14862c" category="cell">2</block>
+  <block id="6364d3f0f495b6ab9dcf8d3b5c6e0b01" category="cell">32</block>
+  <block id="513845366c2bc8fe8669fbab5231a805" category="cell">400달러</block>
+  <block id="f718499c1c8cef6730f9fd03c8125cab" category="cell">256</block>
+  <block id="488b78b337f4ec1e2d6e5afb536a96a5" category="cell">$600</block>
+  <block id="eccbc87e4b5ce2fe28308fd9f2a7baf3" category="cell">3</block>
+  <block id="642e92efb79421734881b53e1e1b18b6" category="cell">48</block>
+  <block id="58a2fc6ed39fd083f55d4182bf88826d" category="cell">192</block>
+  <block id="0584ce565c824b7b7f50282d9a19945b" category="cell">384</block>
+  <block id="58d1927824d8b164739bdeca5c6a1562" category="cell">900달러</block>
+  <block id="a87ff679a2f3e71d9181a67b7542122c" category="cell">4</block>
+  <block id="9ffc82e6d39b418623fea8fb846c6d0c" category="cell">800달러</block>
+  <block id="10a7cdd970fe135cf4f7bb55c0e3b59f" category="cell">512</block>
+  <block id="04d008b1065ba083df383d847bac4e74" category="cell">1,200달러</block>
+  <block id="e4da3b7fbbce2345d7772b0674a318d5" category="cell">5</block>
+  <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
+  <block id="239e87316e51a3050c7d7a108d1f961a" category="cell">500달러</block>
+  <block id="320722549d1751cf3f247855f937b982" category="cell">320</block>
+  <block id="c3f36e316dffa1394151fc7c56fff158" category="cell">1,000달러</block>
+  <block id="4ffce04d92a4d6cb21c1494cdfcd6dc1" category="cell">640</block>
+  <block id="d5b7284b7282bbf4c243332ee423c542" category="cell">1,500달러</block>
+  <block id="1679091c5a880faf6fb5e6087eb1b2dc" category="cell">6</block>
+  <block id="26657d5ff9020d2abefe558796b99584" category="cell">96</block>
+  <block id="3a835d3215755c435ef4fe9965a3f2a0" category="cell">768</block>
+  <block id="90eedf2e9773844ea8b5c0dbd9460bee" category="cell">1,800달러</block>
+  <block id="8f14e45fceea167a5a36dedd4bea2543" category="cell">7</block>
+  <block id="7f6ffaa6bb0b408017b62254211691b5" category="cell">112</block>
+  <block id="6f8c5eacd7432bebab7b4ab57eda8c54" category="cell">$700</block>
+  <block id="9b70e8fe62e40c570a322f1b0b659098" category="cell">448</block>
+  <block id="16531c4017c7a4e55fa6aeb8c8a8798f" category="cell">1,400달러</block>
+  <block id="061412e4a03c02f9902576ec55ebbe77" category="cell">896)를 참조하십시오</block>
+  <block id="58076f0f8afec2271177c0accc61f91e" category="cell">2,100달러</block>
+  <block id="c9f0f895fb98ab9159f51fd0297e236d" category="cell">8</block>
+  <block id="4ca3395cfd4f7d44b5af8685883706e9" category="cell">1,600달러</block>
+  <block id="a980f22074119d4103953f70f2fd69ce" category="cell">1,024</block>
+  <block id="b5a94aad3bc3e86d65024bb527c76f1c" category="cell">2,400달러</block>
+  <block id="45c48cce2e2d7fbdea1afc51c7c6ad26" category="cell">9</block>
+  <block id="0a09c8844ba8f0936c20bd791130d6b6" category="cell">144</block>
+  <block id="a7aeed74714116f3b292a982238f83d2" category="cell">576</block>
+  <block id="a2ec7ea68d10c1832eb7bc24417b4c73" category="cell">1,152</block>
+  <block id="8abca8484c3e011aa8b4077f2ccc7a9b" category="cell">2,700달러</block>
+  <block id="d3d9446802a44259755d38e6d163e820" category="cell">10</block>
+  <block id="b73ce398c39f506af761d2277d853a92" category="cell">160</block>
+  <block id="dd5f865c529f13e5a9983f8d2fbbb198" category="cell">$2,000</block>
+  <block id="d074a76497ac7c9cf90be2933f171e07" category="cell">1,280</block>
+  <block id="a51ea84c6fa22dfbe17ff5f2155dd877" category="cell">$3,000</block>
+  <block id="6512bd43d9caa6e02c990b0a82652dca" category="cell">11</block>
+  <block id="38af86134b65d0f10fe33d30dd76442e" category="cell">176</block>
+  <block id="fbd9e527c3da7273291f6ea83c5d9b8b" category="cell">1,100달러</block>
+  <block id="f64eac11f2cd8f0efa196f8ad173178e" category="cell">704</block>
+  <block id="d01e032a2c4c9b852bace0a612321185" category="cell">2,200달러</block>
+  <block id="b5433fb6d3b738bfc5bf19637b8c12a0" category="cell">1,408</block>
+  <block id="4e8e331483d1bdc7fe70b31d2cbeaf48" category="cell">3,300달러</block>
+  <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
+  <block id="d969ae360b7ff6fa704401ecb7d4424d" category="cell">1,536</block>
+  <block id="731fee82a88c3e7a360533d7e74e97ba" category="cell">3,600달러입니다</block>
+  <block id="c51ce410c124a10e0db5e4b97fc2af39" category="cell">13</block>
+  <block id="091d584fced301b442654dd8c23b3fc9" category="cell">208</block>
+  <block id="7aa6fc8a1e75fd01c5a24c09a42edd04" category="cell">1,300달러</block>
+  <block id="7250eb93b3c18cc9daa29cf58af7a004" category="cell">832</block>
+  <block id="e67205092ab29ee5e5235fbbb6a54bd7" category="cell">2,600달러</block>
+  <block id="ca17fb4ccf34589606ea20f51fb67572" category="cell">1,664</block>
+  <block id="7d22f5bfe358a1b8a9e54241d4932c27" category="cell">3,900달러</block>
+  <block id="aab3238922bcc25a6f606eb525ffdc56" category="cell">14</block>
+  <block id="13fe9d84310e77f13a6d184dbf1232f3" category="cell">224</block>
+  <block id="a92f6b233128aacc3d83ab56adc4c55e" category="cell">2,800달러</block>
+  <block id="51f8a71bd595aee58a4d31fcc5b7251e" category="cell">1,792</block>
+  <block id="90c23d245c8ff44281e8bb2c4e876803" category="cell">$4,200</block>
+  <block id="9bf31c7ff062936a96d3c8bd1f8f2ff3" category="cell">15</block>
+  <block id="335f5352088d7d9bf74191e006d8e24c" category="cell">240</block>
+  <block id="437d7d1d97917cd627a34a6a0fb41136" category="cell">960</block>
+  <block id="c9ce3b8b108f8145e2fc3eb7064c3516" category="cell">1,920</block>
+  <block id="131cac8402e1322ba1f7a6d24115eb89" category="cell">4,500달러</block>
+  <block id="72e3d4d8bafc26f47a36d6be204bb764" category="cell">3,200달러</block>
+  <block id="4546199e2bcb9ae49a13edef9675fd03" category="cell">2,048</block>
+  <block id="df8df1500baf2bb457828f4a26ec0e04" category="cell">4,800달러</block>
+  <block id="70efdf2ec9b086079795c442636b55fb" category="cell">17</block>
+  <block id="7a614fd06c325499f1680b9896beedeb" category="cell">272</block>
+  <block id="4e962fb8f92d11f704d85ff5ef11c6a6" category="cell">1,700달러</block>
+  <block id="857a14696a060a6cd2faa38c7b476305" category="cell">1,088</block>
+  <block id="78119155254de2cda0428fbf1b127cab" category="cell">3,400달러</block>
+  <block id="408fef2b76c44f4ca6fb5c74b192b429" category="cell">2,176</block>
+  <block id="1bb70ddfe350a9d08f6c5133eaa7dc1a" category="cell">$5,100</block>
+  <block id="6f4922f45568161a8cdf4ad2299f6d23" category="cell">18</block>
+  <block id="48aedb8880cab8c45637abc7493ecddd" category="cell">288</block>
+  <block id="1ced3beb6929d932c52fd501ac7ef9c2" category="cell">2,304</block>
+  <block id="fb04e6f8c3cef4d74949a50aa0d40877" category="cell">5,400달러</block>
+  <block id="1f0e3dad99908345f7439f8ffabdffc4" category="cell">19</block>
+  <block id="37bc2f75bf1bcfe8450a1a41c200364c" category="cell">304</block>
+  <block id="aef9a149034f443e5a9c311e1068db54" category="cell">1,900달러</block>
+  <block id="32ad3356163eab16620a49733767a241" category="cell">1,216</block>
+  <block id="e86a577306a732bf9adcf21f8398475e" category="cell">3,800달러</block>
+  <block id="85862250c8d12522fa16feede37b89ae" category="cell">2,432</block>
+  <block id="ad276936a09383f04a535de2511c6526" category="cell">5,700달러</block>
+  <block id="98f13708210194c475687be6106a3b84" category="cell">20</block>
+  <block id="4b325c2a5e831ae52cfc17736eda18b0" category="cell">4,000달러</block>
+  <block id="2372fbbe5b31f0a06ff46aae4e94d156" category="cell">2,560</block>
+  <block id="3204a3cb09a2f0a39c540811a454bf4f" category="cell">6,000달러</block>
+  <block id="3c59dc048e8850243be8079a5c74d079" category="cell">21</block>
+  <block id="6855456e2fe46a9d49d3d3af4f57443d" category="cell">336</block>
+  <block id="bfacb0cda62d58861198f46c8f59999d" category="cell">1,344</block>
+  <block id="e586434102dc24b1e7c7dd19995d8ba2" category="cell">2,688</block>
+  <block id="5d467019d642d292d699d7b078d97163" category="cell">6,300달러</block>
+  <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="cell">22</block>
+  <block id="371bce7dc83817b7893bcdeed13799b5" category="cell">352</block>
+  <block id="8122d32637f1bedba9bf826e12280f37" category="cell">4,400달러</block>
+  <block id="5d172485a2518083f572ac0c7b774a8d" category="cell">2,816</block>
+  <block id="013351dbd6b661d97bf5b01de1e8ac7d" category="cell">6,600달러</block>
+  <block id="37693cfc748049e45d87b8c7d8b9aacd" category="cell">23</block>
+  <block id="cf004fdc76fa1a4f25f62e0eb5261ca3" category="cell">368</block>
+  <block id="1ea294a9c8e20ff5440d7bdd61c1e601" category="cell">2,300달러</block>
+  <block id="3299f7267db8fe9f13dc0b68a8ebcc66" category="cell">1,472</block>
+  <block id="b2fd76e6a0476713762d5dfd9eedcd6d" category="cell">4,600달러입니다</block>
+  <block id="2e7b19fc245c368ab19620107880cd28" category="cell">2,944</block>
+  <block id="29fdc73e0c803d1c8548314f05f7cd7e" category="cell">6,900달러</block>
+  <block id="1ff1de774005f8da13f42943881c655f" category="cell">24</block>
+  <block id="6b4f9c381e764df5528ccd7edfbfbc0e" category="cell">3,072입니다</block>
+  <block id="251a16748cd5f7164f98963c0bc0bef3" category="cell">7,200달러</block>
+  <block id="8e296a067a37563370ded05f5a3bf3ec" category="cell">25</block>
+  <block id="18d8042386b79e2c279fd162df0205c8" category="cell">400</block>
+  <block id="e594f42bb1d723403592962f91fb5c36" category="cell">2,500달러</block>
+  <block id="9f62f1974f653574a79b51175c6f815a" category="cell">1,600</block>
+  <block id="e778bd3756acf55c287fb6038c545a97" category="cell">$5,000</block>
+  <block id="9b27a8f7b7b1e02d20f94ccd0f705c81" category="cell">3,200</block>
+  <block id="37649c400583224095345eb32fc43932" category="cell">7,500달러</block>
+  <block id="4e732ced3463d06de0ca9a15b6153677" category="cell">26</block>
+  <block id="8fe0093bb30d6f8c31474bd0764e6ac0" category="cell">416</block>
+  <block id="84c7ba0412ca0099c6fc791f4a856dd1" category="cell">5,200달러</block>
+  <block id="03798723555b0ede4dde0e36f0728fcd" category="cell">3,328로 이동합니다</block>
+  <block id="ce935acb223bad2bae98e78bbbacec16" category="cell">7,800달러</block>
+  <block id="02e74f10e0327ad868d138f2b4fdd6f0" category="cell">27</block>
+  <block id="248e844336797ec98478f85e7626de4a" category="cell">432</block>
+  <block id="438af5a7df39d4656ece3cd1c1499b0f" category="cell">1,728</block>
+  <block id="6f5b269f08bebe3bf5aa67d20c8a1982" category="cell">3,456을 참조하십시오</block>
+  <block id="8f4d4d9c054aaf124ce684120e9efbc2" category="cell">8,100달러</block>
+  <block id="33e75ff09dd601bbe69f351039152189" category="cell">28</block>
+  <block id="e49668c2daaf972b88f69d19a052c270" category="cell">5,600달러</block>
+  <block id="9a003cffecc0e8671073944fd9257b22" category="cell">3,584</block>
+  <block id="565c7a7609eaf7ee6d37b0417289c36c" category="cell">8,400달러</block>
+  <block id="6ea9ab1baa0efb9e19094440c317e21b" category="cell">29</block>
+  <block id="cd04fb5963b4e83fbb81ed1a6b0bfba7" category="cell">2,900달러</block>
+  <block id="c2a2f0121b38748f2ea78a331b2bb22c" category="cell">1,856</block>
+  <block id="e55385c6bf0a7a802fdfd45292907f3a" category="cell">5,800달러</block>
+  <block id="cfd5cf9297bab50b5bad09036e9e0dc3" category="cell">3,712</block>
+  <block id="2b18d12c6feaffe1e8b7a58e092fabad" category="cell">8,700달러</block>
+  <block id="34173cb38f07f89ddbebc2ac9128303f" category="cell">30</block>
+  <block id="6ea2ef7311b482724a9b7b0bc0dd85c6" category="cell">480</block>
+  <block id="eebe33fdc6823a44adbcad8ecf8b68c1" category="cell">3,840</block>
+  <block id="e6016e80598ff3a4a8f96027dab08c6d" category="cell">9,000달러</block>
+  <block id="c16a5320fa475530d9583c34fd356ef5" category="cell">31</block>
+  <block id="b534ba68236ba543ae44b22bd110a1d6" category="cell">496</block>
+  <block id="0bf9537dad08165082e26fd1d7e4cfd1" category="cell">$3,100</block>
+  <block id="ae3945f38f605859bc5371bf14b18ac9" category="cell">1,984</block>
+  <block id="59d9b8876c484f3aceb084d299cd52d3" category="cell">6,200달러</block>
+  <block id="1f0c0806adc2bddfe63d7d7379aea76d" category="cell">3,968</block>
+  <block id="dfd386b9ffc64163117054f184cc3030" category="cell">9,300달러</block>
+  <block id="e5f2adedbf969b8fc310133aeabaceb4" category="cell">6,400달러</block>
+  <block id="c9ca1ec49e8aac1615059e421cbb4793" category="cell">4,096개</block>
+  <block id="4bdeed5f8844bfc5baf215ba45faef7f" category="cell">9,600달러</block>
+  <block id="182be0c5cdcd5072bb1864cdee4d3d6e" category="cell">33</block>
+  <block id="f4be00279ee2e0a53eafdaa94a151e2c" category="cell">528</block>
+  <block id="4eabed92a3b9b17a9e978ae065374304" category="cell">2,112</block>
+  <block id="0f6e26643fab7063e44bbb4a11e2340e" category="cell">4,224</block>
+  <block id="5d7b3a041bbb60cbf9fc1d1596e2a027" category="cell">9,900달러</block>
+  <block id="e369853df766fa44e1ed0ff613f563bd" category="cell">34</block>
+  <block id="97e8527feaf77a97fc38f34216141515" category="cell">544</block>
+  <block id="8fe5ba40228a8192fdf48c86904af1b8" category="cell">6,800달러</block>
+  <block id="e2cdf56d6e1982c6471048ba70156221" category="cell">4,352</block>
+  <block id="4de1359946a99628590912a38a0d4c7c" category="cell">$10,200</block>
+  <block id="1c383cd30b7c298ab50293adfecb7b18" category="cell">35</block>
+  <block id="a9a6653e48976138166de32772b1bf40" category="cell">560</block>
+  <block id="6d21386e1bb02fbbf085a177e125e773" category="cell">3,500달러</block>
+  <block id="be186c804064fc0b6325f6b5f3bd64ab" category="cell">2,240</block>
+  <block id="adc126ae7ddf288326fab8cbd99fa62d" category="cell">$7,000</block>
+  <block id="876272968baa90d7368e3b1a6672dbcf" category="cell">4,480</block>
+  <block id="72e7691c8a1f1e09ae9367e55ccc1f1f" category="cell">10,500달러</block>
+  <block id="19ca14e7ea6328a42e0eb13d585e4c22" category="cell">36</block>
+  <block id="c7a406813eceb19ae792b1eb5cb3c9f2" category="cell">4,500개</block>
+  <block id="ca5a7ac3e35af00d313bb71ba0b2d9e8" category="cell">10,800달러</block>
+  <block id="a5bfc9e07964f8dddeb95fc584cd965d" category="cell">37</block>
+  <block id="dbe272bab69f8e13f14b405e038deb64" category="cell">592</block>
+  <block id="b5956fae6f24e2f6bc64f43b385daf30" category="cell">3,700달러</block>
+  <block id="95f3d05f7452cc80901a5c4e9350d15c" category="cell">2,368</block>
+  <block id="c9b9a3daa6e47f7c26aeea4e0e636e5e" category="cell">7,400달러</block>
+  <block id="6a49552c8a8c24728b651f8695279593" category="cell">$11,100</block>
+  <block id="a5771bce93e200c36f7cd9dfd0e5deaa" category="cell">38</block>
+  <block id="996a7fa078cc36c46d02f9af3bef918b" category="cell">608</block>
+  <block id="b23e38b0d9bcc8f55f0853b4b1b18684" category="cell">7,600달러</block>
+  <block id="df4174b4c2a5eb91c588955535672f01" category="cell">$11,400</block>
+  <block id="d67d8ab4f4c10bf22aa353e27879133c" category="cell">39</block>
+  <block id="48ab2f9b45957ab574cf005eb8a76760" category="cell">624</block>
+  <block id="a49d5fec73f3733f1991638259163bb4" category="cell">2,496</block>
+  <block id="654a7501882051eacb3b443411155c1e" category="cell">$11,700</block>
+  <block id="d645920e395fedad7bbbed0eca3fe2e0" category="cell">40</block>
+  <block id="d5e50c1e2ffd9ab603a7e6e1789595e3" category="cell">8,000달러</block>
+  <block id="2d30bccb3b569ab57bf3a1f218fcde5c" category="cell">12,000달러</block>
+  <block id="3416a75f4cea9109507cacd8e2f2aefc" category="cell">41</block>
+  <block id="26408ffa703a72e8ac0117e74ad46f33" category="cell">656)을 참조하십시오</block>
+  <block id="3848f43e1be9ffbb47ae79df35c8eab9" category="cell">$4,100</block>
+  <block id="748ec101eac6bc8826c843ea0e3e8e30" category="cell">2,624</block>
+  <block id="d78e423452b86fa01741b9e5437f8d8d" category="cell">8,200달러</block>
+  <block id="3a3090a0bbd3e45f29ff429376cbd741" category="cell">$12,300</block>
+  <block id="a1d0c6e83f027327d8461063f4ac58a6" category="cell">42</block>
+  <block id="2dea61eed4bceec564a00115c4d21334" category="cell">672)를 참조하십시오</block>
+  <block id="9b9932065443dfb3e5d881ab33051c49" category="cell">$12,600</block>
+  <block id="17e62166fc8586dfa4d1bc0e1742c08b" category="cell">43</block>
+  <block id="f79921bbae40a577928b76d2fc3edc2a" category="cell">688</block>
+  <block id="3ada608df0e514f6202a207d39b63d77" category="cell">4,300달러</block>
+  <block id="fa064943223d179f779ba445cdcbe40b" category="cell">2,752</block>
+  <block id="13c7d2dbc70eb8a88d7c343ff6591302" category="cell">8,600달러</block>
+  <block id="a4b3b81841606ef7665fe042b59f08de" category="cell">$12,900</block>
+  <block id="f7177163c833dff4b38fc8d2872f1ec6" category="cell">44</block>
+  <block id="2b354be3b9b055cb3663037db7988289" category="cell">8,800달러</block>
+  <block id="091c6b36f47424a63295fb1f871e6fb4" category="cell">$13,200</block>
+  <block id="6c8349cc7260ae62e3b1396831a8398f" category="cell">45</block>
+  <block id="5f2c22cb4a5380af7ca75622a6426917" category="cell">720</block>
+  <block id="8dbe5468ca4a7bd73018d84ae2927c88" category="cell">2,880</block>
+  <block id="bec5050b7d6b3fef4299de990bfdb6d4" category="cell">$14,500</block>
+  <block id="d9d4f495e875a2e075a1a4a6e1b9770f" category="cell">46</block>
+  <block id="6bc24fc1ab650b25b4114e93a98f1eba" category="cell">736</block>
+  <block id="bb2d0e6c31e3f8930ba4ac4d2dcb39fa" category="cell">9,200달러</block>
+  <block id="7d735f09851c166de295f02c80f694a5" category="cell">$13,800</block>
+  <block id="67c6a1e7ce56d3d6fa748ab6d9af3fd7" category="cell">47</block>
+  <block id="a1d33d0dfec820b41b54430b50e96b5c" category="cell">752</block>
+  <block id="7f938a656490e565973f589e0ad9c79c" category="cell">4,700달러</block>
+  <block id="d1b624f9e54d26f767a5c6b47d9b8bd1" category="cell">3,008</block>
+  <block id="9b3547dd6befbafead9eef053329195f" category="cell">9,400달러</block>
+  <block id="efbfa51cb7ea403dbd0cb090f5ef6421" category="cell">$14,100</block>
+  <block id="35a55f758dc87785cdad44e7d028d62d" category="cell">$14,400</block>
+  <block id="f457c545a9ded88f18ecee47145a72c0" category="cell">49</block>
+  <block id="fc8001f834f6a5f0561080d134d53d29" category="cell">784</block>
+  <block id="7219000e527da329d1419f40967b329f" category="cell">4,900달러</block>
+  <block id="206dd327ff78959436387abeb90993b4" category="cell">3,136</block>
+  <block id="85652fe823e592a519f3be2b17441c92" category="cell">9,800달러</block>
+  <block id="9556c99ed90a7a9986200bd257b7b303" category="cell">$14,700</block>
+  <block id="c0c7c76d30bd3dcaefc96f40275bdc0a" category="cell">50</block>
+  <block id="7a53928fa4dd31e82c6ef826f341daec" category="cell">800</block>
+  <block id="3fa4be9dddcae8581430eb80b7e1014d" category="cell">$10,000</block>
+  <block id="f12f4e77772e71d833f0df7c8e47b463" category="cell">$15,000</block>
+  <block id="2838023a778dfaecdc212708f721b788" category="cell">51</block>
+  <block id="43fa7f58b7eac7ac872209342e62e8f1" category="cell">816</block>
+  <block id="6b3910c5f8852c3c30def4f020546d57" category="cell">3,264</block>
+  <block id="5caaa4efcbec1a31216f0d5d201de19a" category="cell">$15,300</block>
+  <block id="9a1158154dfa42caddbd0694a4e9bdc8" category="cell">52</block>
+  <block id="01e6c8b55f7b29017bd838ebd8a6e5d7" category="cell">$10,400</block>
+  <block id="cfbf84a220c4b80caed526e474c7bef5" category="cell">$15,600</block>
+  <block id="362e80d4df43b03ae6d3f8540cd63626" category="cell">848</block>
+  <block id="d4613a01da59234c2eb29812a688f971" category="cell">5,300달러</block>
+  <block id="46a5c57c26aa123579e97dcaadbc7c18" category="cell">3,392</block>
+  <block id="4d6368ef01d3a65cc4ff2792f673427e" category="cell">$10,600</block>
+  <block id="7b65883e68cdbf716a2a99abd72fe353" category="cell">$15,900</block>
+  <block id="a684eceee76fc522773286a895bc8436" category="cell">54</block>
+  <block id="1fc214004c9481e4c8073e85323bfd4b" category="cell">864</block>
+  <block id="d93f22ce1eea345e6d1ae7ee5e38aa0c" category="cell">$16,200</block>
+  <block id="b53b3a3d6ab90ce0268229151c9bde11" category="cell">55</block>
+  <block id="1f50893f80d6830d62765ffad7721742" category="cell">880</block>
+  <block id="7b5ac0f0ee6f0a20bea3503fbc79b62d" category="cell">5,500달러</block>
+  <block id="7a4a23bb30197f2a80c076cb01b2fa05" category="cell">3,520</block>
+  <block id="0f03ccf36687da3a04aa7d2376d0bd40" category="cell">$11,000</block>
+  <block id="d2cbc36d77b8ed8ab20be83ac4009a30" category="cell">$16,500</block>
+  <block id="9f61408e3afb633e50cdf1b20de6f466" category="cell">56</block>
+  <block id="ca4a271264b6a391e6a77947b90165c6" category="cell">$11,200</block>
+  <block id="81f59e4743da2b2f6fc1a5b00ed5e291" category="cell">$16,800</block>
+  <block id="72b32a1f754ba1c09b3695e0cb6cde7f" category="cell">57</block>
+  <block id="2a9d121cd9c3a1832bb6d2cc6bd7a8a7" category="cell">912</block>
+  <block id="1cd253a16c59c151a850058a2fb45048" category="cell">3,648</block>
+  <block id="18f623b9983aad051e0fa443bb9361fc" category="cell">$17,100</block>
+  <block id="66f041e16a60928b05a7e228a89c3799" category="cell">58</block>
+  <block id="d045c59a90d7587d8d671b5f5aec4e7c" category="cell">928</block>
+  <block id="41ba18773a1a545cd44ec05301c9838d" category="cell">$11,600</block>
+  <block id="e6555d37ea882bc8f0032158dbe66b81" category="cell">$17,400</block>
+  <block id="093f65e080a295f8076b1c5722a46aa2" category="cell">59</block>
+  <block id="64223ccf70bbb65a3a4aceac37e21016" category="cell">944</block>
+  <block id="5906a22ae431da5929bdb24be904e7a8" category="cell">5,900달러</block>
+  <block id="085de5f9b74520ffc33f61eee5ceccb5" category="cell">3,776입니다</block>
+  <block id="0e1e97680994d02103792fa079fcd663" category="cell">$11,800</block>
+  <block id="654e6e68acba5b4f100a40bc1a4edbf5" category="cell">$17,700</block>
+  <block id="072b030ba126b2f4b2374f342be9ed44" category="cell">60</block>
+  <block id="a907a756488216298ebeb2f427b8c324" category="cell">18,000달러</block>
+  <block id="7f39f8317fbdb1988ef4c628eba02591" category="cell">61</block>
+  <block id="9c01802ddb981e6bcfbec0f0516b8e35" category="cell">976)을 참조하십시오</block>
+  <block id="9f95aa2cc8bc74c296a755254729c7cb" category="cell">6,100달러</block>
+  <block id="3940498a028fde51f06fa4cde9e50415" category="cell">3,904</block>
+  <block id="47328efac62e65af13d5853291b1c5af" category="cell">$12,200</block>
+  <block id="690a8d7249fb47bb61f7542008a0aa74" category="cell">$18,300</block>
+  <block id="44f683a84163b3523afe57c2e008bc8c" category="cell">62</block>
+  <block id="860320be12a1c050cd7731794e231bd3" category="cell">992</block>
+  <block id="e50d4b1c60a6063e27c6e107814e6f5a" category="cell">$12,400</block>
+  <block id="1c0ff5ae07926d93672fc383cf4b7517" category="cell">$18,600</block>
+  <block id="03afdbd66e7929b125f8597834fa83a4" category="cell">63</block>
+  <block id="a05e4b899cf743ddd918378a76eac8e9" category="cell">1,008</block>
+  <block id="9e4b5af50e6a366d8d86df8387c3a565" category="cell">4,032</block>
+  <block id="c0a7db06712964d92225a9493f1aa2f4" category="cell">$18,900</block>
+  <block id="9e7dfca780ce12456d60f5967e4c6f5e" category="cell">12,800달러</block>
+  <block id="c674b4e8eaa2319b49a14239e59678c8" category="cell">$19,200</block>
+  <block id="fc490ca45c00b1249bbe3554a4fdf6fb" category="cell">65</block>
+  <block id="509ac89bed3b5145496da59f08c40d6d" category="cell">1,040</block>
+  <block id="7470fddb1eec7ea6c8b866f7c86f6b94" category="cell">6,500달러</block>
+  <block id="cd3ed66a43a07436c3ad4004455146fa" category="cell">4,160</block>
+  <block id="130ddec80306247361991575dc54f235" category="cell">$13,000</block>
+  <block id="483b05fdf5b51ebf61d0f00039fd21c9" category="cell">$19,500</block>
+  <block id="3295c76acbf4caaed33c36b1b5fc2cb1" category="cell">66</block>
+  <block id="025feabccb15b838c0aa44d506a0c9d6" category="cell">1,056</block>
+  <block id="6c907d501226b8ae0f6a89be5e134267" category="cell">$19,800</block>
+  <block id="735b90b4568125ed6c3f678819b6e058" category="cell">67</block>
+  <block id="f41e86d0228dc7e98791219608c15e1a" category="cell">1,072</block>
+  <block id="36ddf29adf847f6492cc6b78644d55fd" category="cell">6,700달러</block>
+  <block id="e12dc67763b9a83e57fbdefec9c34fbe" category="cell">4,288</block>
+  <block id="4752b4eceedf35daeacf3a588e7c9530" category="cell">$13,400</block>
+  <block id="630a7c94cadff82ae90c7ec169a6c2d8" category="cell">$20,100</block>
+  <block id="a3f390d88e4c41f2747bfa2f1b5f87db" category="cell">68</block>
+  <block id="a05329065ad9bea5098cc114211852c0" category="cell">$13,600</block>
+  <block id="387c35b7162eaa5720df611880dafdba" category="cell">$20,400</block>
+  <block id="14bfa6bb14875e45bba028a21ed38046" category="cell">69</block>
+  <block id="2edf192feb13fed040b98437b7c33fe4" category="cell">1,104</block>
+  <block id="f68705e07feef5698cad56559f238036" category="cell">4,416</block>
+  <block id="57f9a81bf2ece3d9cd3101c795affcf7" category="cell">$20,700</block>
+  <block id="7cbbc409ec990f19c78c75bd1e06f215" category="cell">70</block>
+  <block id="5048b05ed2c0a5c28962ee489c5735ba" category="cell">1,120</block>
+  <block id="37601027479becc24be379085129d442" category="cell">14,000달러</block>
+  <block id="25e87f705d45e54cccc0f16e22e95d7c" category="cell">2만 1,000달러</block>
+  <block id="e2c420d928d4bf8ce0ff2ec19b371514" category="cell">71</block>
+  <block id="2bdfdb04330a310f641722ad9b91da04" category="cell">1,136</block>
+  <block id="ec4d7d0a8492c4b146bbcd39004c2634" category="cell">7,100달러</block>
+  <block id="1a2fefd3972cdd547629f25b540b7d56" category="cell">$14,200</block>
+  <block id="971dab3eb34331312d4d6898cba22e56" category="cell">2,1,300달러</block>
+  <block id="32bb90e8976aab5298d5da10fe66f21d" category="cell">72</block>
+  <block id="58af640723e9db81e0fb9fe11ab841bb" category="cell">2,1,600달러</block>
+  <block id="d2ddea18f00665ce8623e36bd4e3c7c5" category="cell">73</block>
+  <block id="69a206ef4a9fe2be7093b3a6a9860cc7" category="cell">1,168</block>
+  <block id="3472923ec847bbaef0c5ebe5d53d9d98" category="cell">7,300달러</block>
+  <block id="d47cdb515732d60256efb11905773712" category="cell">$14,600</block>
+  <block id="e33ff6485c31db30d8a11e523e8c0e3f" category="cell">$21,900</block>
+  <block id="ad61ab143223efbc24c7d2583be69251" category="cell">74</block>
+  <block id="0d5f5715f3dd10192b0cf94a13a19a4b" category="cell">1,184</block>
+  <block id="b992e179e4809576be7c941112efb1a1" category="cell">$14,800</block>
+  <block id="4b9bcfe253c167d262e84a44dffddddb" category="cell">$22,200</block>
+  <block id="d09bf41544a3365a46c9077ebb5e35c3" category="cell">75를</block>
+  <block id="bc82c542d7228d85b06c977c78cb3f48" category="cell">1,200</block>
+  <block id="e208a97c22a55317443fc8da90e526a1" category="cell">2만 2천 5백 달러</block>
+  <block id="fbd7939d674997cdb4692d34de8633c4" category="cell">76</block>
+  <block id="dcc98ad6ccdba8687e4ea3892d86c9b7" category="cell">$15,200</block>
+  <block id="0d551e80c290fcfe70ac2105da7f5196" category="cell">$22,800</block>
+  <block id="28dd2c7955ce926456240b2ff0100bde" category="cell">77</block>
+  <block id="b53361efb8d974b1650dacdf8cfb7ea1" category="cell">1,232</block>
+  <block id="7eaa9934dad62607498842ce0d462908" category="cell">7,700달러</block>
+  <block id="517929b412ee8d889fd7c46455ee1cbd" category="cell">$15,400</block>
+  <block id="0c3802bc1898fdc414daacb561279095" category="cell">$23,100</block>
+  <block id="35f4a8d465e6e1edc05f3d8ab658c551" category="cell">78</block>
+  <block id="f9259e8f14e952df0f8855dbf5281085" category="cell">1,248</block>
+  <block id="60740ba4f71b0a8e734ac66d4b71a42c" category="cell">$23,400</block>
+  <block id="d1fe173d08e959397adf34b1d77e88d7" category="cell">79</block>
+  <block id="68c5694ab439f927c54dd6e31d93556b" category="cell">1,264</block>
+  <block id="d4af1026eedce56ae4ab1f5b0b63f94f" category="cell">7,900달러</block>
+  <block id="bd2f160217544665703cd9f0c1fac8c9" category="cell">$15,800</block>
+  <block id="b2dfd57ef1fba0ab8793b2e8b397defe" category="cell">$23,700</block>
+  <block id="2b9b6d952c18741e7930c90904151945" category="cell">$16,000</block>
+  <block id="59631e0d402977db2ec7e97e79123f52" category="cell">24,000달러</block>
+  <block id="43ec517d68b6edd3015b3edc9a11367b" category="cell">81</block>
+  <block id="7d42f60239bc3d3efa15de0f608f56e1" category="cell">1,296</block>
+  <block id="1759d72cc5fed4d7dd47fb204c6a5562" category="cell">$24,300</block>
+  <block id="9778d5d219c5080b9a6a17bef029331c" category="cell">82</block>
+  <block id="eba2f9ba8a8dad26362a4a3fe2eb174f" category="cell">1,312</block>
+  <block id="176f35c090b3ecc4c47402e67a2eab2c" category="cell">$16,400</block>
+  <block id="551ad677ee67785ca555bce4f7262b98" category="cell">$24,600</block>
+  <block id="fe9fc289c3ff0af142b6d3bead98a923" category="cell">83</block>
+  <block id="ff0b19b22f8d89f3584367a37d312d87" category="cell">1,328</block>
+  <block id="8f2936475c24926642478c115cb95d99" category="cell">8,300달러</block>
+  <block id="07200ba3ce9b797c17a7bd82cd44b443" category="cell">$16,600</block>
+  <block id="49aa65813949280223e06da0a90ad2ca" category="cell">$24,900</block>
+  <block id="68d30a9594728bc39aa24be94b319d21" category="cell">84</block>
+  <block id="c4b2abc9439e7893d70df7a883ee71d3" category="cell">$25,200</block>
+  <block id="3ef815416f775098fe977004015c6193" category="cell">85</block>
+  <block id="9348df72c44b30c92f21c45bf60c134a" category="cell">1,360</block>
+  <block id="e5e0b764cc972c86af0bc536f2f6f518" category="cell">8,500달러</block>
+  <block id="4e3fbe6ec562fb549f0c1e4dd788e6ea" category="cell">$17,000</block>
+  <block id="260c2853bac64cc0879727fc88fc1bfb" category="cell">$25,500</block>
+  <block id="93db85ed909c13838ff95ccfa94cebd9" category="cell">86</block>
+  <block id="9174cb2ab6b0e84a25d9860c030731c8" category="cell">1,376</block>
+  <block id="54ed65e9c68a1e371a94600c1161da3b" category="cell">$17,200</block>
+  <block id="03a41cf81cdbfd67afe73447bd8cf8d9" category="cell">25,800달러</block>
+  <block id="c7e1249ffc03eb9ded908c236bd1996d" category="cell">87</block>
+  <block id="77d42bfaff62ddcf6cc3aae13aa0cc6e" category="cell">1,392</block>
+  <block id="22931987f181e7c7e478bb1b4d3ab6b0" category="cell">$26,100</block>
+  <block id="216dd68f037ead6b06e3f1334436254f" category="cell">$17,600</block>
+  <block id="c7ee6aeb0c8a2fc24823bc029f731e3c" category="cell">$26,400</block>
+  <block id="7647966b7343c29048673252e490f736" category="cell">89</block>
+  <block id="27014f48b87d72edd8a665f08e889d5f" category="cell">1,424</block>
+  <block id="6adbaede8a77d2dd8472b8a1671a68bf" category="cell">8,900달러</block>
+  <block id="ad841a9de2f22fac924ea70490931327" category="cell">$17,800</block>
+  <block id="eed50b503a043bae654317e299adea74" category="cell">$26,700</block>
+  <block id="8613985ec49eb8f757ae6439e879bb2a" category="cell">90</block>
+  <block id="5533cffca7ce34e5c108e9bf7f72fbb0" category="cell">1,440개</block>
+  <block id="b5e593368546548b6e19d3c88b3c9a48" category="cell">27,000달러</block>
+  <block id="54229abfcfa5649e7003b83dd4755294" category="cell">91</block>
+  <block id="4a978f81d22037721b213fb8408f6472" category="cell">1,456개</block>
+  <block id="696f31fe5d5b67f8c1656f5ad97c9d8e" category="cell">$9,100</block>
+  <block id="8aecfd8a0e6038beae50f32d729b2d67" category="cell">$18,200</block>
+  <block id="83a45784b96d3e899ccafa0a6edb6178" category="cell">27,300달러</block>
+  <block id="92cc227532d17e56e07902b254dfad10" category="cell">92</block>
+  <block id="3e4202ad177148ca487d14aca955f6ab" category="cell">$18,400</block>
+  <block id="e066e6e41e3620cf86db6f6c6a3595ef" category="cell">27,600달러</block>
+  <block id="98dce83da57b0395e163467c9dae521b" category="cell">93</block>
+  <block id="b83f104e5c1f891a958af843fec85b56" category="cell">1,488</block>
+  <block id="f16a2aaa5604b12c45e63134561b56bd" category="cell">27,900달러</block>
+  <block id="f4b9ec30ad9f68f89b29639786cb62ef" category="cell">94</block>
+  <block id="197037d3aa278839fd3e8ba3e6ff29fb" category="cell">1,504</block>
+  <block id="7317b65c113de6ee7299bcf4aba8dab8" category="cell">$18,800</block>
+  <block id="f7c85032be17cdfdf4e39cd911d7887b" category="cell">$28,200</block>
+  <block id="812b4ba287f5ee0bc9d43bbf5bbe87fb" category="cell">95</block>
+  <block id="e5a0bd6a23e4860bd04bbc6da5a2a010" category="cell">1,520</block>
+  <block id="ee19b1f8c608c45d846ab325eabd8977" category="cell">9,500달러입니다</block>
+  <block id="d4fd4f9d12fea8a171a989a8cf2e3da6" category="cell">19,000달러</block>
+  <block id="1fbe75f9586ae852377219c6b70bc6d8" category="cell">28,500달러</block>
+  <block id="780e5c6c46c21fb785caf7ca90440652" category="cell">28,800달러</block>
+  <block id="e2ef524fbf3d9fe611d5a8e90fefdc9c" category="cell">97</block>
+  <block id="363f8c34a0b6c80a00e0b12482cf3455" category="cell">1,552</block>
+  <block id="685e5a70d9b039a0a140bbb04b9afff8" category="cell">9,700달러</block>
+  <block id="406c9cc385b552a1a133f20ad6995286" category="cell">$19,400</block>
+  <block id="5e35b57ba2b41b1d9ac351a917c1d964" category="cell">29,100달러</block>
+  <block id="ed3d2c21991e3bef5e069713af9fa6ca" category="cell">98</block>
+  <block id="7168998a626bd21d89aab5103a9a2c22" category="cell">1,568</block>
+  <block id="1237815886d92682295d8f3e75505792" category="cell">$19,600</block>
+  <block id="6f827c31f7cb1e0b62ad2e4f87e49ba7" category="cell">29,400달러</block>
+  <block id="ac627ab1ccbdb62ec96e702f07f6425b" category="cell">99</block>
+  <block id="5d3ad0ff825f78b6dda0692f7d7c67bc" category="cell">1,584</block>
+  <block id="53ef17ea537ac6bdba8db2bc260e1f40" category="cell">29,700달러</block>
+  <block id="f899139df5e1059396431415e770c6dd" category="cell">100</block>
+  <block id="f715f9ab45b5537b33999f5b826dc943" category="cell">2만 달러</block>
+  <block id="68da0938692f24559fc3ea76422b7309" category="cell">3만 달러</block>
+  <block id="5504977cb47d642da3d1264eefb7edda" category="section-title">예 1</block>
+  <block id="b53853437e958b2ada74339c5a15080e" category="paragraph">예를 들어 애플리케이션에 25TB의 용량과 100MB/s의 대역폭이 필요합니다. 25TB의 용량으로 표준 서비스 수준은 400MB/s의 대역폭을 2,500달러의 비용으로 제공하여 이 경우 Standard를 가장 적합한 서비스 수준으로 만듭니다.</block>
+  <block id="96eade91ea8ad3a768b45fae66e4a317" category="inline-image-macro">서비스 수준 및 용량 선택, 예 1</block>
+  <block id="fa1e629ff9f8ba28a5b87f520d0f978b" category="paragraph"><block ref="fa1e629ff9f8ba28a5b87f520d0f978b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5f3a8aa007370d00f3fd3b293a6a1118" category="section-title">예 2</block>
+  <block id="e3c01a8104d16b1a5dbd3786dcb09e17" category="paragraph">예를 들어 애플리케이션의 경우 12TB의 용량과 800MB/s의 최대 대역폭이 필요합니다. Extreme 서비스 수준이 12TB 표시를 기준으로 애플리케이션의 요구 사항을 충족할 수 있지만 Premium 서비스 수준에서 13TB를 선택하는 것이 더 비용 효율적입니다.</block>
+  <block id="47d1178d43da1c44b8c4b656a839d0b9" category="inline-image-macro">서비스 수준 및 용량 선택, 예 2</block>
+  <block id="fdd6098304bebbe4ab182205872c90df" category="paragraph"><block ref="fdd6098304bebbe4ab182205872c90df" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b033db96cf2833d3637e7b2b2a7dc879" category="summary">클라우드 볼륨을 AWS 인스턴스에 마운트할 수 있습니다. 클라우드 볼륨은 현재 Linux 및 UNIX 클라이언트용 NFSv3 및 NFSv4.1과 Windows 클라이언트용 SMB 2.1, 3.0 및 3.1.1을 지원합니다.</block>
+  <block id="9ffb10eae8fc633ca6f16dadaba49b52" category="paragraph">클라우드 볼륨을 AWS 인스턴스에 마운트할 수 있습니다. 클라우드 볼륨은 현재 Linux 및 UNIX 클라이언트용 NFSv3 및 NFSv4.1과 Windows 클라이언트용 SMB 2.1, 3.0 및 3.1.1을 지원합니다.</block>
+  <block id="7d3e2b7307444071e2aff9ce902f88d2" category="paragraph">* 참고: * 고객이 지원하는 강조 표시된 프로토콜/언어를 사용하십시오.</block>
+  <block id="edf98d71e9ead5b679c1110ac3ecf1b6" category="list-text">파란색 물음표(?)를 클릭하여 생성한 볼륨에 대한 마운트 지침을 확인합니다. 볼륨 이름 옆에 있는 내보내기 경로 필드의 끝 부분에 있습니다.</block>
+  <block id="b707ea881a434e6f1311733c415823f9" category="paragraph">물음표 위로 마우스를 가져가면 * Show mount instructions * 가 표시됩니다.</block>
+  <block id="d50e8af1a37f2f146c82bbd2994263e9" category="inline-image-macro">마운트 지침을 표시합니다</block>
+  <block id="ee33b97ca9b14ea34add893e795143a3" category="paragraph"><block ref="ee33b97ca9b14ea34add893e795143a3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="50c44b570d181bb18058f8b2c446ff85" category="list-text">물음표를 클릭하면 마운트 지침이 표시됩니다.</block>
+  <block id="f8b7bb7f28d1f1a0e9534f8d8582d615" category="paragraph">* NFS 예: *</block>
+  <block id="4817b93a9db766f5959990256de64ac8" category="inline-image-macro">NFS에 대한 마운트 지침</block>
+  <block id="0bf04c2d2bf11553852f68735d4b7a17" category="paragraph"><block ref="0bf04c2d2bf11553852f68735d4b7a17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cb3bef40f931522adf1b31bfb5ba4e1b" category="paragraph">'rsize' 및 'wsize' 옵션에 의해 정의된 최대 I/O 크기는 1048576이지만 대부분의 사용 사례에서 65536이 권장되는 기본값입니다.</block>
+  <block id="db5d4fc10778d421fd3beb8b0e92b854" category="paragraph">버전을 지정하지 않으면 Linux 클라이언트는 기본적으로 NFSv4.1로 설정됩니다.</block>
+  <block id="c33a261ec68784a847d41ccecc103bc1" category="paragraph">* SMB 예: *</block>
+  <block id="b51b4019a8ec4841677f28fc041aa3f2" category="inline-image-macro">SMB를 위한 마운트 지침</block>
+  <block id="4a2cc8ebc3353a6428da6806b7d93166" category="paragraph"><block ref="4a2cc8ebc3353a6428da6806b7d93166" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="551922b0bc90cc1e1c104a41677df6f3" category="list-text">SSH 또는 RDP 클라이언트를 사용하여 Amazon Elastic Compute Cloud(EC2) 인스턴스에 연결한 다음 해당 인스턴스에 대한 마운트 지침을 따릅니다.</block>
+  <block id="48bdce5c154a8b0847bc13ad135c652b" category="paragraph">마운트 지침의 단계를 완료한 후 클라우드 볼륨을 AWS 인스턴스에 마운트했습니다.</block>
+  <block id="f44080b03577203d6c764d413f5ed1ea" category="summary">더 이상 필요하지 않은 Cloud Sync 관계를 삭제할 수 있습니다.</block>
+  <block id="83b9a291807c68f75e73e458476c8ab3" category="doc">Cloud Sync 관계를 삭제하는 중입니다</block>
+  <block id="78868aa9d3e48d0f5ae3596c531f2e0a" category="list-text">삭제할 관계 상자를 클릭하고 * 작업 * 을 클릭한 다음 * 관계/s 삭제 * 를 선택합니다.</block>
+  <block id="3c1dcb9c8b45beff191ea00aa2f20bfd" category="summary">AWS 마켓플레이스에 구독한 후 바로 Cloud Volumes Service에 액세스할 수 있다면 지원 권한을 활성화하는 것이 좋습니다. 지원 권한을 활성화하면 온라인 채팅, 웹 티켓 시스템 및 전화를 통해 기술 지원에 액세스할 수 있습니다.</block>
+  <block id="902d45c505e34d873cd427fc812f0cec" category="doc">지원 권한 활성화 및 지원 액세스</block>
+  <block id="30cbc44aad93ced2beecdbf7f7f7fec6" category="paragraph">기본 지원 수준은 일련 번호 활성화 및 등록이 완료될 때까지 셀프 서비스입니다.</block>
+  <block id="e9d356ec51ae4d84881e70ea3c98b6dc" category="section-title">지원 권한 활성화 중</block>
+  <block id="be95e2cfe33d221ef43e897ebe76de9c" category="paragraph">Cloud Volumes Service for AWS의 초기 구독 프로세스 중에 클라우드 볼륨 인스턴스가 "930"으로 시작하는 20자리 NetApp 일련 번호를 생성합니다. NetApp 일련 번호는 AWS 계정에 연결된 Cloud Volumes Service 가입을 나타냅니다. 지원 자격을 활성화하려면 NetApp 일련 번호를 등록해야 합니다. NetApp은 2가지 지원 등록 옵션을 제공합니다.</block>
+  <block id="23957c938fbe6783848a0c7c3651718a" category="list-text">기존 NetApp NSS(Support Site) SSO 계정을 가진 현재 NetApp 고객</block>
+  <block id="63b11526307884ce31efc524f509c090" category="list-text">기존 NetApp Support Site(NSS) SSO 계정이 없는 새로운 NetApp 고객</block>
+  <block id="766f3d31e0bd393953854f6e09656987" category="section-title">옵션 1: 기존 NetApp Support Site(NSS) SSO 계정을 가진 현재 NetApp 고객</block>
+  <block id="7539cbf9922878ac5ea7a50e44ff73f7" category="inline-link">NetApp Cloud Central 포털</block>
+  <block id="c04559b3591d91b90cafc2eee58d541f" category="list-text">Cloud Volumes Service URL로 이동하거나 을 통해 이 서비스에 액세스합니다<block ref="92934608ae6af31041e90caa3f54396c" category="inline-link-rx"></block>. 그런 다음 NetApp Cloud Central 자격 증명으로 로그인합니다.</block>
+  <block id="3ff70f5b598d5ae4fd3e3fecd8918128" category="list-text">Cloud Volumes Service UI(사용자 인터페이스)에서 ** 지원**을 선택하여 NetApp 일련 번호를 표시합니다.</block>
+  <block id="fd2a8f819ab8e42b6ec0be6d8de775da" category="image-alt">지원 페이지를 표시합니다</block>
+  <block id="22a87fb83a61d9dfc90c784e297a7a30" category="list-text">** 지원** 페이지에서 지원 상태가 "등록되지 않음"으로 표시되는지 확인합니다.</block>
+  <block id="4008d83877c7ccfbcaa7bd36d9c0f204" category="image-alt">지원 상태가 등록되지 않았습니다</block>
+  <block id="20fa88b6364f4bad6cd379a12f3e31fa" category="paragraph">지원 상태 및 NetApp 일련 번호가 표시되지 않으면 브라우저 페이지를 새로 고치십시오.</block>
+  <block id="0fc9c2a334a9b361f87a8e9043060be7" category="list-text">** 지원 활성화**를 클릭하여 NetApp 일련 번호를 등록합니다.</block>
+  <block id="81d3e987d1ca98307e460e15a5eccd2a" category="list-text">NSS 계정이 있는 경우 ** 지원 활성화** 페이지에 NSS 자격 증명(사용자 이름 및 암호)을 입력하고 ** 활성화**를 클릭하여 NetApp 일련 번호에 대한 지원 권한을 활성화합니다.</block>
+  <block id="83f88ebd41a2d4bf2440a2d134086a74" category="image-alt">지원을 활성화합니다</block>
+  <block id="fbf62905ff14cf2944029e8b9424e045" category="inline-link">NetApp Support 등록 사이트</block>
+  <block id="9c8b87a50dd659656a141c27dc247aa9" category="list-text">기존 NetApp 고객이지만 NSS SSO 자격 증명이 없는 경우 로 이동하십시오<block ref="2995c8cd64db3ab408e3c867564074bd" category="inline-link-rx"></block> 계정을 먼저 생성합니다. NSS 자격 증명에 등록하려면 여기 로 돌아가십시오.</block>
+  <block id="7d8439e5c479249957b26bc548b04e4f" category="list-text">신규 NetApp 고객인 경우 아래 옵션 2의 지침을 참조하십시오.</block>
+  <block id="b7d095572c49cd0da541386a19f9d94d" category="paragraph">NetApp 일련 번호가 활성화되면 ** 지원** 페이지에 "등록" 상태가 표시되어 지원 자격이 활성화되었음을 나타냅니다.</block>
+  <block id="ccd9f3251025937256b46396828d30b6" category="image-alt">지원 상태가 등록되었습니다</block>
+  <block id="54e29fcae2e1546490105986804a9125" category="paragraph">해당 Cloud Volumes Service 일련 번호에 대한 1회 지원 등록입니다. 새로운 Cloud Volumes Service 서브스크립션 및 후속 새 제품 번호도 지원 활성화가 필요합니다. 지원 등록과 관련하여 궁금한 점이나 문제가 있으면 cvs-support@netapp.com 으로 문의하십시오.</block>
+  <block id="9c72e9218774375323f849ee08453718" category="section-title">옵션 2: 기존 NetApp Support Site(NSS) SSO 계정이 없는 새로운 NetApp 고객</block>
+  <block id="8e2e894a8f2d0c798eda10b04a6aae2c" category="inline-link">클라우드 데이터 서비스 지원 등록</block>
+  <block id="d15ddd92716258916f2997a149c0e1c9" category="list-text">로 이동합니다<block ref="2151d866808a52a3eadb15c242a47970" category="inline-link-rx"></block> 페이지로 이동하여 NSS 계정을 만듭니다.</block>
+  <block id="1c50975feec0d84c66edb56f1126d033" category="list-text">"등록된 NetApp 고객이 아닙니다."를 선택하면 신규 고객 등록 양식이 표시됩니다.</block>
+  <block id="13057fbeba6fc2ea452df672598620da" category="image-alt">신규 고객 등록 양식</block>
+  <block id="ee364f11fd7d245e4d69ec062eb83cb8" category="list-text">양식에 필요한 정보를 입력합니다.</block>
+  <block id="cddef93549327dd0dc967c3c80b4f3e9" category="list-text">이름과 회사 정보를 입력합니다.</block>
+  <block id="5fddeeeadbac57fc1e413c54bbe2136f" category="list-text">Cloud Volumes Service** 을 제품 라인으로 선택하고 ** 클라우드 서비스 공급자로 Amazon Web Services**를 선택합니다.</block>
+  <block id="ca1fd1b529e3590bf05d6bbfd7555b8f" category="list-text">다음 두 필드에 ** NetApp 일련 번호** 및 ** AWS 고객 ID**를 Cloud Volumes Service** 지원** 페이지에서 입력합니다.</block>
+  <block id="dee616561cc7f504f6a9ea5ffb29fe5d" category="list-text">** 등록 제출** 을 클릭합니다.</block>
+  <block id="3c4d0c718f64dc728edbccefce9a6a3c" category="list-text">제출된 등록으로부터 확인 이메일을 받게 됩니다. 오류가 발생하지 않으면 "Registration Submitted successfully(등록 제출이 완료되었습니다)" 페이지로 이동합니다. 또한 1시간 이내에 "귀하의 제품은 현재 지원 대상입니다"라는 이메일을 받게 됩니다.</block>
+  <block id="e4c7b422a46f280870b3f268ba11a2a4" category="list-text">또한 새로운 NetApp 고객은 이후의 지원 활성화를 위해 NetApp NSS(Support Site) 사용자 계정을 만들고 기술 지원 채팅 및 웹 티켓 판매에 대한 지원 포털에 액세스해야 합니다. 로 이동합니다<block ref="2995c8cd64db3ab408e3c867564074bd" category="inline-link-rx"></block> 를 눌러 이 작업을 수행합니다. 새로 등록한 Cloud Volumes Service 일련 번호를 제공하여 프로세스를 신속하게 처리할 수 있습니다.</block>
+  <block id="9373c0ca75df5603cb648bb12943f07d" category="section-title">지원 정보 얻기</block>
+  <block id="4190f7b054c6bf5e70a45b6bb7a8e7fc" category="paragraph">NetApp은 다양한 방법으로 Cloud Volumes Service를 지원합니다. 기술 자료(KB) 기사 또는 NetApp 커뮤니티 등 광범위한 무료 셀프 지원 옵션이 24x7 제공됩니다. AWS SaaS 마켓플레이스에서 구입한 Cloud Volumes Service 구독에는 채팅, 이메일, 웹 티켓 또는 전화를 통한 원격 기술 지원이 포함됩니다. 이러한 셀프 서비스 지원 옵션을 사용하려면 먼저 각 NetApp 일련 번호에 대한 지원을 활성화해야 합니다. NetApp NSS(Support Site) SSO 계정은 케이스 관리와 함께 채팅 및 웹 티켓팅에 필요합니다.</block>
+  <block id="2a5fd010c9151aa446afcaeb77ddb758" category="paragraph">기본 메뉴에서 ** 지원** 탭을 선택하여 Cloud Volumes Service UI에서 지원 옵션에 액세스할 수 있습니다. 사용 가능한 지원 옵션은 평가판 모드인지 구독 모드인지에 따라 다릅니다.</block>
+  <block id="07d41912a6ab6b97216f8cf89e93205c" category="section-title">자체 지원</block>
+  <block id="1eaf00c3e60bf4d6ada37af5f9aa703b" category="paragraph">이 옵션은 평가판 모드에서 사용할 수 있으며 연중무휴 24시간 무료로 제공됩니다.</block>
+  <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">기술 자료</block>
+  <block id="633613fb5d0ad93edb696f9fe685fc7b" category="list-text"><block ref="2eb023f98447a7b9d0796d4a598b558f" category="inline-link-rx"></block>이 섹션의 링크를 선택하면 NetApp 기술 문서로 이동합니다. 여기에서 Cloud Volumes Service 관련 기사, 사용 방법, FAQ 또는 고장 수리 정보를 검색할 수 있습니다.</block>
+  <block id="7b1329f5ca3d485bba602a815ffd4d6d" category="inline-link">사용 설명서</block>
+  <block id="54a4898cb0859902452f24e233ad7a5e" category="list-text"><block ref="159360ebed879dd5655e40a678966ca3" category="inline-link-rx"></block>** 여기를 클릭** 링크를 선택하면 Cloud Volumes Service for AWS 설명서 센터로 이동합니다.</block>
+  <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">커뮤니티</block>
+  <block id="3e2001e16c856c9dd701c91abe4ed12a" category="list-text"><block ref="744de2cadf11290893abb03340e471cb" category="inline-link-rx"></block>** 여기를 클릭** 링크를 클릭하면 Cloud Volumes Service 커뮤니티로 이동하여 동료 및 전문가와 연결할 수 있습니다.</block>
+  <block id="0c5a6aa558c218816e6fbd6d8ed8baec" category="list-text">전자 메일 선택 ** 피드백 섹션의 [여기 클릭]** 링크를 클릭하면 cvs-support@netapp.com 통해 지원 이메일이 시작됩니다. 서비스에 대한 일반적인 질문을 하거나, 피드백과 제안을 제공하거나, 온보딩 관련 문제에 대한 지원을 요청할 수 있는 훌륭한 장소입니다.</block>
+  <block id="52fcceb1925114589eec173daab1c999" category="section-title">구독 지원</block>
+  <block id="2d171858498adf3d36222085f079f93a" category="paragraph">위의 자체 지원 옵션 외에도 Cloud Volumes Service 유료 가입이 있는 경우 NetApp 지원 엔지니어와 협력하여 문제를 해결할 수 있습니다.</block>
+  <block id="0262da3f439e4df14689dec8b54430c7" category="paragraph">Cloud Volumes Service 일련 번호가 활성화되면 다음 방법 중 하나를 통해 NetApp 기술 지원 리소스에 액세스할 수 있습니다. 이러한 지원 옵션을 사용하려면 활성 Cloud Volumes 구독이 있어야 합니다.</block>
+  <block id="55dcdf017b51fc96f7b5f9d63013b95d" category="inline-link">채팅</block>
+  <block id="7c3ee899ee3ed2e1c69a3ddeb2ce70c2" category="list-text"><block ref="f34fa7926cfb7f2704a258637db5d0a4" category="inline-link-rx"></block>그러면 지원 티켓도 열립니다.</block>
+  <block id="0af89698bf5d1150026d4fcbbcf784a6" category="inline-link">지원 티켓</block>
+  <block id="d9b74aae4d86dd6ebe1e7d5b45dc3716" category="list-text"><block ref="0e15415017bcac169a4122be533e84df" category="inline-link-rx"></block>클라우드 데이터 서비스 &gt; Cloud Volumes Service AWS 를 선택합니다</block>
+  <block id="bcc254b55c4a1babdf1dcb82c207506b" category="inline-link">전화</block>
+  <block id="730e98d86dc7760bee1a7c5c00c06266" category="list-text"><block ref="91cd0fdb94d4d417072ea0006d1c5102" category="inline-link-rx"></block>새로운 문제를 보고하거나 기존 티켓에 대해 전화하는 경우 이 방법은 P1 또는 즉각적인 지원에 가장 적합합니다.</block>
+  <block id="0fb8dd59a0bef75c0f2ec966582f227b" category="inline-link">영업 담당자에게 문의하십시오</block>
+  <block id="f5f2725fe1e9760da005d9b95caefa13" category="paragraph">을 클릭하여 영업 지원을 요청할 수도 있습니다<block ref="a2cda76faf53fb03dbec7610ce9cd123" category="inline-link-rx"></block> 링크.</block>
+  <block id="734e99db37f7371ef9c12acb1553af95" category="paragraph">Cloud Volumes Service 일련 번호는 지원 메뉴 옵션에서 서비스 내에 표시됩니다. 서비스에 액세스하는 데 문제가 있고 이전에 NetApp에 일련 번호를 등록한 경우 cvs-support@netapp.com 에 지원을 문의할 수 있습니다. 또한 NetApp Support 사이트에서 다음과 같이 Cloud Volumes Service 일련 번호 목록을 확인할 수 있습니다.</block>
+  <block id="0373910e51252c7b97dcbea9f4942604" category="inline-link">mysupport.netapp.com</block>
+  <block id="c251a5a1be5b1e6d0fb464d2e96ec490" category="list-text">에 로그인합니다<block ref="d2d7cb2875e01b404c245a3a5e58fd46" category="inline-link-rx"></block>.</block>
+  <block id="80ea1edd18fe734adc3e09db4052ab87" category="list-text">제품 &gt; 내 제품 메뉴 탭에서 제품군** SaaS Cloud Volume**을 선택하여 등록된 모든 일련 번호를 찾습니다.</block>
+  <block id="b7be7163ec921853688f069d0b016262" category="image-alt">설치된 시스템을 봅니다</block>
+  <block id="8200b1de489c95095faff60ea363d1bc" category="summary">스냅샷 정책 설정을 유지하는 동안 잠시 동안 스냅샷이 생성되지 않도록 중지하려면 스냅샷 정책을 사용하지 않도록 설정하면 됩니다.</block>
+  <block id="4a61d7d79701fa8cda34100236b743ac" category="doc">스냅샷 정책을 사용하지 않도록 설정합니다</block>
+  <block id="f2dd955514c60fad76437ba0f7550a7f" category="paragraph">스냅샷 정책 설정을 유지하는 동안 잠시 동안 스냅샷이 생성되지 않도록 스냅샷 정책을 사용하지 않도록 설정할 수 있습니다.</block>
+  <block id="5c2a7b98dbf4984dc5a8077cc2209264" category="list-text">스냅샷을 생성하지 않으려면 * Enabled * 버튼을 클릭하여 * off * 로 설정하십시오.</block>
+  <block id="1d4ea42cd22f735c69c50ec8e0d347c9" category="inline-image-macro">스냅샷 정책 활성화 버튼</block>
+  <block id="56f2499084530f15e1dd7e25fd69cb80" category="paragraph"><block ref="56f2499084530f15e1dd7e25fd69cb80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1286c3c4202e7e744c12c6a5a9d6eae5" category="paragraph">스냅샷 정책을 다시 활성화하려면 * Enabled * 버튼을 클릭하여 * On * 으로 설정하고 * Save Changes * 를 클릭합니다.</block>
+  <block id="85d8107d25877ec192d67090bebbb48e" category="summary">몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Service를 시작할 수 있습니다.</block>
+  <block id="ded5309ebea6d4cf5ed055e7034efeb8" category="doc">빠른 시작 지침</block>
+  <block id="98cd9fd436f3f06a4f633a68293ace22" category="inline-link-macro">[KO</block>
+  <block id="c4e8dfa1afd29fe4a9774a9a68d87b5f" category="inline-link-macro">[JA</block>
+  <block id="5ac3e76d06eb5d3e2a8eb1e2a93d6020" category="paragraph">* 참고: * 클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 <block ref="ea1749da35be089b2ed08e644f3246da" category="inline-link-macro-rx"></block>]|<block ref="4b61c911928703a63f9e7f084d89a163" category="inline-link-macro-rx"></block>] 아직 이 단계를 완료하지 않은 경우.</block>
+  <block id="e07d1c8552b02a9af8096c445a1f98f0" category="floating-title">span class="image"&gt;&lt;img src="./media/number1.png" alt="the number 1"&gt;&lt;/span&gt;&lt;a href="task_selecting_region.html"&gt;지역 선택&lt;/A&gt;</block>
+  <block id="348eb763eb8d49a86500b8ed6b6f30cb" category="paragraph">클라우드 볼륨을 생성할 AWS 영역을 지정합니다.</block>
+  <block id="89eb2085607ad7d0a08819a56cfd9b5c" category="floating-title">span class="image"&gt;&lt;img src="./media/number2.png" alt="the number 2"&gt;&lt;/span&gt;&lt;a href="task_creating_cloud_volumes_for_AWS.html"&gt;클라우드 볼륨 만들기&lt;/A&gt;</block>
+  <block id="c159d360fd7e6de751d0c82932215e11" category="paragraph">크기 및 서비스 수준을 지정하여 AWS 클라우드에서 클라우드 볼륨을 생성하고 다른 옵션을 정의합니다.</block>
+  <block id="9052c494a743afff74600701fd6f6b27" category="floating-title">span class="image"&gt;&lt;img src="./media/number3.png" alt="the number 3"&gt;&lt;/span&gt;&lt;a href="task_mounting_cloud_volumes_for_AWS.html"&gt;클라우드 볼륨 마운트&lt;/A&gt;</block>
+  <block id="5374594906015b13962ce3076af203a6" category="paragraph">Linux 및 UNIX 클라이언트용 NFS 또는 Windows 클라이언트용 SMB를 사용하여 AWS 인스턴스에 클라우드 볼륨을 마운트합니다.</block>
+  <block id="2ca6d31f8d60669a0f87dad46b3f3150" category="summary">클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 있습니다. Cloud Volumes Service for AWS를 사용하려면 몇 가지 사전 요구사항이 충족되어야 합니다.</block>
+  <block id="32ac6e1aa2f558fdf3c0cfa9da90aaf9" category="doc">Cloud Volumes Service for AWS 사전 요구사항</block>
+  <block id="4fe27e17b02228491de0c851dbac97d3" category="paragraph">클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 있습니다. Cloud Volumes Service for AWS를 사용하려면 몇 가지 사전 요구사항이 충족되어야 합니다.</block>
+  <block id="94a6dfdf4a3ed548fefdb4adca150f05" category="paragraph">이 문서에 설명된 Cloud Volumes 작업을 수행하려면 먼저 AWS용 Cloud Volumes Service를 구독해야 합니다. 가입 프로세스에는 서비스를 사용하는 데 필요한 초기 설정 및 구성이 포함됩니다.</block>
+  <block id="924988a65a07792cd431caa7102e4b91" category="paragraph">를 참조하십시오<block ref="b4ffe6fc9debe4aaf5715606bd5ac041" category="inline-link-rx"></block> 페이지를 참조하십시오.</block>
+  <block id="8b9f9b0e63f1a86cc6b639972644976b" category="summary">Cloud Volumes Service은 여러 AWS 지역에서 사용할 수 있습니다. 클라우드 볼륨을 생성하기 전에 서비스를 사용할 지역을 지정해야 합니다.</block>
+  <block id="e39bff1f0720bfb155ff93f726e278ee" category="list-text">로 이동합니다<block ref="e1ae8f67f4b7e40d13b946f09e02a05e" category="inline-link-rx"></block> 을 클릭한 다음 구독 중에 제공한 전자 메일 주소로 로그인합니다.</block>
+  <block id="b40e3ac8963740941342f5cb16f06116" category="paragraph">이 URL을 북마크해야 합니다. 나중에 다시 이 페이지로 돌아가야 합니다.</block>
+  <block id="3e27a282c15af74f0f8417b067bf023e" category="list-text">상단 패널의 * Available regions * (사용 가능한 영역 *) 드롭다운 메뉴에서 작업할 영역을 선택합니다.</block>
+  <block id="b9f6d8286b9543482a4c496f020f00c7" category="paragraph">이 선택 프로세스는 AWS 콘솔에서 영역을 변경하는 방법과 비슷합니다.</block>
+  <block id="2e124fd39616970cb0d84a0817df2234" category="list-text">클라우드 볼륨을 생성하려는 경우 각 추가 영역에 대해 위 단계를 반복합니다.</block>
+  <block id="6101f8901ac322b1f3b7a4ab12a3eccd" category="inline-link">지역 및 가용성 영역</block>
+  <block id="b000e3ffba81c003d15c3d27a6a5aaa7" category="paragraph">* 참고: * Cloud Volumes 사용자 인터페이스에 표시되는 영역은 AWS 사용자 인터페이스에서 선택한 영역과 다른 형식을 사용할 수 있습니다. 예를 들어, Cloud Volumes UI의 _us-east-1_는 AWS 콘솔에서 선택한_N. Virginia_지역에 해당합니다. 을 참조하십시오<block ref="04a445bd4d302f79cc47f5dea32fb59b" category="inline-link-rx"></block> 영역 이름을 매핑하여 두 인터페이스에서 동일한 영역을 선택했는지 확인합니다.</block>
+  <block id="b454c4191e92c73442889214b58f36be" category="sidebar">Cloud Volumes Service for AWS 문서</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
+  <block id="558ab0bef1894a7a726109d36632d09d" category="sidebar">알려진 문제</block>
+  <block id="cb59b87e00d11222bfd9159d0d23836f" category="sidebar">시작하기</block>
+  <block id="5d7f7cb12ae8a116d30dc2cde00fc75d" category="sidebar">클라우드 볼륨 관리</block>
+  <block id="580e45478c258aa0d5a4f704476a412b" category="sidebar">클라우드 볼륨 스냅샷 관리</block>
+  <block id="397ff3bc347de43dbcde7cdb242690fe" category="sidebar">엑스포트 정책 규칙 관리</block>
+  <block id="ff2741973abb478532d388257d6165e5" category="sidebar">클라우드 볼륨을 위한 Cloud Sync 관리</block>
+  <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">참조하십시오</block>
+</blocks>

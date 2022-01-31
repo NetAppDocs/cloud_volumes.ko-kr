@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: aws/task_modifying_cloud_volumes_for_aws.html 
+keywords: Cloud Volumes Service for AWS, volume names, allocated capacity, service levels. 
+summary: 볼륨 이름, 할당된 용량 또는 서비스 수준 변경을 비롯한 기존 볼륨을 수정할 수 있습니다. 
+---
+= 클라우드 볼륨 수정
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+볼륨 이름, 할당된 용량 또는 서비스 수준 변경을 비롯한 기존 볼륨을 수정할 수 있습니다.
+
+.단계
+. 에 로그인합니다 https://cds-aws-bundles.netapp.com/storage/volumes["NetApp Cloud Orchestrator를 사용하면"^].
+. 관리할 볼륨의 이름을 클릭합니다.
+. 해당되는 경우 다음 볼륨 필드를 수정합니다.
++
+** 이름
+** 태그
+** 할당된 용량입니다
+** 서비스 레벨
++
+서비스 레벨을 변경해도 작업이 중단되지 않으며 클라이언트 데이터 액세스에는 영향을 미치지 않습니다.
+
+
+
+
+
+사용 가능한 inode 수는 할당된 용량에 따라 다릅니다.
+
+을 참조하십시오 link:reference_selecting_service_level_and_quota.html["적절한 서비스 레벨 및 할당된 용량 선택"] 를 참조하십시오.

@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: aws/index.html 
+summary: NetApp Cloud Volumes Service for AWS 설명서 포털에 오신 것을 환영합니다. 
+---
+= NetApp Cloud Volumes Service for AWS 설명서
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: cloud volumes, amazon web services, AWS, documentation, help
+
+
+[role="lead"]
+NetApp Cloud Volumes Service for AWS는 NFS 및 SMB에서 All-Flash 성능을 통해 NAS 볼륨을 제공하는 클라우드 네이티브 파일 서비스입니다. 이 서비스를 사용하면 기존 애플리케이션을 포함한 모든 워크로드를 AWS 클라우드에서 실행할 수 있습니다.
+
+
+
+== Cloud Volumes Service for AWS의 이점
+
+Cloud Volumes Service for AWS는 다음과 같은 이점을 제공합니다.
+
+* 일관된 고성능
+* 성능에 영향을 주지 않고 데이터 보호
+* 즉각적으로 클론 복제하여 운영, 개발, 테스트 워크플로우 지원
+* NFSv3 및 NFSv4.1, SMB 2.1, 3.0 및 3.1.1 NAS 프로토콜 지원
+* 다음과 같은 지원을 통해 Linux 및 Windows ECS(Elastic Container Service) 인스턴스에 안전하게 액세스할 수 있습니다.
++
+** Amazon Linux 2, Red Hat Enterprise Linux 7.5, SLES 12 SP3 및 Ubuntu 16.04 LTS
+** Windows Server 2008 R2, Windows Server 2012 R2 및 Windows Server 2016을 지원합니다
+
+
+* 따라서 스토리지 디바이스를 구성하거나 관리할 필요가 없습니다
+* 번들 및 용량제 가격 선택 가능
+
+
+
+
+== 상위 작업을 수행합니다
+
+* link:task_selecting_region.html["지역 선택"]
+* link:task_creating_cloud_volumes_for_aws.html["클라우드 볼륨을 생성하는 중입니다"]
+* link:task_mounting_cloud_volumes_for_aws.html["클라우드 볼륨 마운트"]
+* link:task_creating_on_demand_snapshots.html["클라우드 볼륨에 대한 온디맨드 스냅샷 생성"]
+
+
+
+
+== Cloud Volumes Service for AWS에 대해 자세히 알아보십시오
+
+video::hL4rosv-iZQ[youtube, width=848,height=480]
+
+
+== 자세한 내용을 확인하십시오
+
+* https://cloud.netapp.com/home["NetApp Cloud Central에서"^]
+* https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e["먼저 새로운 NetApp Cloud Volumes Service for AWS에 대해 알아보십시오"^]
+
