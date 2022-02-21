@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: aws/reference_whats_new_cloud_volumes_aws.html 
-keywords: Cloud Volumes Service for AWS, what's new, features, enhancements 
+keywords: 'Cloud Volumes Service for AWS, what"s new, features, enhancements' 
 summary: NetApp은 새로운 기능과 개선사항을 제공하기 위해 AWS용 Cloud Volumes Service를 정기적으로 업데이트합니다. 
 ---
 = Cloud Volumes Service for AWS의 새로운 기능
