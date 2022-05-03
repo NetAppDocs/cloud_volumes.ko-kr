@@ -6,6 +6,7 @@ summary: 웹 UI를 통해 사용할 수 있는 Cloud Volumes 기능은 RESTful A
 ---
 = Cloud Volumes API
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

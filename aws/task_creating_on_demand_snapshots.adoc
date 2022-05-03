@@ -6,6 +6,7 @@ summary: 볼륨 또는 스냅샷 페이지에서 클라우드 볼륨의 주문�
 ---
 = 클라우드 볼륨에 대한 온디맨드 스냅샷 생성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: NetApp Cloud Orchestrator 사이트에서 클라우드 볼륨을 생성
 ---
 = 클라우드 볼륨을 생성하는 중입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

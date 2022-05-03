@@ -7,6 +7,7 @@ summary: 클라우드 볼륨에 필요한 경우 스냅샷 정책을 생성하�
 = 스냅샷 정책 생성 또는 수정
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

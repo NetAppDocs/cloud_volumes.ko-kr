@@ -7,6 +7,7 @@ summary: 추가 엑스포트 정책 규칙을 생성하여 유연한 클라이�
 = 추가 엑스포트 정책 규칙 생성
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

@@ -5,6 +5,7 @@ summary: NetApp Cloud Volumes Service for AWS 설명서 포털에 오신 것을 
 ---
 = NetApp Cloud Volumes Service for AWS 설명서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

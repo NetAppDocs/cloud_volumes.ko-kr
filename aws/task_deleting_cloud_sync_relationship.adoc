@@ -7,6 +7,7 @@ summary: 더 이상 필요하지 않은 Cloud Sync 관계를 삭제할 수 있�
 = Cloud Sync 관계를 삭제하는 중입니다
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

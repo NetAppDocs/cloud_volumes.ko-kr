@@ -6,6 +6,7 @@ summary: Cloud Backup Service를 사용하여 NFS 클라우드 볼륨을 백업�
 ---
 = Cloud Backup Service를 사용한 백업 관리(US-West-2의 베타)
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

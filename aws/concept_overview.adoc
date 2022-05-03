@@ -7,6 +7,7 @@ summary: 클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 �
 = Cloud Volumes Service for AWS 사전 요구사항
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

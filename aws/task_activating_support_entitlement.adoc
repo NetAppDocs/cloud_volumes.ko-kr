@@ -6,6 +6,7 @@ summary: AWS 마켓플레이스에 구독한 후 바로 Cloud Volumes Service에
 ---
 = 지원 권한 활성화 및 지원 액세스
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

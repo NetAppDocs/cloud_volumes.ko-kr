@@ -6,6 +6,7 @@ summary: 볼륨 또는 스냅샷 페이지에서 스냅샷을 삭제할 수 있�
 ---
 = 스냅샷을 삭제하는 중입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

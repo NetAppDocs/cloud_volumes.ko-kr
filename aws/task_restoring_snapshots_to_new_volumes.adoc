@@ -7,6 +7,7 @@ summary: 필요에 따라 스냅샷을 새 볼륨으로 복원할 수 있습니�
 = 스냅샷을 새 볼륨으로 복구
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

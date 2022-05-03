@@ -7,6 +7,7 @@ summary: Cloud Sync 관계가 처음 생성되면 기본적으로 자동 동기�
 = Cloud Sync 스케줄 수정
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

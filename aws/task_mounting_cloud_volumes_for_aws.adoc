@@ -7,6 +7,7 @@ summary: 클라우드 볼륨을 AWS 인스턴스에 마운트할 수 있습니�
 = 클라우드 볼륨 마운트
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font

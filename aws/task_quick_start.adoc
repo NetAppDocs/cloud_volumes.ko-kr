@@ -5,6 +5,7 @@ summary: 몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Servic
 ---
 = 빠른 시작 지침
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -15,7 +16,7 @@ summary: 몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Servic
 [role="lead"]
 몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Service를 시작할 수 있습니다.
 
-* 참고: * 클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 link:media/cvs_aws_account_setup.pdf["[KO"^]]|] 아직 이 단계를 완료하지 않은 경우.
+* 참고: * 클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 link:media/cvs_aws_account_setup.pdf["[KO"^]]|link:media/cvs_aws_account_setup_jaJP.pdf["[JA"^]] 아직 이 단계를 완료하지 않은 경우.
 
 [discrete]
 === span class="image"><img src="./media/number1.png" alt="the number 1"></span><a href="task_selecting_region.html">지역 선택</A>

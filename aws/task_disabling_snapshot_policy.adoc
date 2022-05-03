@@ -7,6 +7,7 @@ summary: 스냅샷 정책 설정을 유지하는 동안 잠시 동안 스냅샷�
 = 스냅샷 정책을 사용하지 않도록 설정합니다
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font
