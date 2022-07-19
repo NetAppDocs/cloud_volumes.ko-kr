@@ -50,7 +50,7 @@ Cloud Volumes Service for AWS는 다음과 같은 이점을 제공합니다.
 
 == Cloud Volumes Service for AWS에 대해 자세히 알아보십시오
 
-video::hL4rosv-iZQ[youtube, width=848,height=480]
+video::hL4rosv-iZQ[youtube,width=848,height=480]
 
 
 == 자세한 내용을 확인하십시오
