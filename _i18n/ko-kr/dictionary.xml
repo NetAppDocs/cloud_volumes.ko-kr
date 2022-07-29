@@ -1045,13 +1045,6 @@
   <block id="ded5309ebea6d4cf5ed055e7034efeb8" category="doc">빠른 시작 지침</block>
   <block id="98cd9fd436f3f06a4f633a68293ace22" category="inline-link-macro">[KO</block>
   <block id="c4e8dfa1afd29fe4a9774a9a68d87b5f" category="inline-link-macro">[JA</block>
-  <block id="5ac3e76d06eb5d3e2a8eb1e2a93d6020" category="paragraph">* 참고: * 클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 <block ref="ea1749da35be089b2ed08e644f3246da" category="inline-link-macro-rx"></block>]|<block ref="4b61c911928703a63f9e7f084d89a163" category="inline-link-macro-rx"></block>] 아직 이 단계를 완료하지 않은 경우.</block>
-  <block id="e07d1c8552b02a9af8096c445a1f98f0" category="floating-title">span class="image"&gt;&lt;img src="./media/number1.png" alt="the number 1"&gt;&lt;/span&gt;&lt;a href="task_selecting_region.html"&gt;지역 선택&lt;/A&gt;</block>
-  <block id="348eb763eb8d49a86500b8ed6b6f30cb" category="paragraph">클라우드 볼륨을 생성할 AWS 영역을 지정합니다.</block>
-  <block id="89eb2085607ad7d0a08819a56cfd9b5c" category="floating-title">span class="image"&gt;&lt;img src="./media/number2.png" alt="the number 2"&gt;&lt;/span&gt;&lt;a href="task_creating_cloud_volumes_for_AWS.html"&gt;클라우드 볼륨 만들기&lt;/A&gt;</block>
-  <block id="c159d360fd7e6de751d0c82932215e11" category="paragraph">크기 및 서비스 수준을 지정하여 AWS 클라우드에서 클라우드 볼륨을 생성하고 다른 옵션을 정의합니다.</block>
-  <block id="9052c494a743afff74600701fd6f6b27" category="floating-title">span class="image"&gt;&lt;img src="./media/number3.png" alt="the number 3"&gt;&lt;/span&gt;&lt;a href="task_mounting_cloud_volumes_for_AWS.html"&gt;클라우드 볼륨 마운트&lt;/A&gt;</block>
-  <block id="5374594906015b13962ce3076af203a6" category="paragraph">Linux 및 UNIX 클라이언트용 NFS 또는 Windows 클라이언트용 SMB를 사용하여 AWS 인스턴스에 클라우드 볼륨을 마운트합니다.</block>
   <block id="2ca6d31f8d60669a0f87dad46b3f3150" category="summary">클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 있습니다. Cloud Volumes Service for AWS를 사용하려면 몇 가지 사전 요구사항이 충족되어야 합니다.</block>
   <block id="32ac6e1aa2f558fdf3c0cfa9da90aaf9" category="doc">Cloud Volumes Service for AWS 사전 요구사항</block>
   <block id="4fe27e17b02228491de0c851dbac97d3" category="paragraph">클라우드 볼륨은 사용이 간단하고 빠르게 구축할 수 있습니다. Cloud Volumes Service for AWS를 사용하려면 몇 가지 사전 요구사항이 충족되어야 합니다.</block>
@@ -1075,4 +1068,11 @@
   <block id="397ff3bc347de43dbcde7cdb242690fe" category="sidebar">엑스포트 정책 규칙 관리</block>
   <block id="ff2741973abb478532d388257d6165e5" category="sidebar">클라우드 볼륨을 위한 Cloud Sync 관리</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">참조하십시오</block>
+  <block id="0d7e1f20e5c1a1d1b089eb22a501e24d" category="admonition">클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 <block ref="ea1749da35be089b2ed08e644f3246da" category="inline-link-macro-rx"></block>]|<block ref="4b61c911928703a63f9e7f084d89a163" category="inline-link-macro-rx"></block>] 아직 이 단계를 완료하지 않은 경우.</block>
+  <block id="01199f4c47580c34b874ddd6aaa68017" category="inline-link-macro">AWS 영역을 지정합니다</block>
+  <block id="971ac4441ccd02861a64a26dbad2b341" category="paragraph"><block ref="04212880faf5c32b2ea14bdddee21214" category="inline-link-macro-rx"></block> 클라우드 볼륨을 생성할 계획인 경우,</block>
+  <block id="124ba7827fa08390f114599668ce5989" category="inline-link-macro">클라우드 볼륨을 생성합니다</block>
+  <block id="775f4090b28ee5c5fff7d4ef36c48dc0" category="paragraph"><block ref="346d247920cee7e3b2b4a7c0b02ac86d" category="inline-link-macro-rx"></block> 크기 및 서비스 수준을 지정하고 다른 옵션을 정의하여 AWS 클라우드에서.</block>
+  <block id="f8a3e524010ba486ee8e4709993867f3" category="inline-link-macro">클라우드 볼륨을 마운트합니다</block>
+  <block id="65875f2f3f86bab85d300291adbab854" category="paragraph"><block ref="60fd149f49a02e7cb34ff55ec3ced595" category="inline-link-macro-rx"></block> Linux 및 UNIX 클라이언트용 NFS 또는 Windows 클라이언트용 SMB를 사용하는 AWS 인스턴스</block>
 </blocks>

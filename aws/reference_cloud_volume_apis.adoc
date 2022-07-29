@@ -65,7 +65,7 @@ API는 다음과 같이 기능별로 나열됩니다.
 
 == Cloud Volumes API 사용
 
-이 섹션에서는 Cloud Volumes API를 사용하는 방법을 보여줍니다. 이 예에서는 Linux bash 셸에서 curl을 사용합니다. "<api_url>", "<api_key>" 및 "<secret_key>"를 에서 기록한 값으로 바꿔야 합니다 <<finding_urL_key_secretKey,API URL, API 키 및 암호 키를 찾습니다>>.
+이 섹션에서는 Cloud Volumes API를 사용하는 방법을 보여줍니다. 이 예에서는 Linux bash 셸에서 curl을 사용합니다. "<api_url>", "<api_key>" 및 "<secret_key>"를 에서 기록한 값으로 바꿔야 합니다 ,API URL, API 키 및 암호 키를 찾습니다.
 
 
 
