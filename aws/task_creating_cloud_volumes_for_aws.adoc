@@ -200,4 +200,5 @@ image:diagram_create_volume_interfaces_dialog.png["가상 인터페이스 수락
 
 
 
+.작업을 마친 후
 를 계속 진행합니다 link:task_mounting_cloud_volumes_for_aws.html["클라우드 볼륨 마운트"].

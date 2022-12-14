@@ -19,11 +19,14 @@ summary: 몇 가지 간단한 단계를 완료하여 AWS용 Cloud Volumes Servic
 
 NOTE: 클라우드 볼륨을 생성하기 전에 필요한 AWS 네트워킹 구성 요소를 구성해야 합니다. Cloud Volumes Service for AWS 계정 설정 가이드 _ 를 참조하십시오 link:media/cvs_aws_account_setup.pdf["[KO"^]]|link:media/cvs_aws_account_setup_jaJP.pdf["[JA"^]] 아직 이 단계를 완료하지 않은 경우.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"] 영역을 선택합니다
 [role="quick-margin-para"]
 link:task_selecting_region.html["AWS 영역을 지정합니다"] 클라우드 볼륨을 생성할 계획인 경우,
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"] 클라우드 볼륨을 생성합니다
 [role="quick-margin-para"]
 link:task_creating_cloud_volumes_for_aws.html["클라우드 볼륨을 생성합니다"] 크기 및 서비스 수준을 지정하고 다른 옵션을 정의하여 AWS 클라우드에서.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"] 클라우드 볼륨을 마운트합니다
 [role="quick-margin-para"]
 link:task_mounting_cloud_volumes_for_aws.html["클라우드 볼륨을 마운트합니다"] Linux 및 UNIX 클라이언트용 NFS 또는 Windows 클라이언트용 SMB를 사용하는 AWS 인스턴스
