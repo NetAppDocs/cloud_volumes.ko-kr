@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>클라우드 볼륨을 생성하는 중입니다</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="클라우드 볼륨을 생성하는 중입니다" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+	<meta property="og:description" content="NetApp Cloud Orchestrator 사이트에서 클라우드 볼륨을 생성할 수 있습니다." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud_volumes/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="NetApp Cloud Orchestrator 사이트에서 클라우드 볼륨을 생성할 수 있습니다.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, volumes, snapshots, service levels, allocated capacity, export policy, NFS, SMB, Active Directory, AD, Windows"><!-- Icons -->
+  <link rel="icon" href="/ko-kr/cloud_volumes/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/cloud_volumes/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ko-kr/cloud_volumes/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/cloud_volumes/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ko-kr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+        $(".page-nav__link").first().addClass('page-nav__link--active');
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/cloud_volumes/js/na-search.js'></script><script src='/ko-kr/cloud_volumes/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ko-kr/cloud_volumes/js/custom-dropdown.js'></script>
+  <script src='/ko-kr/cloud_volumes/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/cloud_volumes/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/cloud_volumes/js/jszip.min.js'></script><script src='/ko-kr/cloud_volumes/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor=""><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ko-kr/cloud_volumes/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/kr">
+                <image id="ie-header-logo" src="/ko-kr/cloud_volumes/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">문서</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ko-kr/cloud_volumes/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">한국어</span>
+                    <img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ko-kr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ko-kr/cloud_volumes/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">모든 NetApp</span>
+                    <img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">지원</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">기술 자료</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/ko/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">교육</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ko-kr/cloud_volumes/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ko-kr/cloud_volumes/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">모든 문서</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ko-kr/cloud_volumes/">-->
+      Cloud Volumes Service
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ko-kr/cloud_volumes/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ko-kr/cloud_volumes/search.html" 
+        data-type="widget"
+        data-placeholder="설명서 검색"
+        data-no-results-found="{query}에 대한 결과를 찾을 수 없습니다"
+        data-did-you-mean="{suggestion}을(를) 검색하십시오."
+        data-no-results-found-did-you-mean="{query}에 대한 결과가 없습니다. {suggestion}을(를) 찾고 계시는 건가요?"
+        data-results-found="{hitCount}개의 결과를 찾았습니다"
+        data-error-message="오류가 발생했습니다. 다시 시도해 주십시오."
+        data-error-reset="검색 재설정"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes Service for AWS 문서"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ko-kr/cloud_volumes/aws/index.html">
+        Cloud Volumes Service for AWS 문서
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="릴리스 정보"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 릴리스 정보</div>-->
+         릴리스 정보
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="새로운 소식"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/reference_whats_new_cloud_volumes_aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/reference_whats_new_cloud_volumes_aws.html">
+        새로운 소식
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="알려진 문제"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/reference_known_issues.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/reference_known_issues.html">
+        알려진 문제
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="시작하기"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 시작하기</div>-->
+         시작하기
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="필수 구성 요소"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/concept_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/concept_overview.html">
+        필수 구성 요소
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="빠른 시작 지침"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_quick_start.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_quick_start.html">
+        빠른 시작 지침
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="지원 권한 활성화 및 지원 액세스"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_activating_support_entitlement.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_activating_support_entitlement.html">
+        지원 권한 활성화 및 지원 액세스
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="지역 선택"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_selecting_region.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_selecting_region.html">
+        지역 선택
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨 관리"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 클라우드 볼륨 관리</div>-->
+         클라우드 볼륨 관리
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨을 생성하는 중입니다"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html">
+        클라우드 볼륨을 생성하는 중입니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨 마운트"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_mounting_cloud_volumes_for_aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_mounting_cloud_volumes_for_aws.html">
+        클라우드 볼륨 마운트
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨 수정"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_modifying_cloud_volumes_for_aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_modifying_cloud_volumes_for_aws.html">
+        클라우드 볼륨 수정
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨을 삭제하는 중입니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_deleting_cloud_volumes_for_aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_deleting_cloud_volumes_for_aws.html">
+        클라우드 볼륨을 삭제하는 중입니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨 스냅샷 관리"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 클라우드 볼륨 스냅샷 관리</div>-->
+         클라우드 볼륨 스냅샷 관리
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨에 대한 온디맨드 스냅샷 생성"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_creating_on_demand_snapshots.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_creating_on_demand_snapshots.html">
+        클라우드 볼륨에 대한 온디맨드 스냅샷 생성
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스냅샷 정책 생성 또는 수정"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_creating_modifying_snapshot_policies.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_creating_modifying_snapshot_policies.html">
+        스냅샷 정책 생성 또는 수정
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스냅샷 정책을 사용하지 않도록 설정합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_disabling_snapshot_policy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_disabling_snapshot_policy.html">
+        스냅샷 정책을 사용하지 않도록 설정합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스냅샷에서 볼륨을 되돌리는 중입니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_reverting_volume_to_snapshot.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_reverting_volume_to_snapshot.html">
+        스냅샷에서 볼륨을 되돌리는 중입니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스냅샷을 삭제하는 중입니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_deleting_snapshots.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_deleting_snapshots.html">
+        스냅샷을 삭제하는 중입니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스냅샷을 새 볼륨으로 복구"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_restoring_snapshots_to_new_volumes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_restoring_snapshots_to_new_volumes.html">
+        스냅샷을 새 볼륨으로 복구
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="엑스포트 정책 규칙 관리"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 엑스포트 정책 규칙 관리</div>-->
+         엑스포트 정책 규칙 관리
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="엑스포트 정책 규칙 수정"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_modifying_export_policy_rules.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_modifying_export_policy_rules.html">
+        엑스포트 정책 규칙 수정
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="추가 엑스포트 정책 규칙 생성"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_creating_additional_export_policy_rules.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_creating_additional_export_policy_rules.html">
+        추가 엑스포트 정책 규칙 생성
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="엑스포트 정책 규칙을 삭제하는 중입니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_deleting_export_policy_rules.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_deleting_export_policy_rules.html">
+        엑스포트 정책 규칙을 삭제하는 중입니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 볼륨을 위한 Cloud Sync 관리"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 클라우드 볼륨을 위한 Cloud Sync 관리</div>-->
+         클라우드 볼륨을 위한 Cloud Sync 관리
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Sync 데이터 브로커 생성"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_creating_cloud_sync_data_broker.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_creating_cloud_sync_data_broker.html">
+        Cloud Sync 데이터 브로커 생성
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Sync 관계 생성"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_creating_cloud_sync_relationship.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_creating_cloud_sync_relationship.html">
+        Cloud Sync 관계 생성
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Sync 스케줄 수정"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_modifying_cloud_sync_schedule.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_modifying_cloud_sync_schedule.html">
+        Cloud Sync 스케줄 수정
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Sync 관계를 삭제하는 중입니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_deleting_cloud_sync_relationship.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_deleting_cloud_sync_relationship.html">
+        Cloud Sync 관계를 삭제하는 중입니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Sync 데이터 브로커를 삭제하는 중입니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/task_deleting_cloud_sync_data_broker.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/task_deleting_cloud_sync_data_broker.html">
+        Cloud Sync 데이터 브로커를 삭제하는 중입니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes API"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/reference_cloud_volume_apis.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ko-kr/cloud_volumes/aws/reference_cloud_volume_apis.html">
+        Cloud Volumes API
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="참조하십시오"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/cloud_volumes/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/cloud_volumes/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 참조하십시오</div>-->
+         참조하십시오
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Windows AD 서버에 대한 AWS 보안 그룹 설정"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/reference_security_groups_windows_ad_servers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/reference_security_groups_windows_ad_servers.html">
+        Windows AD 서버에 대한 AWS 보안 그룹 설정
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="적절한 서비스 레벨 및 할당된 용량 선택"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/reference_selecting_service_level_and_quota.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/cloud_volumes/aws/reference_selecting_service_level_and_quota.html">
+        적절한 서비스 레벨 및 할당된 용량 선택
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="법적 고지"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/aws/task_creating_cloud_volumes_for_aws.html" 
+      dale-entry-url="/aws/reference_notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ko-kr/cloud_volumes/aws/reference_notices.html">
+        법적 고지
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ko-kr/cloud_volumes"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ko-kr/cloud_volumes"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ko-kr/cloud_volumes/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">클라우드 볼륨을 생성하는 중입니다</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2022-12-14 17:55:35 +0000">12/14/2022</time>
+        
+    
+    
+        <span>기여자
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ko-kr/cloud_volumes/images/discuss-sm.svg" alt="" class="github-icon" />변경 제안</span>
+        <img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes.ko-kr/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ko-kr/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html&page-title=클라우드 볼륨을 생성하는 중입니다" class="page-nav-contribute-link" role="button">문서 변경사항 요청</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/main/aws/task_creating_cloud_volumes_for_aws.adoc" class="page-nav-contribute-link" role="button">이 페이지 편집</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >기여하는 방법 알아보기</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ko-kr/cloud_volumes/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ko-kr/cloud_volumes/pdfs/fullsite-sidebar/Cloud_Volumes_Service_for_AWS_문서.pdf" >
+                    <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/릴리스_정보.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            릴리스 정보
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/시작하기.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            시작하기
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/클라우드_볼륨_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            클라우드 볼륨 관리
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/클라우드_볼륨_스냅샷_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            클라우드 볼륨 스냅샷 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/엑스포트_정책_규칙_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            엑스포트 정책 규칙 관리
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/클라우드_볼륨을_위한_Cloud_Sync_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            클라우드 볼륨을 위한 Cloud Sync 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/cloud_volumes/pdfs/sidebar/참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud_volumes/images/pdf-icon.png" alt="" width="16" height="16"/>
+            참조하십시오
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ko-kr/cloud_volumes/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>NetApp Cloud Orchestrator 사이트에서 클라우드 볼륨을 생성할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="필수-구성-요소">필수 구성 요소</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>첫 번째 클라우드 볼륨을 생성하려면 AWS 환경이 특정 요구사항을 충족해야 합니다. 클라우드 볼륨을 구축하려는 각 AWS 지역의 경우 다음과 같은 항목이 있어야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VPC(가상 프라이빗 클라우드)</p>
+</li>
+<li>
+<p>VPC에 연결된 vGW(Virtual Private Gateway</p>
+</li>
+<li>
+<p>VPC용 서브넷</p>
+</li>
+<li>
+<p>클라우드 볼륨이 실행될 네트워크를 포함하여 정의된 경로</p>
+</li>
+<li>
+<p>선택적으로 Direct Connect Gateway를 사용할 수 있습니다</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>특정 지역에서 첫 번째 클라우드 볼륨을 생성할 때 다음 정보를 사용할 수 있어야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* AWS 계정 ID *: 대시가 없는 12자리 아마존 계정 식별자입니다.</p>
+</li>
+<li>
+<p>* CIDR(Classless Inter-Domain Routing) 블록 *: 사용되지 않는 IPv4 CIDR 블록. 네트워크 접두사는 /16 및 /28 사이의 범위여야 하며, 개인 네트워크용으로 예약된 범위(RFC 1918)에도 속해야 합니다. VPC CIDR 할당과 중복되는 네트워크를 선택하지 마십시오.</p>
+</li>
+<li>
+<p>서비스를 사용할 올바른 지역을 선택해야 합니다. 을 참조하십시오 <a href="task_selecting_region.html">"지역 선택"</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>필요한 AWS 네트워킹 구성 요소를 구성하지 않은 경우 를 참조하십시오 <a href="media/cvs_aws_account_setup.pdf" target="_blank" rel="noopener">"NetApp Cloud Volumes Service for AWS 계정 설정"</a> 참조하십시오.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>참고: * SMB 볼륨 생성을 계획하는 경우 연결할 수 있는 Windows Active Directory 서버가 있어야 합니다. 볼륨을 생성할 때 이 정보를 입력합니다. 또한 관리자 사용자가 지정된 OU(조직 단위) 경로에 컴퓨터 계정을 만들 수 있는지 확인합니다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="볼륨-세부-정보를-입력합니다">볼륨 세부 정보를 입력합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>볼륨 생성 페이지 맨 위에 있는 필드를 작성하여 볼륨 이름, 크기, 서비스 수준 등을 정의합니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>에 로그인한 후 <a href="https://cds-aws-bundles.netapp.com/storage/volumes" target="_blank" rel="noopener">"NetApp Cloud Orchestrator를 사용하면"</a> 구독 중에 제공한 전자 메일 주소가 있는 사이트입니다 <a href="task_selecting_region.html">"영역을 선택했습니다"</a>에서 * 새 볼륨 생성 * 버튼을 클릭합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_create_volume_1.png" alt="볼륨 생성 페이지">
+</div>
+</div>
+</li>
+<li>
+<p>볼륨 생성 페이지에서 생성할 볼륨의 프로토콜로 * NFS *, * SMB * 또는 * 이중 프로토콜 * 을 선택합니다.</p>
+</li>
+<li>
+<p>이름 * 필드에서 볼륨에 사용할 이름을 지정합니다.</p>
+</li>
+<li>
+<p>Region * (지역 *) 필드에서 볼륨을 생성할 AWS 영역을 선택합니다. 이 지역은 AWS에서 구성한 지역과 일치해야 합니다.</p>
+</li>
+<li>
+<p>시간대 * 필드에서 시간대를 선택합니다.</p>
+</li>
+<li>
+<p>볼륨 경로 * 필드에서 사용하려는 경로를 지정하거나 자동으로 생성된 경로를 적용합니다.</p>
+</li>
+<li>
+<p>Service level * (서비스 수준 *) 필드에서 볼륨에 대한 성능 수준을 * Standard * (표준 *), * Premium * (프리미엄 *) 또는 * Extreme * (익스트림 *)으로 선택합니다.</p>
+<div class="paragraph">
+<p>을 참조하십시오 <a href="reference_selecting_service_level_and_quota.html#service-levels">"서비스 레벨 선택"</a> 를 참조하십시오.</p>
+</div>
+</li>
+<li>
+<p>할당된 용량 * 필드에서 필요한 용량을 선택합니다. 사용 가능한 inode 수는 할당된 용량에 따라 다릅니다.</p>
+<div class="paragraph">
+<p>을 참조하십시오 <a href="reference_selecting_service_level_and_quota.html#allocated-capacity">"할당된 용량을 선택합니다"</a> 를 참조하십시오.</p>
+</div>
+</li>
+<li>
+<p>NFS 버전 * 필드에서 요구사항에 따라 * NFSv3 *, * NFSv4.1 * 또는 * 둘 다를 선택합니다.</p>
+</li>
+<li>
+<p>이중 프로토콜을 선택한 경우 드롭다운 메뉴에서 * NTFS * 또는 * UNIX * 를 선택하여 * 보안 스타일 * 필드에서 보안 스타일을 선택할 수 있습니다.</p>
+<div class="paragraph">
+<p>보안 스타일은 사용된 파일 권한 유형과 사용 권한을 수정하는 방법에 영향을 줍니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>UNIX는 NFSv3 모드 비트를 사용하며, NFS 클라이언트만 권한을 수정할 수 있습니다.</p>
+</li>
+<li>
+<p>NTFS는 NTFS ACL을 사용하며, SMB 클라이언트만 권한을 수정할 수 있습니다.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Show snapshot directory * (스냅샷 디렉토리 표시 *) 필드에서 이 볼륨의 스냅샷 디렉토리를 볼 수 있는 기본값을 유지하거나 스냅샷 복사본 목록을 숨기려면 이 상자의 선택을 취소합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="네트워크-세부-정보-입력aws-지역당-1회-설정">네트워크 세부 정보 입력(AWS 지역당 1회 설정)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>이 AWS 지역에서 클라우드 볼륨을 처음 생성하는 경우 * Network * 섹션이 표시되어 Cloud Volumes 계정을 AWS 계정에 연결할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CIDR(IPv4) * 필드에 지역에 대해 원하는 IPv4 범위를 입력합니다. 네트워크 접두사의 범위는 /16과 /28 사이여야 합니다. 또한 네트워크는 전용 네트워크용으로 예약된 범위 내에 속해야 합니다(RFC 1918). VPC CIDR 할당과 중복되는 네트워크를 선택하지 마십시오.</p>
+</li>
+<li>
+<p>AWS 계정 ID * 필드에 대시 없이 12자리 아마존 계정 식별자를 입력합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_create_volume_network.png" alt="네트워크 설정을 구성합니다">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="엑스포트-정책-규칙-입력선택-사항">엑스포트 정책 규칙 입력(선택 사항)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NFS 또는 이중 프로토콜을 선택한 경우 * Export policy * 섹션에서 내보내기 정책을 생성하여 볼륨에 액세스할 수 있는 클라이언트를 식별할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>허용된 클라이언트 * 필드에서 IP 주소 또는 CIDR(Classless Inter-Domain Routing)을 사용하여 허용된 클라이언트를 지정합니다.</p>
+</li>
+<li>
+<p>Access * 필드에서 * Read &amp; Write * 또는 * Read Only * 를 선택합니다.</p>
+</li>
+<li>
+<p>프로토콜 * 필드에서 사용자 액세스에 사용되는 프로토콜(또는 볼륨에서 NFSv3과 NFSv4.1 액세스가 모두 허용되는 경우 프로토콜)을 선택합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_create_volume_4.png" alt="엑스포트 정책 규칙을 추가합니다">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>추가 엑스포트 정책 규칙을 정의하려면 * + 엑스포트 정책 규칙 추가 * 를 클릭합니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="데이터-암호화-활성화선택-사항">데이터 암호화 활성화(선택 사항)</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SMB 또는 이중 프로토콜을 선택한 경우 * SMB3 프로토콜 암호화 활성화 * 필드의 확인란을 선택하여 SMB 세션 암호화를 활성화할 수 있습니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>참고: * SMB 2.1 클라이언트가 볼륨을 마운트해야 하는 경우 암호화를 활성화하지 마십시오.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="active-directory-서버smb-및-이중-프로토콜와-볼륨-통합">Active Directory 서버(SMB 및 이중 프로토콜)와 볼륨 통합</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SMB 또는 이중 프로토콜을 선택한 경우 * Active Directory * 섹션에서 Windows Active Directory 서버 또는 AWS Managed Microsoft AD와 볼륨을 통합하도록 선택할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>사용 가능한 설정 * 필드에서 기존 Active Directory 서버를 선택하거나 새 AD 서버를 추가합니다.</p>
+</div>
+<div class="paragraph">
+<p>새 AD 서버에 대한 연결을 구성하려면 다음을 수행합니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>DNS server * 필드에 DNS 서버의 IP 주소를 입력합니다. 여러 서버를 참조할 때 쉼표를 사용하여 IP 주소를 구분합니다(예: 172.31.25.223, 172.31.2.74).</p>
+</li>
+<li>
+<p>도메인 * 필드에 SMB 공유의 도메인을 입력합니다.</p>
+<div class="paragraph">
+<p>AWS Managed Microsoft AD를 사용하는 경우 "Directory DNS name(디렉터리 DNS 이름)" 필드의 값을 사용합니다.</p>
+</div>
+</li>
+<li>
+<p>SMB 서버 NetBIOS* 필드에 생성할 SMB 서버의 NetBIOS 이름을 입력합니다.</p>
+</li>
+<li>
+<p>조직 단위 * 필드에 자신의 Windows Active Directory 서버에 연결할 "CN=Computers"를 입력합니다.</p>
+<div class="paragraph">
+<p>AWS Managed Microsoft AD를 사용하는 경우 조직 단위는 "OU=&lt;NetBIOS_name&gt;" 형식으로 입력해야 합니다. 예: * OU=AWSmanagedAD *.</p>
+</div>
+<div class="paragraph">
+<p>중첩된 OU를 사용하려면 가장 낮은 수준의 OU를 가장 높은 수준의 OU까지 먼저 호출해야 합니다. 예: * OU=THIRDLEVEL, OU=SECONDLEVEL, OU=FIRSTLEVEL *.</p>
+</div>
+</li>
+<li>
+<p>사용자 이름 * 필드에 Active Directory 서버의 사용자 이름을 입력합니다.</p>
+<div class="paragraph">
+<p>SMB 서버에 연결할 Active Directory 도메인에서 컴퓨터 계정을 생성할 수 있도록 승인된 모든 사용자 이름을 사용할 수 있습니다.</p>
+</div>
+</li>
+<li>
+<p>암호 * 필드에 지정한 AD 사용자 이름의 암호를 입력합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_create_volume_ad.png" alt="Active Directory를 클릭합니다">
+</div>
+</div>
+<div class="paragraph">
+<p>을 참조하십시오 <a href="https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/designing-the-site-topology" target="_blank" rel="noopener">"Active Directory 도메인 서비스를 위한 사이트 토폴로지 설계"</a> 최적의 Microsoft AD 구현 설계 지침</p>
+</div>
+<div class="paragraph">
+<p>를 참조하십시오 <a href="media/cvs_aws_ds_smb_setup.pdf" target="_blank" rel="noopener">"NetApp Cloud Volumes Service for AWS로 AWS 디렉토리 서비스 설정"</a> AWS Managed Microsoft AD 사용에 대한 자세한 지침은 가이드를 참조하십시오.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud_volumes/images/important.svg" alt="중요함">
+</td>
+<td class="content">
+AWS 보안 그룹 설정에 대한 지침에 따라 클라우드 볼륨이 Windows Active Directory 서버와 올바르게 통합되도록 해야 합니다. 을 참조하십시오 <a href="reference_security_groups_windows_ad_servers.html">"Windows AD 서버에 대한 AWS 보안 그룹 설정"</a> 를 참조하십시오.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>참고: * NFS를 사용하여 볼륨을 마운트하는 UNIX 사용자는 UNIX 루트의 경우 Windows 사용자 "루트"로, 다른 모든 사용자의 경우 "pcuser"로 인증됩니다. NFS를 사용할 때 이중 프로토콜 볼륨을 마운트하기 전에 이러한 사용자 계정이 Active Directory에 있는지 확인하십시오.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="스냅샷-정책-생성선택-사항">스냅샷 정책 생성(선택 사항)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>이 볼륨에 대한 스냅샷 정책을 생성하려면 * 스냅샷 정책 * 섹션에 세부 정보를 입력합니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>스냅샷 빈도 * 시간별 *, * 일별 *, * 주별 * 또는 * 월별 * 를 선택합니다.</p>
+</li>
+<li>
+<p>유지할 스냅샷 수를 선택합니다.</p>
+</li>
+<li>
+<p>스냅샷을 생성할 시간을 선택합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_snapshot_policy_1.png" alt="스냅샷 정책">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>위의 단계를 반복하거나 왼쪽 탐색 영역에서 스냅샷 탭을 선택하여 추가 스냅샷 정책을 생성할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="볼륨을-생성합니다">볼륨을 생성합니다</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>페이지 아래쪽으로 스크롤하여 * 볼륨 생성 * 을 클릭합니다.</p>
+<div class="paragraph">
+<p>이 영역에서 이전에 클라우드 볼륨을 생성한 경우 새 볼륨이 볼륨 페이지에 나타납니다.</p>
+</div>
+<div class="paragraph">
+<p>이 AWS 지역에서 생성한 첫 번째 클라우드 볼륨이고 이 페이지의 네트워크 섹션에 네트워킹 정보를 입력한 경우, AWS 인터페이스와 볼륨을 연결하기 위해 수행해야 하는 다음 단계를 식별하는 진행률 대화 상자가 표시됩니다.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_create_volume_interfaces_dialog.png" alt="가상 인터페이스 수락 대화 상자"></span></p>
+</div>
+</li>
+<li>
+<p>의 섹션 6.4에 설명된 대로 가상 인터페이스를 수락합니다 <a href="media/cvs_aws_account_setup.pdf#page=21" target="_blank" rel="noopener">"NetApp Cloud Volumes Service for AWS 계정 설정"</a> 가이드. 10분 이내에 이 작업을 수행해야 합니다. 그렇지 않을 경우 시스템이 시간 초과될 수 있습니다.</p>
+<div class="paragraph">
+<p>인터페이스가 10분 이내에 나타나지 않으면 구성 문제가 있을 수 있으며, 이 경우 지원 부서에 문의해야 합니다.</p>
+</div>
+<div class="paragraph">
+<p>인터페이스 및 기타 네트워킹 구성 요소가 생성되면 생성한 볼륨이 Volumes 페이지에 나타나고 Actions 필드가 Available로 나열됩니다.<span class="image"><img src="./media/diagram_create_volume_3.png" alt="볼륨이 생성됩니다"></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">작업을 마친 후</div>
+<p>를 계속 진행합니다 <a href="task_mounting_cloud_volumes_for_aws.html">"클라우드 볼륨 마운트"</a>.</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ko-kr/cloud_volumes/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ko-kr/cloud_volumes/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">이 페이지에서</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">이용 약관</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">개인 정보 보호 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">쿠키 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">쿠키 설정</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">이 페이지에 대한 피드백 보내기</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/cloud_volumes/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/cloud_volumes/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/cloud_volumes/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/cloud_volumes/js/ie-tabbed-blocks.js'></script>
+    <script src='/ko-kr/cloud_volumes/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
